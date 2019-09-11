@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login form with confirmation!</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  
+  
+</head>
+<body>
+
+
+<div class="overlay"></div>
+
+<div class="container">
+	<div class="loginBox">
+			<div class="userImage">
+				<img src="../images/logo.png">
+			</div>
+		<div class="loginBoxLeft" style="width: 450px;border-right: 1px dashed #E8E8E8;float: left;">
+			
+			<form id=switchFormEmail>
+				<div class="input-wrapper">
+					<label>邮&nbsp;&nbsp;&nbsp;箱:</label>
+					<input type="email" name="" placeholder="请输入邮箱">
+					<div class="error-email"><div class="email-msg"></div><div class="triangle"></div></div>
+				</div>
+				<div class="input-wrapper">
+					<label>密&nbsp;&nbsp;&nbsp;码:</label>
+					<input type="password" name="" placeholder="密码">
+					<div class="error-pass"><div class="pass-msg"></div><div class="triangle"></div></div>
+				</div>
+				<div class="input-wrapper">
+					<label>手机号</label>
+					<input type="password" name="" placeholder="密码">
+					<div class="error-pass"><div class="pass-msg"></div><div class="triangle"></div></div>
+				</div>
+				<div class="input-wrapper">
+					<input type="text" name="" placeholder="验证码" style="width: 270px;">
+					<label>获取验证码</label>
+					<div class="error-pass"><div class="pass-msg"></div><div class="triangle"></div></div>
+				</div>
+				
+				<input type="button" name="" value="登录" style="cursor: pointer;width: 380px;" onClick="validateForm()">
+			</form>
+			
+			
+		</div>
+		
+		<div class="loginBoxLeft" style="width: 180px;float: left;">
+			<span style="display: block;margin-left: 70px;color: #000">已有账号:</span>
+			<a href="login.html" style="margin-left: 70px;color: #00b38a">立即登陆
+				<img alt="" src="../images/3.png" style="width: 18px;height: 18px;margin-left: 140px;display: block;margin-top: -19px;cursor: pointer;">	
+			</a>
+			<img alt="" src="../images/aap.jpg" style="width: 150px;height: 150px;margin-left: 50px;">	
+			<span style="display: block;margin-left: 70px;">扫描二维码进入微信小程序</span>
+		</div>
+	</div>
+</div>
+<div class="confirmation showOk">
+	<img src="../images/gato.jpg">
+</div>
+
+<script src='../js/jquery.min.js'></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>
