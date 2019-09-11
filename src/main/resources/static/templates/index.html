@@ -241,9 +241,35 @@ $(function(){
 $("#tr").click(function(){
     alert("qqqqqq");
 });
+</script>
+<script>
+$(document).ready(function(){
+    $.ajax({
+    	url:"/task/show",
+        dataType:"json",
+        success:function(json){
+            console.log(json);
+            var task = json.data;
+            for(var i=0;i<task.length;i++){
+            	var cname = task[i].cname;
+            	var tdate = task[i].tdate;
+            	var pname = task[i].pname;
+            	var tbidding = task[i].tbidding;
+            	var pmoney = task[i].pmoney;
+            	var findate = task[i].findate;
+            	$("#tab").append('<tr>'+
+                '<td id="tr"><span >'+cname+'</span></td>'+
+                '<td class="tl">'+pname+'</td>'+
+                '<td class="o">'+tdate+'</td>'+
+                '<td>'+findate+'</td>'+
+                '<td>'+pmoney+'元</td>'+
+                '<td class="tl"><span class="process"><span class="process-bar" style="width: 75%"></span></span>75%</td>'+
+                '<td><a href="invest-show.html" class="button ico Bid">投标</a></td>'+
+            '</tr>');
+            }
+        }
+    });
 
-$.ajax({
-	
 });
 
 </script>

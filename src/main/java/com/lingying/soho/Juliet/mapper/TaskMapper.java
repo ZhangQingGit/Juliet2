@@ -1,5 +1,7 @@
 package com.lingying.soho.Juliet.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.lingying.soho.Juliet.entity.Task;
@@ -33,5 +35,10 @@ public interface TaskMapper {
      * @return
      */
     Task findById(Integer rid);
+    /**
+     * 分页查询列表信息
+     * @return
+     */
+    List<Task> findByLimit();
     
 }
