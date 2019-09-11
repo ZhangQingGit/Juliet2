@@ -13,7 +13,13 @@ function validateForm() {
   var countErrors = 0;
   var emailInput = $("input[type=email]");
   var passInput = $("input[type=password]");
+  var cemail=$(emailInput).val();
+  var cpassword=$(passInput).val();
+  var cophone
   
+  if(cemail == null | cemail == ""){
+	  
+  }
   if(!checkEmail($(emailInput).val())) {
     $(".error-email").fadeIn();
     $(".email-msg").html("请输入正确的邮箱");
@@ -34,10 +40,24 @@ function validateForm() {
 
   setTimeout(function showErrorMsg() {
     $(".error-email, .error-pass").fadeOut();
-  }, 2000)
+  }, 2000);
 
   if(countErrors === 0) {
     $(".overlay").show();
     $(".confirmation").show();
+    setTimeout(function () {
+    	 window.location.href="index.html";
+      }, 1000);
+ 
   }
+}
+
+function switchFormPhone() {
+	$("#switchFormPhone").show();//显示
+	$("#switchFormEmail").hide();//显示
+}
+
+function switchFormEmail() {
+	$("#switchFormEmail").show();//显示
+	$("#switchFormPhone").hide();//显示
 }
