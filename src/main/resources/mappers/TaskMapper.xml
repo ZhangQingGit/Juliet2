@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.lingying.soho.Juliet.mapper.TaskMapper">
+
+    <insert id="addTask">
+    INSERT INTO task(
+           cname,cemail
+           ,tdate,pname
+           ,psynopsis,pmoney
+           ,findate,tasktype,tbidding
+        ) VALUES (
+            #{cname},#{cemail},
+            #{tdate}, #{pname},
+            #{psynopsis},#{pmoney},
+            #{findate},#{tasktype},#{tbidding}
+        )
+    </insert>
+    
+    <select id="findById" resultType="com.lingying.soho.Juliet.entity.Task">
+        SELECT
+            cname,cemail
+           ,tdate,pname
+           ,psynopsis,pmoney
+           ,findate,tasktype,tbidding
+        FROM
+            task
+        WHERE
+            rid=#{rid}
+    </select>
+    <select id="findByLimit" resultType="com.lingying.soho.Juliet.entity.Task">
+        SELECT
+             cname,tdate
+            ,pname,pmoney
+            ,findate,tbidding
+        FROM
+            task
+        LIMIT 0,5
+    </select>
+
+
+</mapper>

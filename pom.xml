@@ -29,11 +29,6 @@
 			<version>2.1.0</version>
 		</dependency>
 
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.1.2</version>
-        </dependency>
         
 		<dependency>
 			<groupId>mysql</groupId>
@@ -50,6 +45,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		 <!-- javaMail -->
+          <dependency>
+             <groupId>com.sun.mail</groupId>
+             <artifactId>javax.mail</artifactId>
+             <version>1.6.1</version>
+          </dependency>
 	</dependencies>
 
 	<build>

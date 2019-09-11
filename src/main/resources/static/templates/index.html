@@ -48,7 +48,7 @@
 					</span>
 				</div>
 			</div>
-			<table class="invest-list-tab">
+			<table class="invest-list-tab" id="tab">
 				<tr>
 					<th width="200">公司名</th>
 					<th width="200">项目名称</th>
@@ -58,74 +58,7 @@
 					<th width="195">竞标人数</th>
 					<th class="Statistics">共<span class="o">329</span>个标</th>
 				</tr>
-				<tr>
-					<td><span class="ico lebel_A indent">A</span></td>
-					<td class="tl">阿里巴巴</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
-				<tr>
-					<td><span class="ico lebel_B indent">B</span></td>
-					<td class="tl">阿里巴巴实力大卖家，二次借……</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
-				<tr>
-					<td><span class="ico lebel_B indent">B</span></td>
-					<td class="tl">阿里巴巴实力大卖家，二次借……</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span
-							class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
-				<tr>
-					<td><span class="ico lebel_B indent">asasd</span></td>
-					<td class="tl">阿里巴巴实力大卖家，二次借……</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span
-							class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
-				<tr>
-					<td><span class="ico lebel_A indent">A</span></td>
-					<td class="tl">阿里巴巴实力大卖家，二次借……</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span
-							class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
-				<tr>
-					<td><span class="ico lebel_A indent">A</span></td>
-					<td class="tl">阿里巴巴实力大卖家，二次借……</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span
-							class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
-				<tr>
-					<td><span class="ico lebel_A indent">A</span></td>
-					<td class="tl">阿里巴巴实力大卖家，二次借……</td>
-					<td class="o">12%</td>
-					<td>90天</td>
-					<td>16,000.00元</td>
-					<td class="tl"><span class="process"><span
-							class="process-bar" style="width: 75%"></span></span>75%</td>
-					<td><a href="invest-show.html" class="button ico Bid">投标</a></td>
-				</tr>
+				
 				
 				
 			</table>
@@ -149,6 +82,7 @@
 	<script src="../js/waste.js"></script>
 	<script src="../js/banner.js"></script>
 	<script src="../js/jQuery-jcMarquee.js"></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
 	<!--Partner-->
 	<!-- <div class="Partner mt10">
 		<div class="wrap clearfix">
@@ -303,5 +237,48 @@ $(function(){
 	});
 });
 </script>
+<script type="text/javascript">
+$("#tr").click(function(){
+    alert("qqqqqq");
+});
+</script>
+<script>
+$(document).ready(function(){
+    $.ajax({
+    	url:"/task/show",
+        dataType:"json",
+        success:function(json){
+            console.log(json);
+            var task = json.data;
+            for(var i=0;i<task.length;i++){
+            	var cname = task[i].cname;
+            	var tdate = task[i].tdate;
+            	var pname = task[i].pname;
+            	var tbidding = task[i].tbidding;
+            	var pmoney = task[i].pmoney;
+            	var findate = task[i].findate;
+            	$("#tab").append('<tr>'+
+                '<td id="tr"><span >'+cname+'</span></td>'+
+                '<td class="tl">'+pname+'</td>'+
+                '<td class="o">'+tdate+'</td>'+
+                '<td>'+findate+'</td>'+
+                '<td>'+pmoney+'元</td>'+
+                '<td class="tl"><span class="process"><span class="process-bar" style="width: 75%"></span></span>75%</td>'+
+                '<td><a href="invest-show.html" class="button ico Bid">投标</a></td>'+
+            '</tr>');
+            }
+        }
+    });
+
+});
+
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
