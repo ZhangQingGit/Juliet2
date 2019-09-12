@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	   
+</head>
+<body>
+
+    <div id="c1"></div>
+    
+   
+    <button id="btn-popup">测试</button>
+	<script type="text/javascript">
+			 console.log("adasd");
+		var demo_4 = _dx.Captcha(document.getElementById('c1'), {
+	        appId: '2aee9fe8934781720ffedf2ec6d02a1a', //appId，在控制台中“应用管理”或“应用配置”模块获取
+	        style: 'popup',
+	        width: 300,
+		    success: function (token) {
+		    	
+		    }
+		});
+		
+		document.getElementById('btn-popup').onclick = function() {
+			   demo_4.show();
+			   
+			    }
+	</script>
+</body>
+</html>

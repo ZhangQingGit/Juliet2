@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta -->
+	<meta charset="UTF-8" />
+	<title>领英智能科技</title>
+	<link rel="Shortcut Icon" href="//www.lgstatic.com/lg-passport-fed/static/common/static/favicon_faed927.ico" />
+	
+	<link rel="stylesheet" type="text/css" href="../css/register/register.css" />
+	<script src="../js/register/register.js"></script>
+</head>
+<body>
+	<!-- 页面主体START -->
+	<header class="sso_header">
+		<!-- <a href="http://www.lagou.com" class="logo"></a> -->
+	</header>
+	<section class="content_box cleafix">
+
+		<div class="left_area fl account-c  ">
+			<div class="account-content">
+				<div class="register_type_wrapper clearfix">
+					<div class="register_type account-c" data-lg-tj-id="1m2i"
+						data-lg-tj-no="idnull" data-lg-tj-cid="idnull">发布任务</div>
+					<div class="register_type account-b" data-lg-tj-id="1m2j"
+						data-lg-tj-no="idnull" data-lg-tj-cid="idnull">接受任务</div>
+					<div class="active_tab"></div>
+				</div>
+				<div class="register_form_wrapper clearfix">
+					<div class="inner">
+						<!--注册表单-->
+						<form class="register_form" action="" method="">
+							<div class="form_body" data-view="phoneRegisterC">
+								<div class="input_item clearfix" data-propertyname="phone"
+									data-controltype="Phone">
+									<span class="area_code"></span>
+									<div class="area_code_list">
+										<dl class="code_list_main"></dl>
+										<p class="tips">如果没有找到您的所在归属地，请拨打客服电话4006282835解决。</p>
+									</div>
+
+									<input type="text" class="input" placeholder="请输入常用手机号"
+										data-required="required" autocomplete="off">
+								</div>
+								<div class="input_item clearfix"
+									data-propertyname="request_form_verifyCode"
+									data-controltype="VerifyCode" style="display: none;">
+									<input type="text" class="input verify_code_input fl" name=""
+										placeholder="请证明你不是机器人" data-required="required"
+										autocomplete="off"> <img src="" alt="点击重试"
+										class="yzm" width="98" height="40"> <a rel="nofollow"
+										href="javascript:;" class="reflash"></a>
+									<div class="clearfix"></div>
+								</div>
+								<div class="input_item"
+									data-propertyname="phoneVerificationCode"
+									data-controltype="PhoneVerificationCode">
+									<div class="input_group clearfix">
+										<input type="text" class="input first_child"
+											placeholder="请输入验证码" data-required="required"
+											autocomplete="off"> 
+										<input type="button" class="btn btn_active last_child sense_msg_code" value="获取验证码" 
+											onclick="register()">
+									</div>
+								</div>
+								<div class="input_item verify_tips sense_auto_code"
+									data-propertyname="autoPhoneVerificationCode"
+									data-controltype="PhoneVerificationCode">
+									<p class="verify_tips_main">
+										收不到短信？请使用<input type="button"
+											class="auto_phone sense_auto_code" value="语音验证"
+											data-lg-tj-id="1UI0" data-lg-tj-no="idnull"
+											data-lg-tj-cid="idnull">
+									</p>
+									<p class="verify_tips_count_down">语音发送成功</p>
+								</div>
+							</div>
+						</form>
+						<form class="register_form" action="" method="">
+							<div class="form_body" data-view="phoneRegisterB">
+								<div class="input_item clearfix" data-propertyname="phone"
+									data-controltype="Phone">
+									<span class="area_code"></span>
+									<div class="area_code_list">
+										<dl class="code_list_main"></dl>
+										<p class="tips">如果没有找到您的所在归属地，请拨打客服电话4006282835解决。</p>
+									</div>
+
+									<input type="text" class="input" placeholder="请输入常用手机号"
+										data-required="required" autocomplete="off">
+								</div>
+								<div class="input_item clearfix"
+									data-propertyname="request_form_verifyCode"
+									data-controltype="VerifyCode" style="display: none;">
+									<input type="text" class="input verify_code_input fl" name=""
+										placeholder="请证明你不是机器人" data-required="required"
+										autocomplete="off"> <img src="" alt="点击重试"
+										class="yzm" width="98" height="40"> <a rel="nofollow"
+										href="javascript:;" class="reflash"></a>
+									<div class="clearfix"></div>
+								</div>
+								<div class="input_item"
+									data-propertyname="phoneVerificationCode"
+									data-controltype="PhoneVerificationCode">
+									<div class="input_group clearfix">
+										<input type="text" class="input first_child"
+											placeholder="请输入验证码" data-required="required"
+											autocomplete="off"> <input type="button"
+											class="btn btn_active last_child sense_msg_code"
+											value="获取验证码" data-required="required" data-lg-tj-id="1UH0"
+											data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+									</div>
+								</div>
+								<div class="input_item verify_tips sense_auto_code"
+									data-propertyname="autoPhoneVerificationCode"
+									data-controltype="PhoneVerificationCode">
+									<p class="verify_tips_main">
+										收不到短信？请使用<input type="button"
+											class="auto_phone sense_auto_code" value="语音验证"
+											data-lg-tj-id="1UJ0" data-lg-tj-no="idnull"
+											data-lg-tj-cid="idnull">
+									</p>
+									<p class="verify_tips_count_down">语音发送成功</p>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="input_item btn_group clearfix" id="submit">
+					<input type="button"
+						class="btn btn_green btn_active btn_block btn_lg" value="注&nbsp;册"
+						data-lg-tj-id="1Uj0" data-lg-tj-no="idnull"
+						data-lg-tj-cid="idnull" onclick="register()">
+				</div>
+				<div class="agree_text">
+					注册代表你已同意<a rel="nofollow" href='http://www.lagou.com/privacy.html'
+						target='_blank' data-lg-tj-id="18L0" data-lg-tj-no="idnull"
+						data-lg-tj-cid="idnull">「领英用户协议」</a><a rel="nofollow"
+						href='https://www.lagou.com/policy.html' target='_blank'
+						data-lg-tj-id="1mm4" data-lg-tj-no="idnull"
+						data-lg-tj-cid="idnull">「隐私保护政策」</a>
+				</div>
+			</div>
+
+
+			
+		</div>
+		<div class="divider fl"></div>
+		<div class="right_area fl">
+			<h5>已有帐号:</h5>
+			<a href="login.html"
+				class="login_now" data-lg-tj-id="18N0" data-lg-tj-no="idnull"
+				data-lg-tj-cid="idnull">直接登录</a>
+			<h5>使用以下帐号直接登录:</h5>
+			<ul class="vender_login clearfix">
+				<li><a rel="nofollow"
+					href="/oauth20/auth_sinaWeiboProvider.html" title="使用新浪微博帐号登录"
+					class="vender_icon icon_sina" target="_blank" data-lg-tj-id="1910"
+					data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
+				<li><a rel="nofollow" href="/oauth20/auth_weixinProvider.html"
+					class="vender_icon icon_wechat" title="使用微信帐号登录" target="_blank"
+					data-lg-tj-id="1930" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
+				<li><a rel="nofollow" href="/oauth20/auth_qqProvider.html"
+					title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" target="_blank"
+					data-lg-tj-id="1920" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
+				<li><a rel="nofollow" href="/oauth20/auth_baiduProvider.html"
+					title="使用百度帐号登录" class="vender_icon icon_baidu" target="_blank"
+					data-lg-tj-id="2ii0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></a></li>
+			</ul>
+		</div>
+	</section>
+	<!--
+    @require "pc/modules/error-pop/main.less"
+-->
+	<div style="display: none">
+		<div class="popup" id="ajaxError"
+			style="overflow: hidden; width: 500px;">
+			<h4 class="error_msg">网络出错啦</h4>
+		</div>
+	</div>
+	<!-- 页面主体END -->
+	<input type="hidden" id="verifyStyle" style="display: none" value="nolagou">
+	<!-- jquery lib -->
+	<!--拉勾UI框架 -->
+	<!-- analytics js file -->
+	<script type="text/javascript" src="//www.lgstatic.com/lg-passport-fed/static/pkg/vendor_c7a7c93.js"></script>
+	<script type="text/javascript">/*resourcemap*/
+		require.config({paths:{
+		  "dep/jquery.cookie/jquery.cookie": "//www.lgstatic.com/lg-passport-fed/static/dep/jquery.cookie/jquery.cookie_2e75935",
+		  "dep/socketio-java/socket.other": "//www.lgstatic.com/lg-passport-fed/static/dep/socketio-java/socket.other_5539fed",
+		  "dep/socketio-java/moment.min": "//www.lgstatic.com/lg-passport-fed/static/dep/socketio-java/moment.min_2749c32",
+		  "common/components/jquery.qrcode/jquery.qrcode.min": "//www.lgstatic.com/lg-passport-fed/static/common/components/jquery.qrcode/jquery.qrcode.min_0b89e95",
+		  "common/components/checkbox/jquery.checkbox": "//www.lgstatic.com/lg-passport-fed/static/common/components/checkbox/jquery.checkbox_18d2629",
+		  "dep/jquery-placeholder/jquery.placeholder": "//www.lgstatic.com/lg-passport-fed/static/dep/jquery-placeholder/jquery.placeholder_8aef4b0",
+		  "dep/jquery-colorbox/jquery.colorbox-min": "//www.lgstatic.com/lg-passport-fed/static/dep/jquery-colorbox/jquery.colorbox-min_c89ce27",
+		  "pc/page/register/main": "//www.lgstatic.com/lg-passport-fed/static/pc/page/register/main_4c89439"
+		}});
+	</script>
+	<script type="text/javascript" src="//www.lgstatic.com/lg-passport-fed/static/pkg/pc/page/register/main.html_aio_041b0fa.js"></script>
+	<script type="text/javascript" src="//www.lgstatic.com/lg-passport-fed/static/pkg/lg-analytics_44f2da6.js"></script>
+	<script type="text/javascript">
+        var registerSource = 'c';
+        require(['pc/page/register/main']);
+    </script>
+	<script type="text/javascript" src="https://passport.lagou.com/upload/oss.js"></script>
+</body>
+</html>
