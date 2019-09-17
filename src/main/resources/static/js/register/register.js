@@ -34,9 +34,9 @@ function emailRegister() {
 }
 
 function emailCode() {
-	var useremail=$('#useremail').val();
-	alert(useremail);
-	$.post("email",{useremail:useremail},function(data,statu){
+	var email=$('#useremail').val();
+	alert(email);
+	$.post("email",{email:email},function(data,statu){
 
 	});
 }

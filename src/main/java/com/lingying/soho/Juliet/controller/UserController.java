@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lingying.soho.Juliet.service.UserService;
 import com.lingying.soho.Juliet.util.Randoms;
@@ -47,12 +48,16 @@ public class UserController {
     }
     
     @RequestMapping("reg")
-    public ResponseResult<String> reg(String username, String password, Integer usertype, String yanzhengma, HttpSession session){
+    public ResponseResult<String> reg(String username, String password, Integer usertype, String code, HttpSession session){
         Object phone = session.getAttribute(username);        
         if(phone!=null) {
             String str = (String)phone;
-            if(str.equals(yanzhengma)) {
-                userService.register(username, password, usertype);
+            if(str.equals(code)) {
+                Integer i = userService.register(username, password, usertype);
+                if(i==-1) {
+                    return new ResponseResult<>(201, "用户名重复！");
+                }
+                return new ResponseResult<>(200, "注册成功！");
             }else {
                 return new ResponseResult<>(201, "验证码错误！");
             }
@@ -61,6 +66,7 @@ public class UserController {
     }
     
     @RequestMapping("email")
+    @ResponseBody
     public ResponseResult<String> yanzheng(HttpSession session, String email){
         String key = Randoms.randomInt();
         EmailUtil.send(email, "验证码", "验证码为："+key, null);
@@ -69,6 +75,7 @@ public class UserController {
     }
     
     @RequestMapping("phone")
+    @ResponseBody
     public ResponseResult<String> phone(HttpSession session, String phone){
         String key = Randoms.randomInt();
         MsgUtil.msgUtil(phone, key);
