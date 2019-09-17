@@ -76,13 +76,16 @@ h5{
 
 li{
     display: inline-block;
-    cursor: pointer;
 }
 
 .app{
     width: 150px;
     height: 150px;
     margin-left: 50px;
+}
+
+li{
+    cursor: pointer;
 }
 
 .selected{

@@ -1,39 +1,28 @@
 package com.lingying.soho.Juliet.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.lingying.soho.Juliet.service.UserService;
+import com.lingying.soho.Juliet.util.Randoms;
+import com.lingying.soho.Juliet.util.ResponseResult;
+import com.lingying.soho.Juliet.util.Email.EmailUtil;
+import com.lingying.soho.Juliet.util.msg.MsgUtil;
+
 @Controller
 public class UserController {
     
-    @RequestMapping("list")
-    public String list() {
-        
-        return "list";
-    }
-    
-    @RequestMapping("add")
-    public String add() {
-        
-        return "add";
-    }
-    
-    @RequestMapping("updata")
-    public String updata() {
-        
-        return "updata";
-    }
-    @RequestMapping("unauth")
-    public String unauth() {
-        
-        return "unauth";
-    }
+    @Autowired
+    private UserService userService;
    
     @RequestMapping("login")
     public String login(String username, String password, Model model) {
@@ -55,12 +44,36 @@ public class UserController {
             model.addAttribute("msg", "密码错误");
             return "login";
         }
-        
     }
     
+    @RequestMapping("reg")
+    public ResponseResult<String> reg(String username, String password, Integer usertype, String yanzhengma, HttpSession session){
+        Object phone = session.getAttribute(username);        
+        if(phone!=null) {
+            String str = (String)phone;
+            if(str.equals(yanzhengma)) {
+                userService.register(username, password, usertype);
+            }else {
+                return new ResponseResult<>(201, "验证码错误！");
+            }
+        }
+        return new ResponseResult<>(201, "请获取验证码！");
+    }
     
+    @RequestMapping("email")
+    public ResponseResult<String> yanzheng(HttpSession session, String email){
+        String key = Randoms.randomInt();
+        EmailUtil.send(email, "验证码", "验证码为："+key, null);
+        session.setAttribute(email, key);
+        return new ResponseResult<>(201, "验证码已发送！");
+    }
     
-    
-    
+    @RequestMapping("phone")
+    public ResponseResult<String> phone(HttpSession session, String phone){
+        String key = Randoms.randomInt();
+        MsgUtil.msgUtil(phone, key);
+        session.setAttribute(phone, key);
+        return new ResponseResult<>(201, "验证码已发送！");
+    }
     
 }

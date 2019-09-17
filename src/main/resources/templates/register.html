@@ -22,9 +22,8 @@
             <!-- 上方切换登录方式的ul-->
             <div id="register-ul">
                 <ul>
-                    <li class="selected" onclick="emailRegisterLi()">邮箱注册</li>
-                    <li onclick="phonelRegisterLi()">手机注册</li>
-
+                    <li id="email-register" class="selected" onclick="emailRegister()">邮箱注册</li>
+                    <li id="phone-register" onclick="phonelRegister()">手机注册</li>
                 </ul>
             </div>
 
@@ -32,8 +31,8 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="tel" name="useremail" lay-verify="required|phone" autocomplete="off"
-                                   class="layui-input" placeholder="请输入常用邮箱" id="useremail">
+                            <input type="tel" name="email" lay-verify="required|phone" autocomplete="off"
+                                   class="layui-input" placeholder="请输入常用邮箱">
                         </div><br>
                         <span id="error-email"><img src="images/login/sigh.jpg">请输入常用邮箱</span>
                     </div>
@@ -41,7 +40,7 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="text" name="useremail" lay-verify="email" autocomplete="off"
+                            <input type="text" name="email" lay-verify="email" autocomplete="off"
                                    class="layui-input" placeholder="请输入验证码">
                         </div>
 
@@ -52,7 +51,7 @@
                 <input id="email-code" type="button" value="获取验证码" onclick="register()">
                 <input type="radio" name="sex" value="我要发包" title="我要发包">
                 <input type="radio" name="sex" value="我要接包" title="我要接包">
-                <button type="button" class="layui-btn" onclick="emailRegister()">注册</button>
+                <button type="button" class="layui-btn">注册</button>
             </form>
 
             <form class="layui-form" id="register-phone-form">
@@ -75,8 +74,8 @@
                     </div>
                 </div>
                 <input id="phone-code" type="button" value="获取验证码" onclick="register()">
-                <input type="radio" name="sex" value="我要发包" title="我要发包">
-                <input type="radio" name="sex" value="我要接包" title="我要接包">
+                <input type="radio" name="0" value="我要发包" title="我要发包">
+                <input type="radio" name="1" value="我要接包" title="我要接包">
                 <button type="button" class="layui-btn">注册</button>
             </form>
         </div>

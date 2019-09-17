@@ -39,8 +39,7 @@ public class ShiroConfig {
          */
         Map<String, String> filterMap = new HashMap<String, String>();
         
-//        filterMap.put("/add", "authc");
-        
+        filterMap.put("/register", "anon");
         filterMap.put("/login", "anon");
         filterMap.put("/updata", "perms[1]");
         filterMap.put("/add", "perms[0]");

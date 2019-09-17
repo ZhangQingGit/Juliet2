@@ -4,8 +4,8 @@
    
 <mapper namespace="com.lingying.soho.Juliet.mapper.UserMapper">
 
-    
-    <select id="findByUsername" resultType="com.lingying.soho.Juliet.entity.User">
+    <!-- 根据email查询登录判断 -->
+    <select id="findByEmail" resultType="com.lingying.soho.Juliet.entity.User">
         SELECT
             email,password
            ,phone,usertype
@@ -14,6 +14,29 @@
         WHERE
             email=#{username}
     </select>
-
+    <!-- 根据phone查询登录判断 -->
+    <select id="findByPhone" resultType="com.lingying.soho.Juliet.entity.User">
+        SELECT
+            email,password
+           ,phone,usertype
+        FROM
+            t_user
+        WHERE
+            phone=#{username}
+    </select>
+    <!-- 根据email注册 -->
+    <insert id="EmailReg">
+        INSERT INTO
+            t_user(email,password,usertype)
+        VALUE
+            (#{username},#{password},#{usertype})
+    </insert>
+    <!-- 根据phone注册 -->
+    <insert id="PhoneReg">
+        INSERT INTO
+            t_user(phone,password,usertype)
+        VALUE
+            (#{username},#{password},#{usertype})
+    </insert>
 
 </mapper>
