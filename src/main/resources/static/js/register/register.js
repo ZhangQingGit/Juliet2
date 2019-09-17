@@ -26,6 +26,14 @@ function register() {
 }
 
 function emailRegister() {
+	/*var useremail=$('#useremail').val();
+	alert(useremail);
+	$.post("email",{useremail:useremail},function(data,statu){
+
+	});*/
+}
+
+function emailCode() {
 	var useremail=$('#useremail').val();
 	alert(useremail);
 	$.post("email",{useremail:useremail},function(data,statu){
