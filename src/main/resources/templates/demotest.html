@@ -10,6 +10,14 @@
 <div class="box2">1</div>
 <div class="box22"></div>
 
+<input id="testdemo" placeholder="测试">
+<input id="email-code" type="button" value="获取验证码"style="width: 200px" onclick="register()"><br>
+<script>
+    var testdemo = document.getElementById("testdemo");
+    testdemo.onfocus =function(){
+        console.log("我进来了");
+    }
+</script>
 <style>
     .box1{
         width: 50px;

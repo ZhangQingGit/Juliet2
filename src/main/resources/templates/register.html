@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/register/register.css">
 
+
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="layui/layui.js"></script>
-    <script src="js/login/login.js"></script>
 </head>
 <body>
 <div class="bg"></div>
@@ -22,63 +22,68 @@
             <!-- 上方切换登录方式的ul-->
             <div id="register-ul">
                 <ul>
-                    <li>邮箱登录</li>
-                    <li>验证码登录</li>
+                    <li class="selected" onclick="emailRegisterLi()">邮箱注册</li>
+                    <li onclick="phonelRegisterLi()">手机注册</li>
+
                 </ul>
             </div>
 
-            <form class="layui-form" action="" id="register-email-form">
+            <form class="layui-form" id="register-email-form">
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
-                                   class="layui-input" placeholder="请输入常用手机号/邮箱">
+                            <input type="tel" name="useremail" lay-verify="required|phone" autocomplete="off"
+                                   class="layui-input" placeholder="请输入常用邮箱" id="useremail">
                         </div><br>
-                        <span id="error-email"><img src="images/login/sigh.jpg">请输入已验证的手机/邮箱</span>
+                        <span id="error-email"><img src="images/login/sigh.jpg">请输入常用邮箱</span>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="text" name="email" lay-verify="email" autocomplete="off"
-                                   class="layui-input" placeholder="请输入密码">
-                        </div><br>
+                            <input type="text" name="useremail" lay-verify="email" autocomplete="off"
+                                   class="layui-input" placeholder="请输入验证码">
+                        </div>
+
                         <span id="error-email-password"><img src="images/login/sigh.jpg">请输入密码</span>
+
                     </div>
                 </div>
+                <input id="email-code" type="button" value="获取验证码" onclick="register()">
                 <input type="radio" name="sex" value="我要发包" title="我要发包">
                 <input type="radio" name="sex" value="我要接包" title="我要接包">
-                <button type="button" class="layui-btn">登录</button>
+                <button type="button" class="layui-btn" onclick="emailRegister()">注册</button>
             </form>
 
-            <form class="layui-form" action="" id="register-phone-form">
+            <form class="layui-form" id="register-phone-form">
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
                             <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
-                                   class="layui-input" placeholder="请输入常用手机号/邮箱">
+                                   class="layui-input" placeholder="请输入常用手机号">
                         </div><br>
-                        <span id="error-phone"><img src="images/login/sigh.jpg">请输入已验证的手机/邮箱</span>
+                        <span id="error-phone"><img src="images/login/sigh.jpg">请输入常用手机号</span>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
                             <input type="text" name="email" lay-verify="email" autocomplete="off"
-                                   class="layui-input" placeholder="请输入密码">
+                                   class="layui-input" placeholder="请输入验证码">
                         </div><br>
                         <span id="error-phone-password"><img src="images/login/sigh.jpg">请输入密码</span>
                     </div>
                 </div>
+                <input id="phone-code" type="button" value="获取验证码" onclick="register()">
                 <input type="radio" name="sex" value="我要发包" title="我要发包">
                 <input type="radio" name="sex" value="我要接包" title="我要接包">
-                <button type="button" class="layui-btn">登录</button>
+                <button type="button" class="layui-btn">注册</button>
             </form>
         </div>
 
         <div id="register-right">
             <h5>已有账号:</h5>
-            <a href="login.html" class="login">立即登录<img src="images/login/arrow.jpg"></a><br>
+            <a href="login" class="login">立即登录<img src="images/login/arrow.jpg"></a><br>
             <img src="images/login/app.jpg" class="app"><br>
             <span style="margin-left: 50px">扫描二维码下载小程序</span>
 
@@ -86,5 +91,6 @@
     </div>
 </div>
 
+<script src="js/register/register.js"></script>
 </body>
 </html>
