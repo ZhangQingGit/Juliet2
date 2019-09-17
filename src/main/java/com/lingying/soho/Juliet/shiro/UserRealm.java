@@ -31,7 +31,6 @@ public class UserRealm extends AuthorizingRealm{
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        System.err.println("执行授权逻辑");
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 //        info.addStringPermission("user:add");
         Subject subject = SecurityUtils.getSubject();
@@ -47,6 +46,7 @@ public class UserRealm extends AuthorizingRealm{
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         UsernamePasswordToken to = (UsernamePasswordToken)token;
         User user = userService.login(to.getUsername());
+        System.out.println(to.getUsername());
         if(user == null) {
             return null;
         }
