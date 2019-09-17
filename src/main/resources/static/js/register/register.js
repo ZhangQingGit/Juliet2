@@ -34,9 +34,27 @@ function emailRegister() {
 }
 
 function emailCode() {
-	var useremail=$('#useremail').val();
-	alert(useremail);
-	$.post("email",{useremail:useremail},function(data,statu){
+	var email=$('#useremail').val();
+	alert(email);
+	$.post("email",{email:email},function(data,statu){
+		alert(data.message);
+	});
+}
+
+function emailRegister() {
+	var username=$('#useremail').val();
+	var password=$('#useremailpassword').val();
+	var code=$('#useremailcode').val();
+	var accounttype = $('input:radio:checked').val();
+
+	if(accounttype == "我要发包"){
+		accounttype=0;
+	}else {
+		accounttype=1;
+	}
+	alert(accounttype);
+	//alert(email);
+	$.post("reg",{email:email,password:password,code:code,usertype:usertype},function(data,statu){
 
 	});
 }

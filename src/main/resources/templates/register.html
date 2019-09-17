@@ -31,26 +31,35 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="tel" name="useremail" lay-verify="required|phone" autocomplete="off"
+                            <input type="tel" name="useremail"  autocomplete="off"
                                    class="layui-input" placeholder="请输入常用邮箱" id="useremail">
                         </div><br>
-                        <span id="error-email"><img src="images/login/sigh.jpg">请输入常用邮箱</span>
+                        <span id="error-email"><img src="images/login/sigh.jpg">请输入邮箱</span>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="text" name="email" lay-verify="email" autocomplete="off"
-                                   class="layui-input" placeholder="请输入验证码">
-                        </div>
+                            <input type="password" name="useremailpassword" lay-verify="pass" autocomplete="off"
+                                   class="layui-input" placeholder="请输入密码" id="useremailpassword">
+                        </div><br>
 
                         <span id="error-email-password"><img src="images/login/sigh.jpg">请输入密码</span>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="useremailcode" lay-verify="email" autocomplete="off"
+                                   class="layui-input" placeholder="请输入验证码" id="useremailcode">
+                        </div>
+                        <span id="error-email-code"><img src="images/login/sigh.jpg">请输入验证码</span>
 
                     </div>
                 </div>
-                <input id="email-code" type="button" value="获取验证码" onclick="emailCode()">
-                <input type="radio" name="sex" value="我要发包" title="我要发包">
-                <input type="radio" name="sex" value="我要接包" title="我要接包">
+                <input id="email-code-register" type="button" value="获取验证码" onclick="emailCode()">
+                <input type="radio" name="0" value="我要发包" title="我要发包">
+                <input type="radio" name="1" value="我要接包" title="我要接包">
                 <button type="button" class="layui-btn" onclick="emailRegister()">注册</button>
             </form>
 
@@ -67,13 +76,23 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="text" name="email" lay-verify="email" autocomplete="off"
-                                   class="layui-input" placeholder="请输入验证码">
+                            <input type="password" name="password" lay-verify="pass" autocomplete="off"
+                                   class="layui-input" placeholder="请输入密码" id="userphonepassword">
                         </div><br>
+
                         <span id="error-phone-password"><img src="images/login/sigh.jpg">请输入密码</span>
                     </div>
                 </div>
-                <input id="phone-code" type="button" value="获取验证码" onclick="register()">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="email" lay-verify="email" autocomplete="off"
+                                   class="layui-input" placeholder="请输入验证码">
+                        </div><br>
+                        <span id="error-phone-code"><img src="images/login/sigh.jpg">请输入验证码</span>
+                    </div>
+                </div>
+                <input id="phone-code-register" type="button" value="获取验证码" onclick="register()">
                 <input type="radio" name="0" value="我要发包" title="我要发包">
                 <input type="radio" name="1" value="我要接包" title="我要接包">
                 <button type="button" class="layui-btn" onclick="phonelRegister()">注册</button>

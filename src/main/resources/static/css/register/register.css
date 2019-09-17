@@ -37,7 +37,7 @@
     border-bottom: 1px solid #9F9F9F;
 }
 
-#error-email,#error-email-password,#error-phone,#error-phone-password{
+#error-email,#error-email-password,#error-email-code,#error-phone,#error-phone-password,#error-phone-code{
     color: #FD482C;
     display: none;
 }
@@ -92,16 +92,16 @@ li{
     color: #00B38A;
 }
 
-#email-code::-webkit-input-placeholder{
+#email-code-register::-webkit-input-placeholder{
     color: #00B38A;
 }
 
-#email-code,#phone-code{
+#email-code-register,#phone-code-register{
     border: 0;
     color: #00B38A;
     background-color: #ffffff;
     cursor: pointer;
     position: absolute;
     left: 670px;
-    top: 310px;
+    top: 360px;
 }
