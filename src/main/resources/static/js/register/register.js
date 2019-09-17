@@ -20,23 +20,30 @@ function phonelRegisterLi() {
 	$('#register-phone-form').show();
 }
 
-
-function register() {
-	alert("adadsd");
+function emailCode() {
+	var email=$('#useremail').val();
+	$.post("email",{email:email},function(data,statu){
+		alert(data.message);
+	});
 }
 
 function emailRegister() {
-	/*var useremail=$('#useremail').val();
-	alert(useremail);
-	$.post("email",{useremail:useremail},function(data,statu){
-
-	});*/
-}
-
-function emailCode() {
 	var email=$('#useremail').val();
-	alert(email);
-	$.post("email",{email:email},function(data,statu){
+	var password=$('#useremailpassword').val();
+	var code=$('#useremailcode').val();
+	var usertype = $('input:radio:checked').val();
+	//alert(usertypr);
+	if(usertype == "我要发包"){
+		usertype=0;
+	}else{
+		usertype=1;
+	}
 
+	$.post("reg",{email:email,password:password,code:code,usertype:usertype},function(data,statu){
+		if(data.message == 200){
+			alert("注册成功");
+		}else{
+			alert(data.message);
+		}
 	});
 }
