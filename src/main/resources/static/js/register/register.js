@@ -8,13 +8,13 @@ layui.use('form', function(){
 	form.render();
 });
 
-function emailRegister() {
+function emailRegisterLi() {
 	//$(this).addClass("selected").siblings().removeClass("selected");
 	$('#register-email-form').show();
 	$('#register-phone-form').hide();
 }
 
-function phonelRegister() {
+function phonelRegisterLi() {
 
 	$('#register-email-form').hide();
 	$('#register-phone-form').show();
@@ -23,4 +23,12 @@ function phonelRegister() {
 
 function register() {
 	alert("adadsd");
+}
+
+function emailRegister() {
+	var useremail=$('#useremail').val();
+	alert(useremail);
+	$.post("email",{useremail:useremail},function(data,statu){
+
+	});
 }
