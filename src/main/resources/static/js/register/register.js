@@ -28,7 +28,7 @@ function emailCode() {
 }
 
 function emailRegister() {
-	var email=$('#useremail').val();
+	var username=$('#useremail').val();
 	var password=$('#useremailpassword').val();
 	var code=$('#useremailcode').val();
 	var usertype = $('input:radio:checked').val();
@@ -39,7 +39,7 @@ function emailRegister() {
 		usertype=1;
 	}
 
-	$.post("reg",{email:email,password:password,code:code,usertype:usertype},function(data,statu){
+	$.post("reg",{username:username,password:password,code:code,usertype:usertype},function(data,statu){
 		if(data.message == 200){
 			alert("注册成功");
 		}else{

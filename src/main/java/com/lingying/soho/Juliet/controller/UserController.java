@@ -48,8 +48,10 @@ public class UserController {
     }
     
     @RequestMapping("reg")
+    @ResponseBody
     public ResponseResult<String> reg(String username, String password, Integer usertype, String code, HttpSession session){
-        Object phone = session.getAttribute(username);        
+        Object phone = session.getAttribute(username);
+        System.out.println((String)phone);
         if(phone!=null) {
             String str = (String)phone;
             if(str.equals(code)) {
