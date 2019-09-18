@@ -28,11 +28,11 @@
 			</div>
             <h5 th:text="${msg}" style="color: #FD482C"></h5>
             <!-- 邮箱/手机密码登录的表单 -->
-			<form class="layui-form" id="login-email-phone-form">
+			<form class="layui-form" id="login-email-phone-form" action="login" method="post">
 				<div class="layui-form-item">
 					<div class="layui-inline">
 						<div class="layui-input-inline">
-							<input type="text" name="useremailphone" lay-verify="required|phone" autocomplete="off"
+							<input type="text" name="username" lay-verify="required|phone" autocomplete="off"
 								   class="layui-input" placeholder="请输入常用手机号/邮箱"
 								   id="useremailphone" >
 						</div><br>
@@ -50,15 +50,15 @@
 				</div>
 
 				<a href="forgetpassword.html" class="forgetpassword">忘记密码?</a><br>
-				<button type="button" class="layui-btn" onclick="emailPhoneLogin()">登录</button>
+				<button type="submit" class="layui-btn" >登录</button>
 			</form>
 
             <!-- 手机验证码登录的表单 -->
-            <form class="layui-form" action="" id="login-phone-form">
+            <form class="layui-form" action="login" id="login-phone-form">
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="tel" name="userphone" lay-verify="required|phone" autocomplete="off"
+                            <input type="tel" name="username" lay-verify="required|phone" autocomplete="off"
                                    class="layui-input" placeholder="请输入已验证手机" id="userphone">
                         </div><br>
                         <span id="error-phone"><img src="images/login/sigh.jpg">请输入已验证手机</span>

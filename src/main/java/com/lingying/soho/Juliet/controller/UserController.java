@@ -27,31 +27,34 @@ public class UserController {
    
     @RequestMapping("login")
     public String login(String username, String password, Model model) {
-        // 获取subject
-        Subject subject = SecurityUtils.getSubject();
-        // 封装用户数据
-        UsernamePasswordToken token = new UsernamePasswordToken(username,password);
-        // 执行登录
-        try {
-            subject.login(token);
-            
-            return "list";
-        } catch (UnknownAccountException e) {
-            //用户名不存在
-            model.addAttribute("msg", "用户名不存在");
-            return "login";
-        }catch (IncorrectCredentialsException e) {
-            //密码错误
-            model.addAttribute("msg", "密码错误");
-            return "login";
+        if(username!=null) {
+            // 获取subject
+            Subject subject = SecurityUtils.getSubject();
+            // 封装用户数据
+            UsernamePasswordToken token = new UsernamePasswordToken(username,password);
+            // 执行登录
+            try {
+                subject.login(token);
+                
+                model.addAttribute("msg", "登陆成功！");
+                return "indetal";
+            } catch (UnknownAccountException e) {
+                //用户名不存在
+                model.addAttribute("msg", "用户名不存在");
+                return "login";
+            }catch (IncorrectCredentialsException e) {
+                //密码错误
+                model.addAttribute("msg", "密码错误！");
+                return "login";
+            }
         }
+        return null;
     }
     
     @RequestMapping("reg")
     @ResponseBody
     public ResponseResult<String> reg(String username, String password, Integer usertype, String code, HttpSession session){
         Object phone = session.getAttribute(username);
-        System.out.println((String)phone);
         if(phone!=null) {
             String str = (String)phone;
             if(str.equals(code)) {

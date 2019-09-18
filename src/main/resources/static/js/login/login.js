@@ -47,9 +47,7 @@ function emailPhoneLogin() {
         $('#error-password').show();
     }
     if(username !=null | username != ""){
-        alert(username);
         if (password !=null | password != ""){
-            alert(password);
             $.post("login",{username:username,password:password},function (data,status) {
 
             });

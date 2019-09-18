@@ -1,5 +1,11 @@
 package com.lingying.soho.Juliet.shiro;
 
+import java.util.Enumeration;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -45,8 +51,8 @@ public class UserRealm extends AuthorizingRealm{
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         UsernamePasswordToken to = (UsernamePasswordToken)token;
+//        SecurityUtils.getSubject().getSession().getAttribute();
         User user = userService.login(to.getUsername());
-        System.out.println(to.getUsername());
         if(user == null) {
             return null;
         }
