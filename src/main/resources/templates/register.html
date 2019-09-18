@@ -55,11 +55,16 @@
                         </div>
                         <span id="error-email-code"><img src="images/login/sigh.jpg">请输入验证码</span>
 
+                        <input id="email-code-register" type="button" value="获取验证码" onclick="emailCode()">
                     </div>
                 </div>
-                <input id="email-code-register" type="button" value="获取验证码" onclick="emailCode()">
-                <input type="radio" name="0" value="我要发包" title="我要发包">
-                <input type="radio" name="1" value="我要接包" title="我要接包">
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <input type="radio" name="usertype" value="我要发包" title="我要发包" checked="">
+                        <input type="radio" name="usertype" value="我要接包" title="我要接包">
+                    </div>
+                </div>
                 <button type="button" class="layui-btn" onclick="emailRegister()">注册</button>
             </form>
 
@@ -67,8 +72,8 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
-                                   class="layui-input" placeholder="请输入常用手机号">
+                            <input type="tel" name="userphone" lay-verify="required|phone" autocomplete="off"
+                                   class="layui-input" placeholder="请输入常用手机号" id="userphone">
                         </div><br>
                         <span id="error-phone"><img src="images/login/sigh.jpg">请输入常用手机号</span>
                     </div>
@@ -76,7 +81,7 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="password" name="password" lay-verify="pass" autocomplete="off"
+                            <input type="password" name="userphonepassword" lay-verify="pass" autocomplete="off"
                                    class="layui-input" placeholder="请输入密码" id="userphonepassword">
                         </div><br>
 
@@ -86,15 +91,19 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="text" name="email" lay-verify="email" autocomplete="off"
-                                   class="layui-input" placeholder="请输入验证码">
-                        </div><br>
+                            <input type="text" name="userphonecode" lay-verify="email" autocomplete="off"
+                                   class="layui-input" placeholder="请输入验证码" id="userphonecode">
+                        </div>
                         <span id="error-phone-code"><img src="images/login/sigh.jpg">请输入验证码</span>
+                        <input id="phone-code-register" type="button" value="获取验证码" onclick="phoneCode()">
                     </div>
                 </div>
-                <input id="phone-code-register" type="button" value="获取验证码" onclick="register()">
-                <input type="radio" name="0" value="我要发包" title="我要发包">
-                <input type="radio" name="1" value="我要接包" title="我要接包">
+                <div class="layui-form-item">
+                    <div class="layui-input-block" >
+                        <input type="radio" name="usertype" value="我要发包" title="我要发包" checked="">
+                        <input type="radio" name="usertype" value="我要接包" title="我要接包">
+                    </div>
+                </div>
                 <button type="button" class="layui-btn" onclick="phonelRegister()">注册</button>
             </form>
         </div>
@@ -104,7 +113,6 @@
             <a href="login" class="login">立即登录<img src="images/login/arrow.jpg"></a><br>
             <img src="images/login/app.jpg" class="app"><br>
             <span style="margin-left: 50px">扫描二维码下载小程序</span>
-
         </div>
     </div>
 </div>
