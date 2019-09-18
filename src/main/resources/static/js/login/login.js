@@ -61,7 +61,6 @@ function emailPhoneLogin() {
 * */
 function phoneCode() {
     var phone=$('#userphone').val();
-    alert(phone);
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);
     });
@@ -82,9 +81,7 @@ function phoneCodeLogin() {
         $('#error-password').show();
     }
     if(username !=null | username != ""){
-        alert(username);
         if (password !=null | password != ""){
-            alert(password);
             $.post("login",{username:username,password:password},function (data,status) {
 
             });

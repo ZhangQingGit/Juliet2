@@ -51,11 +51,23 @@ public class UserRealm extends AuthorizingRealm{
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         UsernamePasswordToken to = (UsernamePasswordToken)token;
-//        SecurityUtils.getSubject().getSession().getAttribute();
+        Object ses = SecurityUtils.getSubject().getSession().getAttribute(to.getUsername());
+        
         User user = userService.login(to.getUsername());
-        if(user == null) {
-            return null;
+        if(ses==null) {
+            //用户名为空
+            if(user == null) {
+                return null;
+            }
+            //密码错误
+            return new SimpleAuthenticationInfo(user,user.getPassword(),"");
+        }else{
+          //用户名为空
+            if(user == null) {
+                return null;
+            }
+            //验证码错误
+            return new SimpleAuthenticationInfo(user,(String)ses,"");
         }
-        return new SimpleAuthenticationInfo(user,user.getPassword(),"");
     }
 }
