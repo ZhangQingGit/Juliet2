@@ -32,4 +32,9 @@ public class ReturnConroller {
         
         return "register";
     }
+    @RequestMapping("indetal")
+    public String indetal() {
+        
+        return "indetal";
+    }
 }
