@@ -22,19 +22,19 @@
 			<!-- 上方切换登录方式的ul-->
 			<div id="login-ul">
 				<ul>
-					<li id="password-login" onclick="passwordLogin()">密码登录</li>
-					<li id="code-login" onclick="codeLogin()">验证码登录</li>
+					<li id="passwordlogin" class="selected" onclick="passwordLogin()">密码登录</li>
+					<li id="codelogin" onclick="codeLogin()">验证码登录</li>
 				</ul>
 			</div>
-
+            <h5 th:text="${msg}" style="color: #FD482C"></h5>
             <!-- 邮箱/手机密码登录的表单 -->
-			<form class="layui-form" id="login-email-phone-form">
+			<form class="layui-form" id="login-email-phone-form" action="login" method="post">
 				<div class="layui-form-item">
 					<div class="layui-inline">
 						<div class="layui-input-inline">
 							<input type="text" name="username" lay-verify="required|phone" autocomplete="off"
 								   class="layui-input" placeholder="请输入常用手机号/邮箱"
-								   id="email-phone" >
+								   id="useremailphone" >
 						</div><br>
 						<span id="error-phone-email"><img src="images/login/sigh.jpg">请输入已验证的手机/邮箱</span>
 					</div>
@@ -43,24 +43,23 @@
 					<div class="layui-inline">
 						<div class="layui-input-inline">
 							<input type="password" name="password" lay-verify="email" autocomplete="off"
-								   class="layui-input" placeholder="请输入密码" id="password">
+								   class="layui-input" placeholder="请输入密码" id="userpassword">
 						</div><br>
-
 						<span id="error-password"><img src="images/login/sigh.jpg">请输入密码</span>
 					</div>
 				</div>
 
 				<a href="forgetpassword.html" class="forgetpassword">忘记密码?</a><br>
-				<button type="button" class="layui-btn" onclick="loginEmailPhone()">登录</button>
+				<button type="submit" class="layui-btn" >登录</button>
 			</form>
 
             <!-- 手机验证码登录的表单 -->
-            <form class="layui-form" action="" id="login-phone-form">
+            <form class="layui-form" action="loginforcode" id="login-phone-form" method="post">
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
-                                   class="layui-input" placeholder="请输入已验证手机">
+                            <input type="tel" name="username" lay-verify="required|phone" autocomplete="off"
+                                   class="layui-input" placeholder="请输入已验证手机" id="userphone">
                         </div><br>
                         <span id="error-phone"><img src="images/login/sigh.jpg">请输入已验证手机</span>
                     </div>
@@ -68,16 +67,16 @@
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline">
-                            <input type="text" name="email" lay-verify="email" autocomplete="off"
-                                   class="layui-input" placeholder="请输入密码">
-                        </div><br>
-
+                            <input type="text" name="password" lay-verify="email" autocomplete="off"
+                                   class="layui-input" placeholder="请输入验证码" id="userphonepassword">
+                        </div>
                         <span id="error-phone-password"><img src="images/login/sigh.jpg">请输入6位数字验证码</span>
+                        <input id="phone-code-login" type="button" value="获取验证码" onclick="phoneCode()">
                     </div>
                 </div>
 
                 <a href="forgetpassword.html" class="forgetpassword">忘记密码?</a><br>
-                <button type="button" class="layui-btn">登录</button>
+                <button type="submit" class="layui-btn" onclick="phoneCodeLogin()">登录</button>
             </form>
 		</div>
 

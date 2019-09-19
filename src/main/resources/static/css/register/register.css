@@ -102,6 +102,17 @@ li{
     background-color: #ffffff;
     cursor: pointer;
     position: absolute;
-    left: 670px;
-    top: 360px;
+    margin-left: -20px;
+}
+
+.layui-input-block{
+    margin-left: 28px;
+}
+
+#email-register{
+     margin-left: 40px;
+}
+
+#phone-register{
+    margin-left: 50px;
 }

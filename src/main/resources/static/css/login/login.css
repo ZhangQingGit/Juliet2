@@ -93,3 +93,20 @@ li{
     cursor: pointer;
 }
 
+.selected{
+    color: #00B38A;
+}
+#phone-code-login{
+    border: 0;
+    color: #00B38A;
+    background-color: #ffffff;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -20px;
+}
+#passwordlogin{
+    margin-left: 40px;
+}
+#codelogin{
+    margin-left: 50px;
+}

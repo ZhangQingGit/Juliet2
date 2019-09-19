@@ -8,32 +8,16 @@ layui.use('form', function(){
 	form.render();
 });
 
-	var email_phone_input=document.getElementById("email-phone");
-	var password_input=document.getElementById("password");
+	var user_email_phone_input=document.getElementById("useremailphone");
+	var user_password_input=document.getElementById("userpassword");
 
-	var email_phone=$('#email-phone').val();
-	var password=$('#password').val();
+    var user_phone_input=document.getElementById("userphone");
+    var user_phone_password_input=document.getElementById("userphonepassword");
 
-
-function loginEmailPhone() {
-	//用户是否点击登录的标识变量
-	var relogin=$('#relogin').text();
-
-	if (email_phone ==null | email_phone == ""){
-		$('#error-phone-email').show();
-	}
-	if(password ==null | password == "" ){
-		$('#error-password').show();
-	}
-	$('#relogin').text(1);
-}
-email_phone_input.onfocus=function () {
-	var relogin=$('#relogin').text();
-
+user_email_phone_input.onfocus=function () {
 	$('#error-phone-email').show();
 }
-password_input.onfocus=function () {
-	var relogin=$('#relogin').text();
+user_password_input.onfocus=function () {
 	$('#error-phone-email').show();
 }
 
@@ -45,4 +29,62 @@ function passwordLogin() {
 function codeLogin() {
 	$('#login-email-phone-form').hide();
 	$('#login-phone-form').show();
+}
+
+/**
+ * 用户密码登陆的方法
+ * */
+function emailPhoneLogin() {
+    //用户是否点击登录的标识变量
+    //var relogin=$('#relogin').text();
+    var username=$('#useremailphone').val();
+    var password=$('#userpassword').val();
+
+    if (username ==null | username == ""){
+        $('#error-phone-email').show();
+    }
+    if(password ==null | password == "" ){
+        $('#error-password').show();
+    }
+    if(username !=null | username != ""){
+        if (password !=null | password != ""){
+            $.post("login",{username:username,password:password},function (data,status) {
+
+            });
+        }
+    }
+
+}
+
+/*
+* 获取手机验证码的方法
+* */
+function phoneCode() {
+    var phone=$('#userphone').val();
+    $.post("phone",{phone:phone},function(data,statu){
+        alert(data.message);
+    });
+}
+/**
+ * 用户手机验证码登陆的方法
+ * */
+function phoneCodeLogin() {
+    //用户是否点击登录的标识变量
+    //var relogin=$('#relogin').text();
+    var username=$('#userphone').val();
+    var password=$('#userphonepassword').val();
+
+    if (username ==null | username == ""){
+        $('#error-phone-email').show();
+    }
+    if(password ==null | password == "" ){
+        $('#error-password').show();
+    }
+    if(username !=null | username != ""){
+        if (password !=null | password != ""){
+            $.post("login",{username:username,password:password},function (data,status) {
+
+            });
+        }
+    }
 }
