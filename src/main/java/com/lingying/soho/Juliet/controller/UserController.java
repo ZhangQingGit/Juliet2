@@ -86,7 +86,8 @@ public class UserController {
                         model.addAttribute("msg", "用户名重复");
                         return null;
                     }
-                    return "list";
+                    session.removeAttribute(username);
+                    return "indetal";
                 }else {
                     model.addAttribute("msg", "验证码错误！");
                     return null;
