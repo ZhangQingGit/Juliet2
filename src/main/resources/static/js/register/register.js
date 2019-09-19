@@ -85,8 +85,6 @@ function emailRegister() {
             if (code == null | code == "") {
                 $('#error-email-code').show();
                 return false;
-            }else{
-                return false;
             }
         }
     }
@@ -156,8 +154,6 @@ function phonelRegister() {
             if (code == null | code == "") {
                 $('#error-phone-code').show();
                     return false;
-            }else{
-                return false;
             }
         }
     }
