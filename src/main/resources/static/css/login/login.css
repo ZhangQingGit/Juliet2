@@ -37,6 +37,25 @@
     border-bottom: 1px solid #9F9F9F;
 }
 
+#userphonepassword{
+    width: 180px;
+    height: 38px;
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid #9F9F9F;
+}
+
+#phone-code-login{
+    height: 38px;
+    border: 0;
+    color: #00B38A;
+    border-bottom: 1px solid #9F9F9F;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 180px;
+    margin-top: -38px;
+}
+
 #error-phone-email,#error-password,#error-phone,#error-phone-password{
     color: #FD482C;
     display: none;
@@ -96,14 +115,7 @@ li{
 .selected{
     color: #00B38A;
 }
-#phone-code-login{
-    border: 0;
-    color: #00B38A;
-    background-color: #ffffff;
-    cursor: pointer;
-    position: absolute;
-    margin-left: -20px;
-}
+
 #passwordlogin{
     margin-left: 40px;
 }

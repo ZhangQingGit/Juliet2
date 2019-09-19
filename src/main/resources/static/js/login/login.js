@@ -14,12 +14,12 @@ layui.use('form', function(){
     var user_phone_input=document.getElementById("userphone");
     var user_phone_password_input=document.getElementById("userphonepassword");
 
-user_email_phone_input.onfocus=function () {
+/*user_email_phone_input.onfocus=function () {
 	$('#error-phone-email').show();
 }
 user_password_input.onfocus=function () {
 	$('#error-phone-email').show();
-}
+}*/
 
 function passwordLogin() {
 	$('#login-email-phone-form').show();
@@ -40,19 +40,28 @@ function emailPhoneLogin() {
     var username=$('#useremailphone').val();
     var password=$('#userpassword').val();
 
-    if (username ==null | username == ""){
-        $('#error-phone-email').show();
+    if(username ==null | username == ""){
+        if(password ==null | password == ""){
+            $('#error-phone-email').show();
+            $('#error-password').show();
+            return false;
+        }else{
+            $('#error-phone-email').show();
+            return false;
+        }
+    }else{
+        if(password ==null | password == ""){
+            $('#error-password').show();
+            return false;
+        }
     }
-    if(password ==null | password == "" ){
-        $('#error-password').show();
-    }
-    if(username !=null | username != ""){
+    /*if(username !=null | username != ""){
         if (password !=null | password != ""){
             $.post("login",{username:username,password:password},function (data,status) {
 
             });
         }
-    }
+    }*/
 
 }
 
@@ -74,17 +83,27 @@ function phoneCodeLogin() {
     var username=$('#userphone').val();
     var password=$('#userphonepassword').val();
 
-    if (username ==null | username == ""){
-        $('#error-phone-email').show();
+    if(username ==null | username == ""){
+        if(password ==null | password == ""){
+            $('#error-phone').show();
+            $('#error-phone-password').show();
+            return false;
+        }else{
+            $('#error-phone').show();
+            return false;
+        }
+    }else{
+        if(password ==null | password == ""){
+            $('#error-phone-password').show();
+            return false;
+        }
     }
-    if(password ==null | password == "" ){
-        $('#error-password').show();
-    }
-    if(username !=null | username != ""){
+
+    /*if(username !=null | username != ""){
         if (password !=null | password != ""){
             $.post("login",{username:username,password:password},function (data,status) {
 
             });
         }
-    }
+    }*/
 }

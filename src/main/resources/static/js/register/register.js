@@ -21,6 +21,16 @@ function phonelRegisterLi() {
 	$('#register-phone-form').show();
 }
 
+/**
+ *邮箱的正则
+ * @param email  传入的邮箱参数
+ * @returns {boolean}  true  邮箱格式正确  false 邮箱格式不正确
+ */
+function checkEmail(email) {
+    var emailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return emailReg.test(email);
+}
+
 /*
 * 获取邮箱验证码的方法
 * */
@@ -33,27 +43,64 @@ function emailCode() {
 }
 
 /*
-* 用户邮箱注册的方法
+* 用户邮箱注册非空验证的方法
 * */
 function emailRegister() {
 	var username=$('#useremail').val();
 	var password=$('#useremailpassword').val();
 	var code=$('#useremailcode').val();
 	var usertype = $('input:radio:checked').val();
-	//alert(usertypr);
-	if(usertype == "我要发包"){
-		usertype=0;
-	}else{
-		usertype=1;
-	}
 
-	$.post("reg",{username:username,password:password,code:code,usertype:usertype},function(data,statu){
-		if(data.message == 200){
-			alert("注册成功");
-		}else{
-			alert(data.message);
-		}
-	});
+    if(username == null | username == ""){
+        $('#error-email').show();
+        if (password == null | password == ""){
+            $('#error-email-password').show();
+            if(code ==null | code == ""){
+                $('#error-email-code').show();
+                return false;
+            }else{
+                return false;
+            }
+        }else{
+            if(code ==null | code == ""){
+                $('#error-email-code').show();
+                return false;
+            }else{
+                return false;
+            }
+        }
+    }else{
+        if(!(checkEmail(username))){
+            $('#error-email-format').show();
+        };
+        if (password == null | password == "") {
+            $('#error-email-password').show();
+            if (code == null | code == "") {
+                $('#error-email-code').show();
+                return  false;
+            }else{
+                return  false;
+            }
+        }else{
+            if (code == null | code == "") {
+                $('#error-email-code').show();
+                return false;
+            }else{
+                return false;
+            }
+        }
+    }
+
+}
+
+/**
+ * 手机正则
+ * @param phone 传入的参数
+ * @returns {boolean}  true 格式正确  false 格式正确
+ */
+function checkPhone(phone) {
+    var phoneReg = /^1[3456789]\d{9}$/;
+    return phoneReg.test(phone);
 }
 
 /*
@@ -74,18 +121,45 @@ function phonelRegister() {
     var password=$('#userphonepassword').val();
     var code=$('#userphonecode').val();
     var usertype = $('input:radio:checked').val();
-    //alert(usertypr);
-    if(usertype == "我要发包"){
-        usertype=0;
+
+    if(username == null | username == ""){
+        $('#error-phone').show();
+        if (password == null | password == ""){
+            $('#error-phone-password').show();
+            if(code ==null | code == ""){
+                $('#error-phone-code').show();
+                return false;
+            }else{
+                return false;
+            }
+        }else{
+            if(code ==null | code == ""){
+                $('#error-phone-code').show();
+                    return false;
+            }else{
+                    return false;
+            }
+        }
     }else{
-        usertype=1;
+        if (!(checkPhone(username))){
+            $('#error-phone-format').show();
+        }
+        if (password == null | password == "") {
+            $('#error-phone-password').show();
+            if (code == null | code == "") {
+                $('#error-phone-code').show();
+                    return false;
+            }else{
+                return false;
+            }
+        }else{
+            if (code == null | code == "") {
+                $('#error-phone-code').show();
+                    return false;
+            }else{
+                return false;
+            }
+        }
     }
 
-    $.post("reg",{username:username,password:password,code:code,usertype:usertype},function(data,statu){
-        if(data.message == 200){
-            alert("注册成功");
-        }else{
-            alert(data.message);
-        }
-    });
 }

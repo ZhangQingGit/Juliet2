@@ -11,7 +11,7 @@
 
 .register {
     width: 600px;
-    height: 280px;
+    height: 400px;
     padding: 30px;
     padding-right: 50px;
     background-color: rgb(255, 255, 255);
@@ -37,7 +37,25 @@
     border-bottom: 1px solid #9F9F9F;
 }
 
-#error-email,#error-email-password,#error-email-code,#error-phone,#error-phone-password,#error-phone-code{
+#useremailcode,#userphonecode{
+    width: 180px;
+    height: 38px;
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid #9F9F9F;
+}
+
+#email-code-register,#phone-code-register{
+    height: 38px;
+    border: 0;
+    color: #00B38A;
+    border-bottom: 1px solid #9F9F9F;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: -20px;
+}
+#error-email,#error-email-format,#error-email-password,#error-email-code,#error-email-type,
+#error-phone,#error-phone-password,#error-phone-code,#error-phone-type,#error-phone-format{
     color: #FD482C;
     display: none;
 }
@@ -90,19 +108,6 @@ li{
 
 .selected{
     color: #00B38A;
-}
-
-#email-code-register::-webkit-input-placeholder{
-    color: #00B38A;
-}
-
-#email-code-register,#phone-code-register{
-    border: 0;
-    color: #00B38A;
-    background-color: #ffffff;
-    cursor: pointer;
-    position: absolute;
-    margin-left: -20px;
 }
 
 .layui-input-block{
