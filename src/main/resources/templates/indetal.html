@@ -74,52 +74,21 @@
             <div id="sidebar" class="sidebar" data-lg-tj-track-code="index_navigation" data-lg-tj-track-type="1">
                 <div class="mainNavs">
                     <div class="menu_box">
-                        <div class="menu_main job_hopping">
+                        <div class="category">
                             <div class="category-list"style="text-align:center;">
                                 <h2 >
-                                    网站开发
+                                    手机APP
                                 </h2>
                                 <i class="arrow"></i>
                             </div>
                         </div>
-                        <div class="menu_sub dn">
-                            <dl>
-                                <dt>
-                                    <span>后端开发</span>
-                                </dt>
-                                <dd>
-                                    <a href="#" data-lg-tj-id="4O00" data-lg-tj-no="0101" data-lg-tj-cid="idnull" class="curr"><h3>电商网站</h3></a>
-                                    <a href="#" data-lg-tj-id="4O00" data-lg-tj-no="0102" data-lg-tj-cid="idnull" class="curr"><h3>综合性网站</h3></a>
-                                    <a href="#" data-lg-tj-id="4O00" data-lg-tj-no="0102" data-lg-tj-cid="idnull" class="curr"><h3>咨讯型网站</h3></a>
-
-                                </dd>
-                            </dl>
+                       <div class="main-category-submenu-content" name="${item.parentsId!}" id="two-level-classification">
+                           <div class="clearfix">
+                            <a class="submenu-item" href="${s.base}/course/list?classifyId=${item.classifyId!}">${item.classifyName!} </a>
                         </div>
-                    </div>
-                    <div class="menu_box">
-                        <div class="menu_main job_hopping">
-                            <div class="category-list"style="text-align:center;">
-                                <h2 >
-                                    网站开发
-                                </h2>
-                                <i class="arrow"></i>
-                            </div>
-                        </div>
-                        <div class="menu_sub dn">
-                            <dl>
-                                <dt>
-                                    <span>后端开发</span>
-                                </dt>
-                                <dd>
-                                    <a href="#" data-lg-tj-id="4O00" data-lg-tj-no="0101" data-lg-tj-cid="idnull" class="curr"><h3>电商网站</h3></a>
-                                    <a href="#" data-lg-tj-id="4O00" data-lg-tj-no="0102" data-lg-tj-cid="idnull" class="curr"><h3>综合性网站</h3></a>
-                                    <a href="#" data-lg-tj-id="4O00" data-lg-tj-no="0102" data-lg-tj-cid="idnull" class="curr"><h3>咨讯型网站</h3></a>
-                                </dd>
-                            </dl>
-                        </div>
+                      </div>
                     </div>
                 </div>
-
             </div>
 
             <div id="home_banner" class="home_banner" data-lg-tj-track-code="index_bannerad" data-lg-tj-track-type="1">
@@ -340,6 +309,7 @@
 <script crossorigin="anonymous" type="text/javascript" src="js/indetal/04.js"></script>
 <script crossorigin="anonymous" type="text/javascript" src="js/indetal/05.js"></script>
 <script crossorigin="anonymous" type="text/javascript" src="js/indetal/06.js"></script>
+<script type="text/javascript" src="js/indetal/list.js"></script>
 <script type="text/javascript">
     window.global = window.global || {};
     global.userCtx = 'com.lagou.entity.User@21677b08';
