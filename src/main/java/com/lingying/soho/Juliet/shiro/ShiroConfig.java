@@ -41,8 +41,8 @@ public class ShiroConfig {
         
         filterMap.put("/register", "anon");
         filterMap.put("/login", "anon");
-        filterMap.put("/updata", "perms[1]");
-        filterMap.put("/add", "perms[0]");
+        filterMap.put("/updata", "perms[2]");
+        filterMap.put("/add", "perms[1]");
         //修改跳转页面
         shiroFilterFactoryBean.setLoginUrl("login");
         shiroFilterFactoryBean.setUnauthorizedUrl("unauth");
