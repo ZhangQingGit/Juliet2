@@ -37,4 +37,9 @@ public class ReturnConroller {
         
         return "indetal";
     }
+    @RequestMapping("perfect")
+    public String perfect() {
+        
+        return "perfect";
+    }
 }

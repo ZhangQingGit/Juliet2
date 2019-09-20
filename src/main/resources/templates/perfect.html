@@ -7,6 +7,7 @@
 
     <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
     <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/perfect/perfect.css">
     <link >
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="layui/layui.js"></script>
@@ -14,10 +15,50 @@
 <body>
 <div class="bg"></div>
 <div class=body>
-
-    <div class="login" id="login">
-
-
+    <h1>个人信息完善：</h1>
+    <div class="login" id="login" shiro:hasPermission="2">
+        <form class="layui-form" action="">
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">个人/团队名</label>
+		    <div class="layui-input-block">
+		      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+		    </div>
+		  </div>
+		   <div class="layui-form-item layui-form-text">
+		    <label class="layui-form-label">项目经历</label>
+		* 作为接包者，在简介中介绍一下自己的项目经历，让更多人看到你的实力吧！
+		      <div class="layui-input-block">
+               <textarea placeholder="请输入个人/公司简介" class="layui-textarea"></textarea>
+              </div>
+           </div>
+           <div class="layui-form-item">
+              <div class="layui-input-block">
+              <button type="submit" class="layui-btn">立即提交</button>
+              </div>
+           </div>
+		 </form>
+    </div>
+    <div class="login" id="login" shiro:hasPermission="1">
+        <form class="layui-form" action="">
+          <div class="layui-form-item">
+            <label class="layui-form-label">个人/公司名</label>
+            <div class="layui-input-block">
+              <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+            </div>
+          </div>
+           <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">简单介绍下</label>
+                   * 作为发包者，在简介中介绍一下自己的“实力”吧！
+              <div class="layui-input-block">
+               <textarea placeholder="请输入个人/公司简介" class="layui-textarea"></textarea>
+              </div>
+           </div>
+           <div class="layui-form-item">
+              <div class="layui-input-block">
+              <button type="submit" class="layui-btn">立即提交</button>
+              </div>
+           </div>
+         </form>
     </div>
 </div>
 </body>
