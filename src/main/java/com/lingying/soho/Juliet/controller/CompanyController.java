@@ -23,7 +23,6 @@ public class CompanyController {
                 return "indetal";
             }
         }
-        
         return "perfect";
     }
 }
