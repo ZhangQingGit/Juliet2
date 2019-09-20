@@ -78,10 +78,43 @@
     }
 })(jQuery);
 
+/**
+ * 获取一二级菜单的ajax
+ *
+ * */
 $(document).ready(function(){
-						   
-	$("#nav .js_toggle").Jdropdown({
-		delay: 100
-	});		
-	
+
+    $.post("showList", function (data, staus) {
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            $('#indetalMenu').append("<li class=\"js_toggle\" >\n" +
+                "<div class=\"category-info list-xl\">\n" +
+                "<h3 class=\"category-name\">\n" +
+                "<i></i>\n" +
+                "<a href="+" class=\"ml-22\">"+data[i].father+"</a>\n"+
+                "</h3>\n" +
+                "<em>&gt;</em>\n" +
+                "</div>\n" +
+                "<div class=\"menu-item menu-in\">\n" +
+                "<div class=\"area-bg\">\n" +
+                "<ul class=\"sublist clearfix\" id=father"+i+">\n" +
+                "</ul>\n" +
+                "</div>\n" +
+                "</div>\n" +
+                "</li>");
+            var str = data[i].son.split(",");
+            for(var j = 0; j < str.length; j++){
+                $('#father'+i).append("<li>\n" +
+                    "<h3 class=\"mcate-item-hd\"><span>"+str[j]+"</span></h3>\n" +
+                    "</li>\n");
+            }
+        }
+        $("#nav .js_toggle").Jdropdown({
+            delay: 100
+        });
+    });
+
+
+
+
 });

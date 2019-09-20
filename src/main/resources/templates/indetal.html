@@ -3,58 +3,55 @@
 <head>
     <!-- meta -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="renderer" content="webkit">
-    <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+    <meta name="baidu-site-verification" content="QIQ6KC1oZ6"/>
 
     <meta content="助力烨" name="keywords">
 
-    <meta content="助力烨是创新型众包服务平台，是雇主和威客值得信赖的威客网站，是众包行业具有价值的创意交易平台，服务品类包含LOGO设计、平面设计、网站建设、网络营销推广、工业设计、文案策划、商标注册服务等400多种领先众包服务领域，一品威客-集创意与智慧于一身，专注于为企业、公共机构、个人提供个性化定制解决方案，更加高效便捷的为广大需求者解决各种实际性需求问题。" name="description">
+    <meta content="助力烨是创新型众包服务平台，是雇主和威客值得信赖的威客网站，是众包行业具有价值的创意交易平台，服务品类包含LOGO设计、平面设计、网站建设、网络营销推广、工业设计、文案策划、商标注册服务等400多种领先众包服务领域，一品威客-集创意与智慧于一身，专注于为企业、公共机构、个人提供个性化定制解决方案，更加高效便捷的为广大需求者解决各种实际性需求问题。"
+          name="description">
 
     <title>助力烨</title>
 
     <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
-    <!-- SEO 需求-->
-    <link rel="canonical" href="#">
     <link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/01.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/02.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/03.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/04.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/05.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/indetal/indetal.css">
+
     <script src="layui/layui.js"></script>
-    <!-- 公共样式 -->
-    <!-- header样式 -->	<!-- footer样式 -->
-    <!-- 页面样式 -->
-    <!-- 动态token，防御伪造请求，重复提交 -->
-    <script type="text/javascript">
-        window.X_Anti_Forge_Token = '';
-        window.X_Anti_Forge_Code = '';
-    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
 
-
-    <link rel="stylesheet" type="text/css" href="css/indetal/01.css" />
-    <link rel="stylesheet" type="text/css" href="css/indetal/02.css" />
-    <link rel="stylesheet" type="text/css" href="css/indetal/03.css" />
-    <link rel="stylesheet" type="text/css" href="css/indetal/04.css" />
-    <link rel="stylesheet" type="text/css" href="css/indetal/05.css" />
-    <link rel="stylesheet" type="text/css" href="css/indetal/style.css" />
 </head>
 <body>
 
-<input type="hidden" value="15142320" name="userid" id="userid" />
+<input type="hidden" value="15142320" name="userid" id="userid"/>
 
 <div id="lg_header">
 
     <!--C端头部黑色导航-->
 
-        <ul class="layui-nav" id="toubu">
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;margin-right:100px;"><img src="images/logo.png" alt="" style="width: 250px;height: 70px;"></a></li>
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;">通讯录</a></li>
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;">工作台</a></li>
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;">增值服务</a></li>
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;">企业数据</a></li>
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;">企业主页</a></li>
-            <li class="layui-nav-item"><a href=""style="font-size: 15px;margin-right:100px;">退出</a></li>
-        </ul>
+    <ul class="layui-nav" id="toubu">
+        <li class="layui-nav-item">
+            <a href="" style="font-size: 15px;margin-right:100px;">
+                <img src="images/logo.png" alt="" style="width: 250px;height: 70px;">
+            </a>
+        </li>
+        <li class="layui-nav-item"><a href="" style="font-size: 15px;">通讯录</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 15px;">工作台</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 15px;">增值服务</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 15px;">企业数据</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 15px;">企业主页</a></li>
+        <li class="layui-nav-item"><a href="" style="font-size: 15px;margin-right:100px;">退出</a></li>
+    </ul>
 
 </div><!--end #header-->
-<input type="hidden" id="serverTime" value="1568698993256" />
+<input type="hidden" id="serverTime" value="1568698993256"/>
 <!-- 页面主体START -->
 <div class="container clearfix " id="container">
     <div class="contain-header">
@@ -62,8 +59,9 @@
         <div class="search-wrapper">
             <div id="search_box" class="search_box" data-lg-tj-track-code="index_search" data-lg-tj-track-type="1">
                 <form id="searchword" class="searchword" name="searchword" action="" method="get">
-                    <input type="text" id="search_input1" class="search_input" tabindex="1" maxlength="64" autocomplete="off" value="" placeholder="请输入想搜索的内容" />
-                    <input type="submit" id="search_button" class="search_button" value="搜索" />
+                    <input type="text" id="search_input1" class="search_input" tabindex="1" maxlength="64"
+                           autocomplete="off" value="" placeholder="请输入想搜索的内容"/>
+                    <input type="submit" id="search_button" class="search_button" value="搜索"/>
                 </form>
             </div>
         </div>
@@ -72,344 +70,40 @@
         <div class="clearfix">
             <div id="sidebar" class="sidebar" data-lg-tj-track-code="index_navigation" data-lg-tj-track-type="1">
                 <div class="mainNavs">
-                
-                
-                
-                
-                <div id="nav">
-                <div class="area clearfix">
-        <div class="separate"></div>
-        <div class="category-content">
-            <div>
-                <span class="all-goods">全部商品<em>（686310）</em></span>
-            </div>
-            <div class="category">
-                <ul class="category-list">
-                    <li class="js_toggle">
-                        <div class="category-info list-nz">
-                            <h3 class="category-name">
-                                <i></i>
-                                <a href="http://www.17sucai.com" class="ml-22">女装</a>
-                            </h3>
-                            <p class="c-category-list">
-                                <a href="http://www.17sucai.com">连衣裙</a>
-                                <a href="http://www.17sucai.com">针织衫</a>
-                                <a href="http://www.17sucai.com">T恤</a>
-                                <a href="http://www.17sucai.com">牛仔裤</a>
-                            </p>
-                            <em>&gt;</em>
-                        </div>
-                        <div class="menu-item menu-in">
-                            <div class="area-bg">
-                                
+                    <div id="nav">
+                        <div class="area clearfix">
+                            <div class="separate"></div>
+                            <div class="category-content">
+                                <div class="category">
+                                    <ul class="category-list" id="indetalMenu">
+                                        <!-- 此处为动态获取的数据-->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="js_toggle">
-                        <div class="category-info list-nanz">
-                            <h3 class="category-name">
-                                <i></i>
-                                <a href="http://www.17sucai.com" class="ml-22">男装</a>
-                            </h3>
-                            <p class="c-category-list">
-                                <a href="http://www.17sucai.com">T恤</a>
-                                <a href="http://www.17sucai.com">衬衫</a>
-                                <a href="http://www.17sucai.com">牛仔裤</a>
-                                <a href="http://www.17sucai.com">休闲裤</a>
-                            </p>
-                            <em>&gt;</em>
-                        </div>
-                        <div class="menu-item menu-in">
-                            <div class="area-bg">
-                                    
-                            </div>
-                        </div>
-                    </li>
-                    <li class="js_toggle">
-                        <div class="category-info list-tz">
-                            <h3 class="category-name">
-                                <i></i>
-                                <a href="http://www.17sucai.com" class="ml-22">童装</a>
-                            </h3>
-                            <p class="c-category-list">
-                                <a href="http://www.17sucai.com">T恤</a>
-                                <a href="http://www.17sucai.com">裙装</a>
-                                <a href="http://www.17sucai.com">童装裤子</a>
-                                <a href="http://www.17sucai.com">套装</a>
-                            </p>
-                            <em>&gt;</em>
-                        </div>
-                        <div class="menu-item menu-in">
-                            <div class="area-bg">
-                                    
-                            </div>
-                        </div>
-                    </li>
-                    <li class="js_toggle">
-                        <div class="category-info list-ny">
-                            <h3 class="category-name">
-                                <i></i>
-                                <a href="http://www.17sucai.com" class="ml-22">内衣</a>
-                            </h3>
-                            <p class="c-category-list">
-                                <a href="http://www.17sucai.com">文胸</a>
-                                <a href="http://www.17sucai.com">内裤</a>
-                                <a href="http://www.17sucai.com">情趣内衣</a>
-                                <a href="http://www.17sucai.com">睡衣</a>
-                            </p>
-                            <em>&gt;</em>
-                        </div>
-                        <div class="menu-item menu-in">
-                            <div class="area-bg">
-                                    
-                            </div>
-                        </div>
-                    </li>
-                    <li class="js_toggle">
-                        <div class="category-info list-xb">
-                            <h3 class="category-name">
-                                <i></i>
-                                <a href="http://www.17sucai.com" class="ml-22">箱包</a>/<a href="http://www.17sucai.com">衣饰</a>
-                            </h3>
-                            <p class="c-category-list">
-                                <a href="http://www.17sucai.com">围巾</a>
-                                <a href="http://www.17sucai.com">手套</a>
-                                <a href="http://www.17sucai.com">单肩包</a>
-                                <a href="http://www.17sucai.com">手提包</a>
-                            </p>
-                            <em>&gt;</em>
-                        </div>
-                        <div class="menu-item menu-in">
-                            <div class="area-bg">
-                                    
-                            </div>
-                        </div>
-                    </li>
-                    <li class="js_toggle">
-                        <div class="category-info list-xl">
-                            <h3 class="category-name">
-                                <i></i>
-                                <a href="http://www.17sucai.com" class="ml-22">鞋类</a>/<a href="http://www.17sucai.com">运动</a>
-                            </h3>
-                            <p class="c-category-list">
-                                <a href="http://www.17sucai.com">单鞋</a>
-                                <a href="http://www.17sucai.com">女靴子</a>
-                                <a href="http://www.17sucai.com">运动/休闲服</a>
-                            </p>
-                            <em>&gt;</em>
-                        </div>
-                        <div class="menu-item menu-in">
-                            <div class="area-bg">
-                                <ul class="sublist clearfix">
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>服饰内衣</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">女装</a>
-                                            <a href="http://www.17sucai.com">男装</a>
-                                            <a href="http://www.17sucai.com">内衣</a>
-                                            <a href="http://www.17sucai.com">家居服</a>
-                                            <a href="http://www.17sucai.com">配件</a>
-                                            <a href="http://www.17sucai.com">羽绒</a>
-                                            <a href="http://www.17sucai.com">呢大衣</a>
-                                            <a href="http://www.17sucai.com">毛衣</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>鞋 箱包</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">女鞋</a>
-                                            <a href="http://www.17sucai.com">男鞋</a>
-                                            <a href="http://www.17sucai.com">箱包</a>
-                                            <a href="http://www.17sucai.com">女包</a>
-                                            <a href="http://www.17sucai.com">男包</a>
-                                            <a href="http://www.17sucai.com">旅行箱</a>
-                                            <a href="http://www.17sucai.com">钱包 </a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>珠宝、手表</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">饰品</a>
-                                            <a href="http://www.17sucai.com">项链</a>
-                                            <a href="http://www.17sucai.com">珠宝</a>
-                                            <a href="http://www.17sucai.com">钻石</a>
-                                            <a href="http://www.17sucai.com">手表</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>化妆品</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">护肤</a>
-                                            <a href="http://www.17sucai.com">彩妆</a>
-                                            <a href="http://www.17sucai.com">香水</a>
-                                            <a href="http://www.17sucai.com">男士</a>
-                                            <a href="http://www.17sucai.com">精油</a>
-                                            <a href="http://www.17sucai.com">假发</a>
-                                            <a href="http://www.17sucai.com">美体</a>
-                                            <a href="http://www.17sucai.com">试用服务</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>运动 户外</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">运动鞋</a>
-                                            <a href="http://www.17sucai.com">运动服</a>
-                                            <a href="http://www.17sucai.com">运动用品</a>
-                                            <a href="http://www.17sucai.com">户外</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>手机 数码</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">手机</a>
-                                            <a href="http://www.17sucai.com">笔记本</a>
-                                            <a href="http://www.17sucai.com">相机</a>
-                                            <a href="http://www.17sucai.com">平板电脑</a>
-                                            <a href="http://www.17sucai.com">配件</a>
-                                            <a href="http://www.17sucai.com">电脑硬件</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>家用电器</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">大家电</a>
-                                            <a href="http://www.17sucai.com">影音电器</a>
-                                            <a href="http://www.17sucai.com">生活电器</a>
-                                            <a href="http://www.17sucai.com">厨房电器</a>
-                                            <a href="http://www.17sucai.com">健康护理</a>
-                                            <a href="http://www.17sucai.com">剃须刀</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>家具 建材</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">家具</a>
-                                            <a href="http://www.17sucai.com">卫浴</a>
-                                            <a href="http://www.17sucai.com">地板</a>
-                                            <a href="http://www.17sucai.com">灯具</a>
-                                            <a href="http://www.17sucai.com">五金</a>
-                                            <a href="http://www.17sucai.com">开关</a>
-                                            <a href="http://www.17sucai.com">装修设计</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>家纺 居家</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">家纺</a>
-                                            <a href="http://www.17sucai.com">磨毛套件</a>
-                                            <a href="http://www.17sucai.com">羽绒被</a>
-                                            <a href="http://www.17sucai.com">枕头</a>
-                                            <a href="http://www.17sucai.com">软饰</a>
-                                            <a href="http://www.17sucai.com">居家</a>
-                                            <a href="http://www.17sucai.com">厨房</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>食品</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">零食</a>
-                                            <a href="http://www.17sucai.com">进口</a>
-                                            <a href="http://www.17sucai.com">茶叶</a>
-                                            <a href="http://www.17sucai.com">冲饮</a>
-                                            <a href="http://www.17sucai.com">酒水</a>
-                                            <a href="http://www.17sucai.com">粮油</a>
-                                            <a href="http://www.17sucai.com">干货</a>
-                                            <a href="http://www.17sucai.com">生鲜</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>医药保健</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">保健</a>
-                                            <a href="http://www.17sucai.com">滋补</a>
-                                            <a href="http://www.17sucai.com">蛋白粉</a>
-                                            <a href="http://www.17sucai.com">阿胶</a>
-                                            <a href="http://www.17sucai.com">药品</a>
-                                            <a href="http://www.17sucai.com">血压仪</a>
-                                            <a href="http://www.17sucai.com">计生</a>
-                                            <a href="http://www.17sucai.com">体检</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>母婴用品</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">玩具</a>
-                                            <a href="http://www.17sucai.com">宝宝食品</a>
-                                            <a href="http://www.17sucai.com">用品</a>
-                                            <a href="http://www.17sucai.com">童装</a>
-                                            <a href="http://www.17sucai.com">孕装</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>汽车 配件</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">新车</a>
-                                            <a href="http://www.17sucai.com">座垫</a>
-                                            <a href="http://www.17sucai.com">脚垫</a>
-                                            <a href="http://www.17sucai.com">GPS</a>
-                                            <a href="http://www.17sucai.com">车衣</a>
-                                            <a href="http://www.17sucai.com">洗车机</a>
-                                            <a href="http://www.17sucai.com">水枪</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <h3 class="mcate-item-hd"><span>文化 玩乐</span></h3>
-                                        <p class="mcate-item-bd">
-                                            <a href="http://www.17sucai.com">电子凭证</a>
-                                            <a href="http://www.17sucai.com">图书</a>
-                                            <a href="http://www.17sucai.com">乐器</a>
-                                            <a href="http://www.17sucai.com">旅游</a>
-                                            <a href="http://www.17sucai.com">鲜花</a>
-                                        </p>
-                                    </li>
-                                </ul>   
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-   </div>            
+                    </div>
                 </div>
             </div>
 
             <div id="home_banner" class="home_banner" data-lg-tj-track-code="index_bannerad" data-lg-tj-track-type="1">
-                <ul class="banner_bg" data-size="4">
-                    <li class="banner_bg_1">
-                        <a class="tj_exposure" rel="nofollow" href="#" target="_blank" data-lg-tj-id="es00" data-lg-tj-no="0001" data-lg-tj-cid="6028">
-                            <img src="http://www.yinggoo.com/resources/images/1558494681003.png" width="840" height="346" alt="" />
-                        </a>
-                    </li>
-                    <li class="banner_bg_2">
-                        <a class="tj_exposure" rel="nofollow" href="#" target="_blank" data-lg-tj-id="es00" data-lg-tj-no="0002" data-lg-tj-cid="6021">
-                            <img src="http://www.yinggoo.com/resources/images/1558494510156.png" width="840" height="346" alt="" />
-                        </a>
-                    </li>
-                </ul>
-                <div class="banner_control">
-                    <em class="control control-left dn"></em>
-                    <em class="control control-right dn"></em>
-                    <ul class="thumbs">
-                        <li  class="thumbs_1 current" >
-                            <i class="circle"></i>
-                        </li>
-                        <li  class="thumbs_2" >
-                            <i class="circle"></i>
-                        </li>
-                    </ul>
+                <div class="layui-carousel" id="test10">
+                    <div carousel-item="">
+                        <div><img src="http://www.yinggoo.com/resources/images/1558494681003.png"></div>
+                        <div><img src="http://www.yinggoo.com/resources/images/1558494510156.png"></div>
+                    </div>
                 </div>
             </div>
+
+
             <ul class="job_tab module-tabs can-click" id="jobTab">
-                <li class="current hotTab" data-lg-tj-id="4X00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">24Hour热门</li>
-                <li class="newTab" data-lg-tj-id="gD00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">最新职位</li>
+                <li class="current hotTab" data-lg-tj-id="4X00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+                    24Hour热门
+                </li>
             </ul>
             <div class="job-list-wrapper">
                 <div class="job_list clearfix" id="jobList">
-                    <div
-                            class="hot_posHotPosition position_list init_joblist"
-                                         data-lg-tj-track-code="index_hotjob"
-                                         data-lg-tj-track-type="1">
+                    <div class="hot_posHotPosition position_list init_joblist" data-lg-tj-track-code="index_hotjob"
+                            data-lg-tj-track-type="1">
                         <ul class="clearfix position_list_ul">
                             <li class="position_list_item default_list">
                                 <span class="top_icon direct_recruitment"></span>
@@ -417,7 +111,8 @@
                                     <div class="clearfix pli_top_l">
                                         <div class="position_name fl">
                                             <h2 class="dib clearfix">
-                                                <a  href="#" target="_blank" class="position_link fl wordCut" data-index="8">项目名字</a>
+                                                <a href="#" target="_blank" class="position_link fl wordCut"
+                                                   data-index="8">项目名字</a>
                                             </h2>
                                             <!-- 此处需要和后台确认 -->
                                             <span class="dib create-time">&ensp;&ensp;&ensp;发布时间&ensp;</span>
@@ -432,7 +127,7 @@
 
                                     <div class="bottom-right">
                                         <h3 class="company_name wordCut">
-                                          项目的详情
+                                            项目的详情
                                         </h3>
                                     </div>
                                 </div>
@@ -440,7 +135,8 @@
                         </ul>
                     </div>
 
-                    <div class="new_posHotPosition position_list" style="display:none;" data-lg-tj-track-code="index_lastjob" data-lg-tj-track-type="1">
+                    <div class="new_posHotPosition position_list" style="display:none;"
+                         data-lg-tj-track-code="index_lastjob" data-lg-tj-track-type="1">
                         <ul class="clearfix position_list_ul">
                             <li class="position_list_item default_list">
                                 <span class="top_icon direct_recruitment"></span>
@@ -448,7 +144,8 @@
                                     <div class="clearfix pli_top_l">
                                         <div class="position_name fl">
                                             <h2 class="dib clearfix">
-                                                <a  href="#" target="_blank" class="position_link fl wordCut" data-index="8">项目名字</a>
+                                                <a href="#" target="_blank" class="position_link fl wordCut"
+                                                   data-index="8">项目名字</a>
                                             </h2>
                                             <!-- 此处需要和后台确认 -->
                                             <span class="dib create-time">&ensp;&ensp;&ensp;发布时间&ensp;</span>
@@ -480,8 +177,8 @@
                         <div class="top">
                             <p>
                                 <a href="#">
-                                    <img src="http://www.yinggoo.com/resources/images/favicon.ico" alt="公司logo" width="80" height="80">
-
+                                    <img src="http://www.yinggoo.com/resources/images/favicon.ico" alt="公司logo"
+                                         width="80" height="80">
                                 </a>
                             </p>
                             <h3 class="company-name wordCut">
@@ -494,36 +191,22 @@
                             <h4 class="advantage wordCut">公司介绍文本</h4>
                         </div>
                         <div class="bottom clearfix">
-                            <a class="bottom-item bottom-1 fl"
-                               href="#"
-                               target="_blank"
-                               data-lg-tj-id="19wb"
-                               data-lg-tj-no="0008"
-                               data-lg-tj-cid="">
+                            <a class="bottom-item bottom-1 fl" href="#" target="_blank" data-lg-tj-id="19wb"
+                               data-lg-tj-no="0008" data-lg-tj-cid="">
                                 <p class="green">
                                     <span>40</span>
                                 </p>
                                 <p class="gray">接包数量</p>
                             </a>
-                            <a class="bottom-item bottom-2 fl"
-                               href="#"
-                               target="_blank"
-
-                               data-lg-tj-id="19wc"
-                               data-lg-tj-no="0008"
-                               data-lg-tj-cid="">
+                            <a class="bottom-item bottom-2 fl" href="#" target="_blank" data-lg-tj-id="19wc"
+                               data-lg-tj-no="0008" data-lg-tj-cid="">
                                 <p class="green">
                                     <span>37</span>
                                 </p>
                                 <p class="gray">完成数量</p>
                             </a>
-                            <a class="bottom-item bottom-3 fl"
-                               href="#"
-                               target="_blank"
-
-                               data-lg-tj-id="19wd"
-                               data-lg-tj-no="0008"
-                               data-lg-tj-cid="">
+                            <a class="bottom-item bottom-3 fl" href="#" target="_blank" data-lg-tj-id="19wd"
+                               data-lg-tj-no="0008" data-lg-tj-cid="">
                                 <p class="green">
                                     <span>91%</span>
                                 </p>
@@ -571,7 +254,8 @@
                 <div class="copyright_main_left">
                     <span class="copyright_title"><em>&copy;</em>2018 助力烨</span>
                     <a target="_blank" href="#" rel="nofollow">京ICP备14023790号-2</a>
-                    <a target="_blank" class="footer_gongan" href="#" rel="nofollow"><i class="footer_lagou_gongan"></i>京公网安备 11010802024043号</a>
+                    <a target="_blank" class="footer_gongan" href="#" rel="nofollow"><i class="footer_lagou_gongan"></i>京公网安备
+                        11010802024043号</a>
                     <div class="footer_lagou_jubao">
                         <i class="lagou_jubao"></i>
                         <p>
@@ -585,40 +269,9 @@
         </div>
     </div>
 </div>
-<script crossorigin="anonymous" type="text/javascript" src="js/indetal/jdropdown.js"></script>
-<script type="text/javascript" src="js/indetal/list.js"></script>
-<script crossorigin="anonymous" type="text/javascript" src="js/indetal/02.js"></script>
-<script crossorigin="anonymous" type="text/javascript" src="js/indetal/03.js"></script>
-<script crossorigin="anonymous" type="text/javascript" src="js/indetal/04.js"></script>
-<script crossorigin="anonymous" type="text/javascript" src="js/indetal/05.js"></script>
-<script crossorigin="anonymous" type="text/javascript" src="js/indetal/06.js"></script>
 
-<script type="text/javascript">
-    window.global = window.global || {};
-    global.userCtx = 'com.lagou.entity.User@21677b08';
-    // 识别当前是否为首页
-    global.isIndex = true;
-    window.global = window.global || {};
-    global.isLogin = true;
-    global.isFirst = false;
-    global.subSite = '北京';
-    global.subSites = '全国,上海,杭州,广州,深圳,成都,武汉,江苏'.split(',');
-    require(['common/widgets/header_c/modules/emailvalid/main']);
-    require(['common/widgets/passport/passport'], function() {
-        PASSPORT.loginPopup = PASSPORT.registerPopup = function() {
-            window.location.reload();
-        };
-        require(['common/widgets/common/msgPopup']);
-    });
-    require(['common/widgets/policy-update/main']);
-    require(['common/widgets/header_c/layout/main']);
-    require(['common/widgets/footer_c/layout/main']);
-    require(['common/widgets/new_login_toolbar/main'])
-    //业务主模块入口
-    require(['index/page/index/main']);
-</script>
-<script type="text/javascript">
-    window.PAGE_ID = "1mb4"
-</script>
+<script src="js/indetal/indetal.js"></script>
+<script crossorigin="anonymous" type="text/javascript" src="js/indetal/jdropdown.js"></script>
+
 </body>
 </html>
