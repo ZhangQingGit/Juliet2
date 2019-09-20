@@ -70,6 +70,15 @@ public class UserController {
                try {
                    subject.login(token);
                    session.removeAttribute(username);
+                 //根据用户名查id
+                   Integer uid = userService.findId(username);
+                   //根据uid去两个表中查是否有信息
+                   Integer isHave = userService.findToExit(uid);
+                   //如果有就进首页，没有进信息完善页
+                   if(isHave==1) {
+                       return "indetal";
+                   }
+                   session.setAttribute("uid", uid);
                    return "perfect";
                } catch (UnknownAccountException e) {
                    //用户名不存在

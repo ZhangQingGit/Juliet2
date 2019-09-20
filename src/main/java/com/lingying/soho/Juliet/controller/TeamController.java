@@ -19,6 +19,7 @@ public class TeamController {
         if(obj!=null) {
             Integer uid = (int)obj;
             Integer i = teamService.teamReg(tname, experience, uid);
+            session.removeAttribute("uid");
             if(i==1) {
                 return "indetal";
             }
