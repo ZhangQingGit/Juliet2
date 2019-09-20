@@ -1,7 +1,6 @@
 package com.lingying.soho.Juliet.controller;
 
 
-import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
@@ -70,7 +69,7 @@ public class UserController {
                try {
                    subject.login(token);
                    session.removeAttribute(username);
-                 //根据用户名查id
+                   //根据用户名查id
                    Integer uid = userService.findId(username);
                    //根据uid去两个表中查是否有信息
                    Integer isHave = userService.findToExit(uid);

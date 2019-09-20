@@ -5,7 +5,7 @@
 <mapper namespace="com.lingying.soho.Juliet.mapper.CompanyMapper">
     <insert id="companyReg">
         INSERT INTO
-            team(cname,synopsis,uid)
+            company(cname,synopsis,uid)
         VALUE
             (#{cname},#{synopsis},#{uid})
     </insert>
