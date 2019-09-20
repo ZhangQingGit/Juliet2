@@ -17,6 +17,6 @@ public class TeamController {
         if(i==1) {
             return "indetal";
         }
-        return "perfect";
+         return "perfect";
     }
 }
