@@ -1,6 +1,7 @@
 package com.lingying.soho.Juliet.controller;
 
 
+import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
@@ -27,7 +28,7 @@ public class UserController {
     private UserService userService;
    
     @RequestMapping("login")
-    public String login(String username, String password, Model model) {
+    public String login(String username, String password, Model model, HttpSession session) {
             if(username!=null) {
                 // 获取subject
                 Subject subject = SecurityUtils.getSubject();
@@ -42,8 +43,9 @@ public class UserController {
                     Integer isHave = userService.findToExit(uid);
                     //如果有就进首页，没有进信息完善页
                     if(isHave==1) {
-                        return "list";
+                        return "indetal";
                     }
+                    session.setAttribute("uid", uid);
                     return "perfect";
                 } catch (UnknownAccountException e) {
                     //用户名不存在
