@@ -17,4 +17,16 @@ public interface UserService {
      * @return
      */
     User login(String username);
+    /**
+     * 得到用户id
+     * @param username
+     * @return
+     */
+    Integer findId(String username);
+    /**
+     * 查看本用户是否存在于团队/公司表
+     * @param username
+     * @return 1为存在，0为不存在
+     */
+    Integer findToExit(Integer uid);
 }

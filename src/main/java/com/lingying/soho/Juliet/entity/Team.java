@@ -6,6 +6,7 @@ import lombok.Data;
 public class Team {
     private Integer tid;
     private String tname;
+    private Integer uid;
     private String temail;
     private String experience;
     private String tasktype;

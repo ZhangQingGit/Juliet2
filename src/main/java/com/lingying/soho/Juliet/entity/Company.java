@@ -16,6 +16,7 @@ import lombok.Data;
 public class Company {
     private Integer cid;
     private String cname;
+    private Integer uid;
     private String synopsis;
     private String cemail;
     private String pname;

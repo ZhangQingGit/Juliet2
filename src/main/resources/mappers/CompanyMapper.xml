@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.lingying.soho.Juliet.mapper.CompanyMapper">
+    <insert id="companyReg">
+        INSERT INTO
+            team(cname,synopsis,uid)
+        VALUE
+            (#{cname},#{synopsis},#{uid})
+    </insert>
+    
+    <select id="findByUid" resultType="com.lingying.soho.Juliet.entity.Company">
+        SELECT
+            *
+        FROM
+            company
+        WHERE
+            uid=#{uid}
+    </select>
+</mapper>
