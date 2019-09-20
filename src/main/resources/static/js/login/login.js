@@ -14,18 +14,33 @@ layui.use('form', function(){
     var user_phone_input=document.getElementById("userphone");
     var user_phone_password_input=document.getElementById("userphonepassword");
 
-/*user_email_phone_input.onfocus=function () {
-	$('#error-phone-email').show();
+/**
+ * input 标签的onfocus事件
+ */
+user_email_phone_input.onfocus=function () {
+	$('#error-phone-email').hide();
 }
 user_password_input.onfocus=function () {
-	$('#error-phone-email').show();
-}*/
+	$('#error-password').hide();
+}
+user_phone_input.onfocus=function () {
+	$('#error-phone').hide();
+}
+user_phone_password_input.onfocus=function () {
+	$('#error-phone-password').hide();
+}
 
+/**
+ * 切换用户密码登录的方法
+ */
 function passwordLogin() {
 	$('#login-email-phone-form').show();
 	$('#login-phone-form').hide();
 }
 
+/**
+ * 切换手机验证码登录的方法
+ */
 function codeLogin() {
 	$('#login-email-phone-form').hide();
 	$('#login-phone-form').show();
@@ -55,14 +70,6 @@ function emailPhoneLogin() {
             return false;
         }
     }
-    /*if(username !=null | username != ""){
-        if (password !=null | password != ""){
-            $.post("login",{username:username,password:password},function (data,status) {
-
-            });
-        }
-    }*/
-
 }
 
 /*
@@ -70,6 +77,10 @@ function emailPhoneLogin() {
 * */
 function phoneCode() {
     var phone=$('#userphone').val();
+    if(phone == null | phone == ""){
+        $('#error-phone').show();
+        return false;
+    }
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);
     });

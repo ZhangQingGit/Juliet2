@@ -8,15 +8,49 @@ layui.use('form', function(){
 	form.render();
 });
 
+    var useremail_input=document.getElementById("useremail");
+    var useremailpassword_input=document.getElementById("useremailpassword");
+    var useremailcode_input=document.getElementById("useremailcode");
+
+    var userphone_input=document.getElementById("userphone");
+    var userphonepassword_input=document.getElementById("userphonepassword");
+    var userphonecode_input=document.getElementById("userphonecode");
+
+/**
+ * input 标签的onfocus事件
+ */
+useremail_input.onfocus=function () {
+    $('#error-email').hide();
+    $('#error-email-format').hide();
+}
+useremailpassword_input.onfocus=function () {
+    $('#error-email-password').hide();
+}
+useremailcode_input.onfocus=function () {
+    $('#error-email-code').hide();
+}
+userphone_input.onfocus=function () {
+    $('#error-phone').hide();
+}
+userphonepassword_input.onfocus=function () {
+    $('#error-phone-password').hide();
+}
+userphonecode_input.onfocus=function () {
+    $('#error-phone-code').hide();
+}
+
+/**
+ * 切换邮箱验证码注册的方法
+ */
 function emailRegisterLi() {
-	$(this).addClass("selected").siblings().removeClass("selected");
 	$('#register-email-form').show();
 	$('#register-phone-form').hide();
 }
 
-
+/**
+ * 切换手机验证码注册的方法
+ */
 function phonelRegisterLi() {
-    $(this).addClass("selected").siblings().removeClass("selected");
 	$('#register-email-form').hide();
 	$('#register-phone-form').show();
 }
@@ -36,7 +70,10 @@ function checkEmail(email) {
 * */
 function emailCode() {
 	var email=$('#useremail').val();
-	//alert(email);
+    if (email == null | email == ""){
+        $('#error-email').show();
+        return false;
+    }
 	$.post("email",{email:email},function(data,statu){
 		alert(data.message);
 	});
@@ -106,6 +143,10 @@ function checkPhone(phone) {
 * */
 function phoneCode() {
     var phone=$('#userphone').val();
+    if (phone == null | phone == ""){
+        $('#error-phone').show();
+        return false;
+    }
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);
     });
