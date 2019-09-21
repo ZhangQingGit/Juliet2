@@ -55,7 +55,7 @@
                             <input type="text" name="code" lay-verify="email" autocomplete="off"
                                    placeholder="请输入验证码" id="useremailcode">
                         </div>
-                        <input id="email-code-register" type="button" value="获取验证码" onclick="return emailCode()"><br>
+                        <input id="email-code-register" type="button" value="获取验证码" onclick="return emailCode(this)"><br>
                         <span id="error-email-code"><img src="images/login/sigh.jpg">请输入验证码</span>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                             <input type="text" name="code" lay-verify="email" autocomplete="off"
                                    placeholder="请输入验证码" id="userphonecode">
                         </div>
-                        <input id="phone-code-register" type="button" value="获取验证码" onclick="return phoneCode()"><br>
+                        <input id="phone-code-register" type="button" value="获取验证码" onclick="return phoneCode(this)"><br>
                         <span id="error-phone-code"><img src="images/login/sigh.jpg">请输入验证码</span>
                     </div>
                 </div>

@@ -68,11 +68,27 @@ function checkEmail(email) {
 /*
 * 获取邮箱验证码的方法
 * */
-function emailCode() {
+var countdown=60;
+function emailCode(val) {
 	var email=$('#useremail').val();
     if (email == null | email == ""){
         $('#error-email').show();
         return false;
+    }
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        $('#email-code-register').css("color","#00B38A");
+        val.value="获取验证码";
+        countdown = 60;
+    } else {
+        val.setAttribute("disabled", true);
+        $('#email-code-register').css("width","70px");
+        $('#email-code-register').css("color","gray");
+        val.value = ""+countdown+"s";
+        countdown--;
+        setTimeout(function () {
+            emailCode(val)
+        }, 1000)
     }
 	$.post("email",{email:email},function(data,statu){
 		alert(data.message);
@@ -86,7 +102,6 @@ function emailRegister() {
 	var username=$('#useremail').val();
 	var password=$('#useremailpassword').val();
 	var code=$('#useremailcode').val();
-	var usertype = $('input:radio:checked').val();
 
     if(username == null | username == ""){
         $('#error-email').show();
@@ -141,11 +156,26 @@ function checkPhone(phone) {
 /*
 * 获取手机验证码的方法
 * */
-function phoneCode() {
+function phoneCode(val) {
     var phone=$('#userphone').val();
     if (phone == null | phone == ""){
         $('#error-phone').show();
         return false;
+    }
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        $('#phone-code-register').css("color","#00B38A");
+        val.value="获取验证码";
+        countdown = 60;
+    } else {
+        val.setAttribute("disabled", true);
+        $('#phone-code-register').css("width","70px");
+        $('#phone-code-register').css("color","gray");
+        val.value = ""+countdown+"s";
+        countdown--;
+        setTimeout(function () {
+            phoneCode(val)
+        }, 1000)
     }
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);
@@ -159,7 +189,6 @@ function phonelRegister() {
     var username=$('#userphone').val();
     var password=$('#userphonepassword').val();
     var code=$('#userphonecode').val();
-    var usertype = $('input:radio:checked').val();
 
     if(username == null | username == ""){
         $('#error-phone').show();

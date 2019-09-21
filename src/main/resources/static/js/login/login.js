@@ -72,14 +72,31 @@ function emailPhoneLogin() {
     }
 }
 
+
 /*
 * 获取手机验证码的方法
 * */
-function phoneCode() {
+var countdown=60;
+function phoneCode(val) {
     var phone=$('#userphone').val();
     if(phone == null | phone == ""){
         $('#error-phone').show();
         return false;
+    }
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        $('#phone-code-login').css("color","#00B38A");
+        val.value="获取验证码";
+        countdown = 60;
+    } else {
+        val.setAttribute("disabled", true);
+        $('#phone-code-login').css("width","70px");
+        $('#phone-code-login').css("color","gray");
+        val.value = ""+countdown+"s";
+        countdown--;
+        setTimeout(function () {
+            phoneCode(val)
+        }, 1000)
     }
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);

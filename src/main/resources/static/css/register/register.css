@@ -53,6 +53,7 @@
     background-color: #ffffff;
     cursor: pointer;
     margin-left: -20px;
+    text-align: right;
 }
 #error-email,#error-email-format,#error-email-password,#error-email-code,#error-email-type,
 #error-phone,#error-phone-password,#error-phone-code,#error-phone-type,#error-phone-format{

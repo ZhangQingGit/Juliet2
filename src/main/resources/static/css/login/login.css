@@ -54,6 +54,7 @@
     cursor: pointer;
     margin-left: 180px;
     margin-top: -38px;
+    text-align: right;
 }
 
 #error-phone-email,#error-password,#error-phone,#error-phone-password{

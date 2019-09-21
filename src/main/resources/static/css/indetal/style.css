@@ -221,7 +221,7 @@ body .hide, body .none {
     border: 1px solid #dadad9;
     border-top: none;
     background: #fefefe;
-    box-shadow: 2px 2px 3px #dedede;
+    /*box-shadow: 2px 2px 3px #dedede;*/
 }
 
 .category-content .category-list li {
@@ -366,11 +366,11 @@ body .hide, body .none {
 }
 
 .category-list li.hover .menu-in {
-    border: 2px solid #00B38A;
+    border: 1px solid #f6f6f6;
 }
 
 .category-list li.hover {
-    border: 2px solid #00B38A;
+    border: 1px solid #f6f6f6;
     border-right: none;
 }
 
