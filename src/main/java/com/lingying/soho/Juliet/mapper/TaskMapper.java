@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.lingying.soho.Juliet.entity.Task;
+import com.lingying.soho.Juliet.entity.TaskV;
 
 public interface TaskMapper {
     /**
@@ -39,6 +40,6 @@ public interface TaskMapper {
      * 分页查询列表信息
      * @return
      */
-    List<Task> findByLimit();
+    List<TaskV> findByLimit();
     
 }

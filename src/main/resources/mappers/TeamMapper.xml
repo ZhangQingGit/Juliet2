@@ -5,9 +5,13 @@
 <mapper namespace="com.lingying.soho.Juliet.mapper.TeamMapper">
     <insert id="teamReg">
         INSERT INTO
-            team(tname,experience,uid)
+            team(tname,experience,uid,
+                temail,tphone,tasktype,
+                taskcount,fintask)
         VALUE
-            (#{tname},#{experience},#{uid})
+            (#{tname},#{experience},#{uid}
+            ,#{temail},#{tphone},#{tasktype}
+            ,#{taskcount},#{fintask})
     </insert>
     
     <select id="findByUid" resultType="com.lingying.soho.Juliet.entity.Team">
@@ -17,5 +21,15 @@
             team
         WHERE
             uid=#{uid}
+    </select>
+    
+    <select id="findByLimit" resultType="com.lingying.soho.Juliet.entity.TeamV">
+        SELECT
+            tname,experience,
+            tasktype,taskcount,fintask
+        FROM
+            team
+        LIMIT
+            0,4
     </select>
 </mapper>

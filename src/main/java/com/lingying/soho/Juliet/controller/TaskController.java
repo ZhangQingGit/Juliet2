@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.lingying.soho.Juliet.entity.Task;
+import com.lingying.soho.Juliet.entity.TaskV;
 import com.lingying.soho.Juliet.service.TaskService;
 import com.lingying.soho.Juliet.util.ResponseResult;
 @Controller
@@ -17,9 +17,8 @@ public class TaskController extends BaseController {
     TaskService task;
     @RequestMapping("show")
     @ResponseBody
-    public ResponseResult<List<Task>> showByLimit(){
-        List<Task> t = task.showByLimit();
-
+    public ResponseResult<List<TaskV>> showByLimit(){
+        List<TaskV> t = task.showByLimit();
         return new ResponseResult<>(SUCCESS,t);
     }
 }
