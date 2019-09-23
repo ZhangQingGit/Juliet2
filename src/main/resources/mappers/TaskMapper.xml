@@ -29,14 +29,14 @@
         WHERE
             rid=#{rid}
     </select>
-    <select id="findByLimit" resultType="com.lingying.soho.Juliet.entity.Task">
+    <select id="findByLimit" resultType="com.lingying.soho.Juliet.entity.TaskV">
         SELECT
-             cname,tdate
+             tdate
             ,pname,pmoney
-            ,findate,tbidding
+            ,findate,psynopsis
         FROM
             task
-        LIMIT 0,5
+        LIMIT 0,6
     </select>
 
 
