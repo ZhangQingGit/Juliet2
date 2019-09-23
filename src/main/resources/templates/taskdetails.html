@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+
+    <title>助力烨</title>
+
+    <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/taskdetails/taskdetails01.css"/>
+    <link rel="stylesheet" type="text/css" href="css/taskdetails/taskdetails02.css"/>
+    <link rel="stylesheet" type="text/css" href="css/taskdetails/taskdetails03.css"/>
+    <link rel="stylesheet" type="text/css" href="css/taskdetails/taskdetails04.css"/>
+    <link rel="stylesheet" type="text/css" href="css/taskdetails/taskdetails05.css"/>
+
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<!-- header -->
+<!--C端头部通栏广告位-->
+<div id="lg_header">
+
+    <!--C端头部黑色导航-->
+    <div id="lg_tbar">
+        <div class="inner">
+            <div class="lg_tbar_l">
+                <a href="https://www.lagou.com/" class="logo"></a>
+            </div>
+
+            <ul class="lg_tbar_m">
+                <li>
+                    <a href="https://www.lagou.com/" data-lg-tj-id="5i00" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull">首页</a>
+                </li>
+                <li>
+                    <a href="https://www.lagou.com/gongsi/" data-lg-tj-id="5j00" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://xiaoyuan.lagou.com/" data-lg-tj-id="19xc" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_campus">校园招聘<span
+                            class="tips-new">new</span></a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://yanzhi.lagou.com/" data-lg-tj-id="ic00" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://kaiwu.lagou.com/" data-lg-tj-id="1mua" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" data-lg-tj-track-code="index_kaiwu">课程</a>
+                </li>
+            </ul>
+
+            <div class="lg_tbar_r">
+                <ul class="account-bar">
+                    <!-- if has unread message, add class unreaded -->
+                    <li class="msg_dropdown" data-lg-tj-track-code="index_message">
+                        <a class="msg_group" href="javascript: void 0;" data-lg-tj-id="5h00" data-lg-tj-no="idnull"
+                           data-lg-tj-cid="idnull" rel="nofollow">
+                            消息
+                            <em class="msg_amount hide" id="headMsgAmount"></em>
+                        </a>
+                        <div class="lg_msg_popup">
+                            <div class="lg_msg_pu_body" id="lgPopupMsgBody">
+                            </div>
+                            <div class="lg_msg_pu_footer">
+                                <a href="https://www.lagou.com/message/settingsdetail.html" target="_blank"
+                                   class="lg_msg_setting fl">
+                                    <i class="lg_msg_avatar setting_i" data-lg-tj-id="18B0"
+                                       data-lg-tj-no="idnull" data-lg-tj-cid="idnull"></i>&nbsp;
+                                </a>
+                                <a href="https://www.lagou.com/message/msgdetail.html" class="lg_msg_more fr"
+                                   data-lg-tj-id="18A0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">查看更多</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="https://www.lagou.com/resume/myresume.html" data-lg-tj-id="5700" data-lg-tj-no="idnull"
+                           data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_resume">简历</a>
+                    </li>
+                    <li>
+                        <a href="https://www.lagou.com/mycenter/delivery.html" id="deliveryLink" data-lg-tj-id="5800"
+                           data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow"
+                           data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱</a>
+                        <em class="noticeDot dn" id="noticeDot_delivery"></em>
+                    </li>
+                    <li>
+                        <a href="https://www.lagou.com/mycenter/collections.html" data-lg-tj-id="5900"
+                           data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow"
+                           data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹</a>
+                    </li>
+                    <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                        <span class="unick">曹鹏辉</span>
+                        <em class="noticeDot dn" id="noticeDot_name"></em>
+                        <i></i>
+                        <ul>
+                            <li>
+                                <a href="https://www.lagou.com/s/subscribe.html" data-lg-tj-id="5a00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+                            </li>
+                            <li>
+                                <a href="https://www.lagou.com/mycenter/invitation.html" id="invitationLink"
+                                   data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow"
+                                   data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+                                <em class="noticeDot dn" id="noticeDot_invitation"></em>
+                            </li>
+
+                            <li>
+                                <a href="https://yanzhi.lagou.com/user/userIndex.html" data-lg-tj-id="1kcy"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的问答</a>
+                            </li>
+
+                            <li>
+                                <a href="https://account.lagou.com/account/cuser/userInfo.html" data-lg-tj-id="5c00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">帐号设置</a>
+                            </li>
+
+                            <li>
+                                <a href="https://easy.lagou.com/dashboard/index.htm?from=c_index" data-lg-tj-id="5d00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">去企业版</a>
+                            </li>
+
+                            <li>
+                                <a href="/frontLogout.do" data-lg-tj-id="5e00" data-lg-tj-no="idnull"
+                                   data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <a rel="nofollow" href="https://www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500"
+                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+                <a rel="nofollow" href="https://easy.lagou.com/dashboard/index.htm?from=c_index" class="lg_os"
+                   data-lg-tj-id="5600" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"
+                   data-lg-tj-track-code="index_qiyeban">进入企业版</a>
+            </div>
+
+        </div>
+
+    </div><!--end #lg_tbar-->
+
+
+</div><!--end #header-->
+
+<!-- 页面主体START -->
+<div class="position-head" data-companyid="50735">
+    <div class="position-content ">
+        <div class="position-content-l">
+            <div class="job-name" title="资深JAVA开发工程师">
+                <h4 class="company">助力烨发布</h4>
+                <h2 class="name">租车系统</h2>
+                <div class="marEdit">
+                </div>
+            </div>
+            <dd class="job_request">
+                <h3>
+                    <span class="salary">18k-30k </span>
+                    <span>/二七区/</span>
+                    <span>三个月/</span>
+                    <span>要求语言java</span>
+                </h3>
+                <!-- 职位标签 -->
+                <ul class="position-label clearfix">
+                    <li class="labels">Java</li>
+                    <li class="labels">web开发</li>
+                </ul>
+                <p class="publish_time">2天前&nbsp; 发布于助力烨网</p>
+            </dd>
+        </div>
+
+        <div class="position-content-r clearfix">
+            <div class="position-deal clearfix">
+                <!-- 收藏按钮 -->
+                <div class="jd_collection  job-collection " data-lg-tj-id="9500" data-lg-tj-no="0001" data-lg-tj-cid="idnull">
+                    <i class="icon-glyph-hollow-star"> </i>收藏
+                </div>
+                <div class="resume-deliver">
+                    <a rel="nofollow" class="send-CV-btn s-send-btn fr" data-code="4" data-position-id="5466919"
+                       data-resume-type="1" data-resume-id="7697565" href="javascript:;" data-lg-tj-id="9800"
+                       data-lg-tj-no="0001" data-lg-tj-cid="idnull">联系一下
+                    </a>
+                </div>
+                <!-- 是否 canDeliver end -->
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container clearfix" id="container">
+    <div class="content_l fl">
+
+        <dl class="job_detail" id="job_detail">
+            <dt class="clearfix join_tc_icon">
+            </dt>
+            <dd class="job-advantage">
+                <span class="advantage">任务诱惑：</span>
+                <p>工期长，定金高</p>
+            </dd>
+            <dd class="job_bt">
+                <h3 class="description">任务描述：</h3>
+                <div class="job-detail">
+                    <p>工作职责:<br>1. 负责核心业务的开发和优化；<br>2. 参与公共组件的设计开发；<br>3. 协助架构师进行系统架构升级优化。<br>
+                        任职资格:<br>1. 4年及以上
+                        <a class="jd-ad" href="https://kaiwu.lagou.com/course/courseInfo.htm?courseId=1" target="_blank"
+                           rel="nofollow" data-ad="3">JAVA
+                        </a>
+                        开发经验，计算机相关专业本科及以上学历；<br>2. 熟悉IO、
+                        <a class="jd-ad" href="https://kaiwu.lagou.com/course/courseInfo.htm?courseId=1"
+                           target="_blank" rel="nofollow" data-ad="3">多线程
+                        </a>
+                        、集合等基础框架，熟悉
+                        <a class="jd-ad" href="" target="_blank" rel="nofollow" data-ad="6">分布式</a>、
+                        <a class="jd-ad" href="https://kaiwu.lagou.com/course/courseInfo.htm?courseId=2"
+                            target="_blank" rel="nofollow" data-ad="6">缓存
+                        </a>、消息、<搜索></搜索>等机制；<br>3.
+                        精通AOP、MVC等框架，熟悉Linux下的常用命令，熟悉
+                        <a class="jd-ad" href="" target="_blank" rel="nofollow" data-ad="10">MySQL</a>；<br>
+                        4. 具有一定的项目规划和决策能力，善于捕捉业务需求、架构设计中存在的问题，并给出有效的解决措施和方法；<br>5. 具有高度的抽象设计能力，思路清晰，善于思考，能独立分析和解决问题。
+                    </p>
+                </div>
+            </dd>
+            <!-- Leader专访 -->
+            <!-- Leader专访 end -->
+            <!-- 团队Leader -->
+            <!-- 团队Leader end -->
+            <dd class="job-address clearfix">
+                <h3 class="address">工作地址</h3>
+                <div class="work_addr">
+                    <a rel="nofollow" href="">杭州</a> -
+                    <a rel="nofollow" href="">滨江区</a> -
+                    <a rel="nofollow" href=""></a>
+                    - 杭州市滨江区秋溢路289号
+                    <a rel="nofollow" href="" id="mapPreview">查看地图</a>
+                </div>
+                <div id="miniMap"></div>
+                <input type="hidden" name="positionLng" value="120.200698"/>
+                <input type="hidden" name="positionLat" value="30.188899"/>
+                <input type="hidden" name="positionAddress" value="杭州市滨江区秋溢路289号"/>
+                <input type="hidden" name="workAddress" value="杭州"/>
+                <div style="display: none;">
+                    <div id="mapPopup" class="popup">
+                        <div id="fullMap"></div>
+                    </div>
+                </div>
+            </dd>
+            <!-- 职位发布者 -->
+            <dd class="jd_publisher">
+                <h3>职位发布者:</h3>
+                <div class="border clearfix">
+                    <img src="images/login/app.jpg" width="60" height="60"/>
+                    <div class="publisher_name">
+                        <a title="仟金顶">
+                            <span class="name">仟金顶</span>
+                            <span class="chat_me" data-is-brief-style="1" data-lg-tj-id="1WG0" data-lg-tj-no="idnull"
+                                  data-lg-tj-cid="idnull" data-lg-tj-track-code="jobs_code"
+                                  data-lg-tj-track-type="1"></span>
+                            <input type="hidden" class='hr_portrait'
+                                   value='i/image/M00/54/E8/CgpEMll5viCAEoWCAAEDMBeYq58565.png'>
+                            <input type="hidden" class='hr_name' value='仟金顶'>
+                            <input type="hidden" class='hr_position' value='HR'>
+                            <input type="hidden" class='target_hr' value='5491688'>
+                            <input type="hidden" class='target_position' value='5466919'>
+                        </a>
+                        <span class="pos"> HR </span>
+                    </div>
+                    <div class="publisher_data">
+                        <div>
+                            <span class="data_title">聊天意愿<i></i></span>
+                            <span class="tip_text">1个月内职位发布者回复聊天的占比</span>
+                            <!-- <span class="data">%</span> -->
+                            <span class="data">很弱</span>
+                            <span class="tip">回复率<i>--</i>&nbsp; 用时<i class='light_tip'>2</i>小时                        </span>
+                        </div>
+                        <em></em>
+                        <div>
+                            <span class="data_title">简历处理<i></i></span>
+                            <span class="tip_text">7日内职位发布者简历处理的效率</span>
+                            <span class="data">快</span>
+                            <span class="tip">处理率<i class="light_tip">13%</i>&nbsp; 用时<i class='light_tip'>1</i>天                        </span>
+                        </div>
+                        <em></em>
+                        <div>
+                            <span class="data_title">活跃时段<i></i></span>
+                            <span class="tip_text">1个月内职位发布者最活跃时段统计</span>
+                            <span class="data">下午</span>
+                            <span class="tip">下午<i class="light_tip">3</i>点最活跃</span>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+            <!-- 职位发布者 end -->
+        </dl>
+        <dl class="interview_experience module-container">
+            <div id="review_anchor" class="module-title">
+                面试评价
+            </div>
+            <a href="https://www.lagou.com/gongsi/i50735.html" target="_blank" class="checkAll" style="display:none">查看该公司全部面试评价</a>
+            <div class="reviews-area">
+                <div class="list-loading"></div>
+            </div>
+        </dl>
+
+
+
+
+        <!-- 推荐 -->
+        <!--
+@require "common/widgets/recommend/main.less"
+-->
+        <!-- 公司详情页、职位详情页 推荐-->
+        <div class="popular_recom hide-recom">
+            <a rel="nofollow" href="javascript:;" class="expansion">展开<i></i></a>
+            <dl class="popular_company clearfix">
+                <dt>推荐公司：</dt>
+                <dd>
+                    <a target="_blank" href="https://www.lagou.com/gongsi/277180.html" rel="nofollow">伙一文化</a>
+                </dd>
+            </dl>
+        </div>
+        <!-- 公司详情页、职位详情页 推荐-->
+    </div>
+    <div class="content_r">
+        <dl class="job_company" id="job_company">
+            <dt>
+                <a href="">
+                    <img class="b2" src="images/login/app.jpg" width="96" height="96" alt="仟金顶网络科技有限公司"/>
+                    <div class="job_company_content">
+                        <h3 class="fl">
+                            <em class="fl-cn">
+                                助力烨
+                            </em>
+                            <i class="icon-approve icon-glyph-valid"></i>
+                            <span class="dn">拉勾认证企业</span>
+                        </h3>
+                    </div>
+                </a>
+            </dt>
+            <dd>
+                <ul class="c_feature">
+                    <li>
+                        <i class="icon-glyph-fourSquare"></i> <h4 class="c_feature_name">电商</h4>
+                        <span class="hovertips">领域</span>
+                    </li>
+                    <li>
+                        <i class="icon-glyph-trend"></i> <h4 class="c_feature_name">B轮</h4>
+                        <span class="hovertips">发展阶段</span>
+                    </li>
+                    <li>
+                        <i class="finance icon-glyph-doller"></i>
+                        <p class="financeOrg"><h4 class="c_feature_name">红杉资本，易居资本(A轮)</h4></p>
+                        <span class="hovertips">投资机构</span>
+                    </li>
+                    <li>
+                        <i class="icon-glyph-figure"></i> <h4 class="c_feature_name">150-500人</h4>
+                        <span class="hovertips">规模</span>
+                    </li>
+                    <li>
+                        <i class="icon-glyph-home"></i>
+                        <a href="http://www.baidu.com" target="_blank" title="http://www.qjdchina.com"
+                           rel="nofollow"><h4 class="c_feature_name">http://www.baidu.com</h4></a>
+                        <span class="hovertips">公司主页</span>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <div class="jobs_similar" id="jobs_similar">
+            <h4 class="jobs_similar_header">
+                <span>相似职位</span>
+            </h4>
+            <input type="hidden" value="true" id="similarPosition">
+            <div class="jobs_similar_content" id="jobs_similar_content">
+                <div class="jobs_similar_detail" id="jobs_similar_detail" data-lg-tj-track-code="jobs_similar"
+                     data-lg-tj-track-type="1">
+                    <ul class="similar_list reset">
+                        <!--source=rec-->
+                        <li class="similar_list_item  clearfix" data-jobid="3775365">
+                            <a class="position_link clearfix" href="https://www.lagou.com/jobs/3775365.html"
+                               target="_blank" data-index="0" data-lg-tj-id="9600" data-lg-tj-no="0001"
+                               data-lg-tj-cid="3775365" data-lg-tj-abt="default|0"
+                               data-lg-webtj-_show_id="b187b88a89ed43e8bb6455a1c8e733ca"
+                               data-lg-webtj-_search_type="position_similar" data-lg-webtj-_content_type="jd">
+                                <div class="similar_list_item_logo">
+                                    <img src="images/login/app.jpg" alt="霖梓控股" width="56" height="56"/>
+                                </div>
+                                <div class="similar_list_item_pos">
+                                    <h2 title="资深java开发工程师">资深java开发工程师</h2>
+                                    <p>18k-30k</p>
+
+                                    <p class="similar_company_name" title="霖梓控股 [杭州·滨江区]">
+                                        霖梓控股 [杭州·滨江区]
+                                    </p>
+                                </div>
+                            </a>
+
+                            <!-- 鼠标划过时展示的公司信息 -->
+                            <div class="similar_company_info dn">
+                                <div class="arr"><span></span></div>
+                                <p><span>领域：</span><span>移动互联网,金融</span></p>
+                                <p><span>创始人：</span><span></span></p>
+                                <p><span>阶段：</span><span>B轮</span></p>
+                                <p><span>规模：</span><span>150-500人</span></p>
+                                <div class="similar_company_label">
+                                    <span>股票期权</span>
+                                    <span>带薪年假</span>
+                                    <span>弹性工作</span>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <a href="https://www.lagou.com/jobs/list_资深JAVA开发工程师?kd=资深JAVA开发工程师&spc=1&pl=&gj=5-10年&xl=&yx=&gx=&st=&labelWords=&lc=&workAddress=&city=杭州"
+                       class="jobs_similar_footer" target="_blank" data-lg-tj-id="9700" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull">查看更多相似任务</a>
+                </div>
+            </div>
+        </div>
+
+        <!--广告位-->
+        <div key="ZHIWEIYE_YOUCEERWEIMA" class="job_ad_side lgad_jsonp ad_exposure"></div>
+    </div>
+</div>
+
+
+<!-- 页面主体END -->
+<!-- footer <-->
+<a id="backtop" title="回到顶部" rel="nofollow"></a>
+
+<div id="footer">
+    <div class="wrapper">
+        <div class="inner_wrapper">
+            <div class="footer_module_right">
+                <div class="footer_module_business">
+                    <p class="footer_module_title">企业服务</p>
+                    <a href="#" target="_blank" rel="nofollow">抢包宝典</a>
+                    <a href="#" target="_blank" rel="nofollow">公司搜索</a>
+                </div>
+                <div class="footer_module_business">
+                    <p class="footer_module_title">用户帮助</p>
+                    <a href="#" target="_blank" rel="nofollow">帮助中心</a>
+                    <a href="#" target="_blank" rel="nofollow">用户服务协议</a>
+                    <a href="#" target="_blank" rel="nofollow">隐私政策</a>
+                </div>
+                <div class="footer_module_business">
+                    <p class="footer_module_title">合作伙伴</p>
+                    <a href="#" target="_blank" rel="nofollow">腾讯云</a>
+                    <a href="#" target="_blank" rel="nofollow">阿里云</a>
+                    <a href="#" target="_blank" rel="nofollow">Gitlab</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="copyright_main">
+                <div class="copyright_main_left">
+                    <span class="copyright_title"><em>&copy;</em>2018 助力烨</span>
+                    <a target="_blank" href="#" rel="nofollow">京ICP备14023790号-2</a>
+                    <a target="_blank" class="footer_gongan" href="#" rel="nofollow"><i class="footer_lagou_gongan"></i>京公网安备
+                        11010802024043号</a>
+                    <div class="footer_lagou_jubao">
+                        <i class="lagou_jubao"></i>
+                        <p>
+                            <span>违法和不良信息举报</span>
+                            <span>电话: 4000400040000</span>
+                            <span>邮箱: cc@zhuliye.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

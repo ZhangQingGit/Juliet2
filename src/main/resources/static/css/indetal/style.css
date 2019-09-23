@@ -214,14 +214,15 @@ body .hide, body .none {
 
 .category-content .category {
     position: absolute;
-    top: 33px;
     z-index: 113;
     width: 199px;
-+ height: 456 px;
-    border: 1px solid #dadad9;
++   height: 456 px;
     border-top: none;
     background: #fefefe;
-    /*box-shadow: 2px 2px 3px #dedede;*/
+    margin-left: -150px;
+    /*top: 33px;
+    border: 1px solid #dadad9;
+    box-shadow: 2px 2px 3px #dedede;*/
 }
 
 .category-content .category-list li {

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>助力烨</title>
+
+    <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/publisher/publisher01.css"/>
+    <link rel="stylesheet" type="text/css" href="css/publisher/publisher02.css"/>
+    <link rel="stylesheet" type="text/css" href="css/publisher/publisher03.css"/>
+    <link rel="stylesheet" type="text/css" href="css/publisher/publisher04.css"/>
+    <link rel="stylesheet" type="text/css" href="css/publisher/publisher05.css"/>
+
+</head>
+<body>
+
+<!--C端头部通栏广告位-->
+
+<!--验证注册邮箱-->
+<!--
+@require "common/widgets/header_c/modules/emailvalid/main.less"
+-->
+
+<div id="lg_header">
+
+    <!--C端头部黑色导航-->
+    <div id="lg_tbar">
+
+        <div class="inner">
+
+            <div class="lg_tbar_l">
+                <a href="https://www.lagou.com/" class="logo"></a>
+            </div>
+
+            <ul class="lg_tbar_m">
+                <li>
+                    <a href="https://www.lagou.com/" data-lg-tj-id="5i00" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull">首页</a>
+                </li>
+                <li>
+                    <a href="https://www.lagou.com/gongsi/" class="current" data-lg-tj-id="5j00" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://xiaoyuan.lagou.com/" data-lg-tj-id="19xc" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_campus">校园招聘<span
+                            class="tips-new">new</span></a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://yanzhi.lagou.com/" data-lg-tj-id="ic00" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" data-lg-tj-track-code="index_yanzhi">言职</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="https://kaiwu.lagou.com/" data-lg-tj-id="1mua" data-lg-tj-no="idnull"
+                       data-lg-tj-cid="idnull" data-lg-tj-track-code="index_kaiwu">课程</a>
+                </li>
+            </ul>
+
+            <div class="lg_tbar_r">
+                <ul class="account-bar">
+                    <!-- if has unread message, add class unreaded -->
+                    <li class="msg_dropdown" data-lg-tj-track-code="index_message">
+                        <a class="msg_group" href="javascript: void 0;" data-lg-tj-id="5h00" data-lg-tj-no="idnull"
+                           data-lg-tj-cid="idnull" rel="nofollow">
+                            消息
+                            <em class="msg_amount hide" id="headMsgAmount"></em>
+                        </a>
+                        <div class="lg_msg_popup">
+                            <div class="lg_msg_pu_body" id="lgPopupMsgBody">
+                            </div>
+                            <div class="lg_msg_pu_footer">
+                                <a href="https://www.lagou.com/message/settingsdetail.html" target="_blank" class="lg_msg_setting fl">
+                                    <i class="lg_msg_avatar setting_i" data-lg-tj-id="18B0" data-lg-tj-no="idnull"
+                                       data-lg-tj-cid="idnull">
+                                    </i>&nbsp;
+                                </a>
+                                <a href="https://www.lagou.com/message/msgdetail.html" class="lg_msg_more fr"
+                                   data-lg-tj-id="18A0" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">查看更多
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="https://www.lagou.com/resume/myresume.html" data-lg-tj-id="5700" data-lg-tj-no="idnull"
+                           data-lg-tj-cid="idnull" rel="nofollow" data-lg-tj-track-code="index_resume">简历
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.lagou.com/mycenter/delivery.html" id="deliveryLink" data-lg-tj-id="5800"
+                           data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow"
+                           data-lg-tj-track-code="index_deliver" data-lg-tj-track-type="1">投递箱
+                        </a>
+                        <em class="noticeDot dn" id="noticeDot_delivery"></em>
+                    </li>
+                    <li>
+                        <a href="https://www.lagou.com/mycenter/collections.html" data-lg-tj-id="5900"
+                           data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow"
+                           data-lg-tj-track-code="index_favorite" data-lg-tj-track-type="1">收藏夹
+                        </a>
+                    </li>
+                    <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                        <span class="unick">曹鹏辉</span>
+                        <em class="noticeDot dn" id="noticeDot_name"></em>
+                        <i></i>
+                        <ul>
+                            <li>
+                                <a href="https://www.lagou.com/s/subscribe.html" data-lg-tj-id="5a00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的订阅</a>
+                            </li>
+                            <li>
+                                <a href="https://www.lagou.com/mycenter/invitation.html" id="invitationLink"
+                                   data-lg-tj-id="5b00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow"
+                                   data-lg-gatj-msg="header_c,职位邀请,number">职位邀请</a>
+                                <em class="noticeDot dn" id="noticeDot_invitation"></em>
+                            </li>
+
+                            <li>
+                                <a href="https://yanzhi.lagou.com/user/userIndex.html" data-lg-tj-id="1kcy"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">我的问答</a>
+                            </li>
+
+                            <li>
+                                <a href="https://account.lagou.com/account/cuser/userInfo.html" data-lg-tj-id="5c00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">帐号设置</a>
+                            </li>
+
+                            <li>
+                                <a href="https://easy.lagou.com/dashboard/index.htm?from=c_index" data-lg-tj-id="5d00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">去企业版</a>
+                            </li>
+
+                            <li>
+                                <a href="/frontLogout.do" data-lg-tj-id="5e00" data-lg-tj-no="idnull"
+                                   data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <a rel="nofollow" href="https://www.lagou.com/app/download.html" class="lg_app" data-lg-tj-id="5500"
+                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" target="_blank">拉勾APP</a>
+                <a rel="nofollow" href="https://easy.lagou.com/dashboard/index.htm?from=c_index" class="lg_os"
+                   data-lg-tj-id="5600" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"
+                   data-lg-tj-track-code="index_qiyeban">进入企业版</a>
+            </div>
+
+        </div>
+
+    </div><!--end #lg_tbar-->
+
+
+</div><!--end #header-->
+
+<!--
+@require "company-c/modules/common/main.less"
+@require "company-c/modules/top-info/main.less"
+-->
+<input type="hidden" value="50735" id="companyId">
+<div class="top_info">
+    <div class="top_info_wrap">
+        <img src="images/login/app.jpg"
+             alt="助力烨Logo" width="164" heihgt="164"/>
+        <div class="company_info">
+            <div class="company_main">
+                <h2>
+                    <a href="http://www.baidu.com" class="hovertips" target="_blank" rel="nofollow"
+                       title="仟金顶网络科技有限公司">
+                        助力烨
+                    </a>
+                </h2>
+                <a href="http://www.baidu.com" class="icon-wrap" target="_blank" rel="nofollow"
+                   title="http://www.baidu.com">
+                    <i></i>
+                </a>
+                <a class="identification tipsys" title="已完成资质认证，并完善了更优质的公司主页信息（以上信息由天眼查提供技术支持）">
+                    <i></i>
+                    <span>助力烨认证</span>
+                </a>
+                <div class="company_word">
+                    小程序+web网站
+                </div>
+            </div>
+            <div class="company_data">
+                <ul>
+                    <li>
+                        <strong>
+                            20个
+                        </strong>
+                        <br/>
+                        <span class="tipsys" original-title="该公司的完成任务数量">
+                            <span>完成任务</span><span class="tip"></span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="main_container">
+    <div id="container_left">
+        <div id="containerCompanyDetails">
+
+            <div class="item_container" id="company_intro">
+                <div class="item_ltitle">公司介绍</div>
+                <div class="item_content">
+                    <h3>asdadsad</h3>
+
+                </div>
+            </div>
+
+            <div class="item_container" id="company_project">
+                <div class="item_ltitle">公司项目经历</div>
+                <div class="item_content">
+                    <h3>asdadsad</h3>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="container_right">
+
+        <div class="company_bussiness_info_container">
+            <div class="title">公司基本信息
+                <div class="slash"></div>
+            </div>
+            <div class="info_item">
+                <div class="info_item_title"><i><img src="//www.lgstatic.com/www/static/company-c/modules/common/img/company-business-companyname_0bd17fb.svg" /></i><span>工商信息</span>
+                </div>
+                <div class="content">仟金顶网络科技有限公司</div>
+            </div>
+            <div class="info_item">
+                <div class="info_item_title"><i><img src="//www.lgstatic.com/www/static/company-c/modules/common/img/company-business-establishtime_cf8ff33.svg"/></i><span>成立时间</span></div>
+                <div class="content">2014-12-26</div>
+            </div>
+            <div class="info_item">
+                <div class="info_item_title"><i><img src="//www.lgstatic.com/www/static/company-c/modules/common/img/company-business-money_416d259.svg" /></i><span>注册资本</span>
+                </div>
+                <div class="content">30000万人民币</div>
+            </div>
+
+            <div class="info_item">
+                <div class="info_item_title"><i><img src="images/publisher/phone-outline.png"/></i><span>联系方式</span></div>
+                <div class="content">17739761149</div>
+            </div>
+            <!--&lt;!&ndash; companyInfo.id &ndash;&gt;
+            <div class="info-more">
+                <img src="//www.lgstatic.com/www/static/company-c/modules/common/img/eye_6053086.png" alt="天眼查" class="info-more-logo"/>
+                <a href="https://www.tianyancha.com/company/2327126166" rel="nofollow" class="info-more-link" target="_blank">查看更多</a>
+            </div>-->
+
+        </div>
+
+        <div class="tags_container item_container" id="tags_container">
+            <div class="item_ltitle">公司标签</div>
+            <div class="tags_warp">
+                <div class="item_content">
+                    <ul class="item_con_ul clearfix">
+                        <li class="con_ul_li">
+                            年终奖金
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 页面主体END -->
+<!-- footer <-->
+<a id="backtop" title="回到顶部" rel="nofollow"></a>
+
+<div id="footer">
+    <div class="wrapper">
+        <div class="inner_wrapper">
+            <div class="footer_module_right">
+                <div class="footer_module_business">
+                    <p class="footer_module_title">企业服务</p>
+                    <a href="#" target="_blank" rel="nofollow">抢包宝典</a>
+                    <a href="#" target="_blank" rel="nofollow">公司搜索</a>
+                </div>
+                <div class="footer_module_business">
+                    <p class="footer_module_title">用户帮助</p>
+                    <a href="#" target="_blank" rel="nofollow">帮助中心</a>
+                    <a href="#" target="_blank" rel="nofollow">用户服务协议</a>
+                    <a href="#" target="_blank" rel="nofollow">隐私政策</a>
+                </div>
+                <div class="footer_module_business">
+                    <p class="footer_module_title">合作伙伴</p>
+                    <a href="#" target="_blank" rel="nofollow">腾讯云</a>
+                    <a href="#" target="_blank" rel="nofollow">阿里云</a>
+                    <a href="#" target="_blank" rel="nofollow">Gitlab</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="copyright_main">
+                <div class="copyright_main_left">
+                    <span class="copyright_title"><em>&copy;</em>2018 助力烨</span>
+                    <a target="_blank" href="#" rel="nofollow">京ICP备14023790号-2</a>
+                    <a target="_blank" class="footer_gongan" href="#" rel="nofollow"><i class="footer_lagou_gongan"></i>京公网安备
+                        11010802024043号</a>
+                    <div class="footer_lagou_jubao">
+                        <i class="lagou_jubao"></i>
+                        <p>
+                            <span>违法和不良信息举报</span>
+                            <span>电话: 4000400040000</span>
+                            <span>邮箱: cc@zhuliye.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
