@@ -83,6 +83,9 @@
  *
  * */
 $(document).ready(function(){
+	$.post("getName", function (data) {
+		$("#d_name").append(data.message);
+	});
 
     $.post("showList", function (data, staus) {
         for (var i = 0; i < data.length; i++) {
@@ -124,12 +127,12 @@ $(document).ready(function(){
                                     +'<div class="clearfix pli_top_l">'
                                         +'<div class="position_name fl">'
                                            +'<h2 class="dib clearfix">'
-                                                +'<a href="#" target="_blank" class="position_link fl wordCut"'
-                                                   +'data-index="8">'+data.data[i].pname+'</a>'
+                                                +'<a href="taskdetails?rid='+data.data[i].rid+'"+ target="_blank" class="position_link fl wordCut"'
+                                                   +'data-index="8" >'+data.data[i].pname+'</a>'
                                             +'</h2>'
                                             +'<span class="dib create-time">&ensp;&ensp;&ensp;'+data.data[i].tdate+'&ensp;</span>'
                                         +'</div>'
-                                        +'<span class="salary fr" style="margin-right: 20%;">'+data.data[i].pmoney+'元</span>'
+                                        +'<span class="salary fr" style="margin-right: 20%;">'+data.data[i].pmoney+'</span>'
                                    +'</div>'
                                    +'<div class="position_main_info wordCut">'
                                         +'<span>任务完成时限：'+data.data[i].findate+'</span>'
@@ -157,7 +160,7 @@ $(document).ready(function(){
                         +'<div class="top">'
                            +'<p><a href="#"><img src="http://www.yinggoo.com/resources/images/favicon.ico" alt="公司logo" width="80" height="80"></a></p>'
                             +'<h3 class="company-name wordCut">'
-                                +'<a href="#">'+data.data[i].tname+'</a></h3>'
+                                +'<a href="publisherdetails?tid='+data.data[i].taskcount+'" target="_blank">'+data.data[i].tname+'</a></h3>'
                             +'<h4 class="indus-stage wordCut">'
                                 +'<span>擅长方面</span>'
                                +'<span>'+data.data[i].tasktype+'</span>'
@@ -193,4 +196,9 @@ $(document).ready(function(){
     });
     
 });
+function uid(data){
+	$.get("list?uid="+data, function (data, staus) {
+		alert("sul");
+	});
+};
     

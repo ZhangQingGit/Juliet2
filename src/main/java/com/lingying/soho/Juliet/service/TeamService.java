@@ -25,4 +25,10 @@ public interface TeamService {
      * @return
      */
     List<TeamV> show();
+    /**
+     * 根据id查用户名
+     * @param uid
+     * @return
+     */
+    String getNameById(Integer uid);
 }

@@ -18,5 +18,10 @@ public class TaskServiceImpl implements TaskService {
     public List<TaskV> showByLimit() {
         return task.findByLimit();
     }
+    
+    @Override
+    public Task taskDatails(Integer rid) {
+        return task.findById(rid);
+    }
 
 }

@@ -21,4 +21,5 @@ public interface CompanyMapper {
     Integer companyReg(@Param("cname") String cname
             , @Param("synopsis") String synopsis
             , @Param("uid") Integer uid);
+    
 }
