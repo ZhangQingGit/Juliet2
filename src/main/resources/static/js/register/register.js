@@ -75,21 +75,7 @@ function emailCode(val) {
         $('#error-email').show();
         return false;
     }
-    if (countdown == 0) {
-        val.removeAttribute("disabled");
-        $('#email-code-register').css("color","#00B38A");
-        val.value="获取验证码";
-        countdown = 60;
-    } else {
-        val.setAttribute("disabled", true);
-        $('#email-code-register').css("width","70px");
-        $('#email-code-register').css("color","gray");
-        val.value = ""+countdown+"s";
-        countdown--;
-        setTimeout(function () {
-            emailCode(val)
-        }, 1000)
-    }
+    countDown(val);
 	$.post("email",{email:email},function(data,statu){
 		alert(data.message);
 	});
@@ -162,26 +148,36 @@ function phoneCode(val) {
         $('#error-phone').show();
         return false;
     }
-    if (countdown == 0) {
-        val.removeAttribute("disabled");
-        $('#phone-code-register').css("color","#00B38A");
-        val.value="获取验证码";
-        countdown = 60;
-    } else {
-        val.setAttribute("disabled", true);
-        $('#phone-code-register').css("width","70px");
-        $('#phone-code-register').css("color","gray");
-        val.value = ""+countdown+"s";
-        countdown--;
-        setTimeout(function () {
-            phoneCode(val)
-        }, 1000)
-    }
+    countDown(val);
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);
     });
 }
 
+/**
+ * 60秒倒计时的方法
+ * @param val
+ */
+function countDown(val) {
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        $('#email-code-register').css("color","#00B38A");
+        $('#phone-code-register').css("color","#00B38A");
+        val.value="获取验证码";
+        countdown = 60;
+    } else {
+        val.setAttribute("disabled", true);
+        $('#email-code-register').css("width","70px");
+        $('#email-code-register').css("color","gray");
+        $('#phone-code-register').css("width","70px");
+        $('#phone-code-register').css("color","gray");
+        val.value = ""+countdown+"s";
+        countdown--;
+        setTimeout(function () {
+            countDown(val)
+        }, 1000)
+    }
+}
 /*
 * 用户手机验证码注册的方法
 * */

@@ -83,6 +83,17 @@ function phoneCode(val) {
         $('#error-phone').show();
         return false;
     }
+    demotest(val)
+    $.post("phone",{phone:phone},function(data,statu){
+        alert(data.message);
+    });
+}
+
+/**
+ * 60秒倒计时的方法
+ * @param val
+ */
+function countDown(val) {
     if (countdown == 0) {
         val.removeAttribute("disabled");
         $('#phone-code-login').css("color","#00B38A");
@@ -95,12 +106,9 @@ function phoneCode(val) {
         val.value = ""+countdown+"s";
         countdown--;
         setTimeout(function () {
-            phoneCode(val)
+            countDown(val)
         }, 1000)
     }
-    $.post("phone",{phone:phone},function(data,statu){
-        alert(data.message);
-    });
 }
 /**
  * 用户手机验证码登陆的方法
