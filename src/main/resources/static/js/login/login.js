@@ -83,7 +83,7 @@ function phoneCode(val) {
         $('#error-phone').show();
         return false;
     }
-    demotest(val)
+    countDown(val)
     $.post("phone",{phone:phone},function(data,statu){
         alert(data.message);
     });
