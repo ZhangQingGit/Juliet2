@@ -62,7 +62,7 @@
 }
 
 #register-phone-form{
-    display: none;
+    /*display: none;*/
 }
 
 .layui-btn {
@@ -74,6 +74,7 @@
 
 #register-left{
     width: 320px;
+    height: 330px;
     margin-left: 30px;
     border-right: 1px dashed #00B38A;
     float: left;

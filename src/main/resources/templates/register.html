@@ -7,10 +7,11 @@
     <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/register/register.css">
-
+    <link rel="stylesheet" href="css/public/tab.css">
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="layui/layui.js"></script>
+    <script src="js/public/tab.js"></script>
 </head>
 <body>
 <div class="bg"></div>
@@ -19,98 +20,107 @@
     <div class="register" id="register">
 
         <div id="register-left">
-            <!-- 上方切换登录方式的ul-->
-            <div id="register-ul">
-                <ul>
-                    <li id="email-register" class="selected" onclick="emailRegisterLi()">邮箱注册</li>
-                    <li id="phone-register" onclick="phonelRegisterLi()">手机注册</li>
-                </ul>
+            <div class="tabbox">
+                <div class="tab">
+                    <a href="javascript:;" class="on">邮箱注册</a>
+                    <a href="javascript:;">手机注册</a>
+                </div>
+                <div class="content" style="height: 350px;">
+                    <ul>
+                        <li>
+                            <!-- 邮箱注册的表单 -->
+                            <form class="layui-form" id="register-email-form" action="reg" method="post">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <input type="tel" name="username"  autocomplete="off"
+                                                   class="layui-input" placeholder="请输入常用邮箱" id="useremail">
+                                        </div><br>
+                                        <span id="error-email"><img src="images/login/sigh.jpg">请输入邮箱</span>
+                                        <span id="error-email-format"><img src="images/login/sigh.jpg">您的邮箱格式不正确</span>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <input type="password" name="password" lay-verify="pass" autocomplete="off"
+                                                   class="layui-input" placeholder="请输入密码" id="useremailpassword">
+                                        </div><br>
+
+                                        <span id="error-email-password"><img src="images/login/sigh.jpg">请输入密码</span>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="code" lay-verify="email" autocomplete="off"
+                                                   placeholder="请输入验证码" id="useremailcode">
+                                        </div>
+                                        <input id="email-code-register" type="button" value="获取验证码" onclick="return emailCode(this)"><br>
+                                        <span id="error-email-code"><img src="images/login/sigh.jpg">请输入验证码</span>
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="radio" name="usertype" value="1" title="我要发包" checked="">
+                                        <input type="radio" name="usertype" value="2" title="我要接包">
+                                    </div>
+                                    <span id="error-email-type"><img src="images/login/sigh.jpg">请选择您的身份</span>
+                                </div>
+                                <button type="submit" class="layui-btn" onclick="return emailRegister()">注册</button>
+                            </form>
+                        </li>
+
+                        <li>
+                            <!-- 手机注册的表单 -->
+                            <form class="layui-form" id="register-phone-form" action="reg" method="post">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <input type="tel" name="username" lay-verify="required|phone" autocomplete="off"
+                                                   class="layui-input" placeholder="请输入常用手机号" id="userphone">
+                                        </div><br>
+                                        <span id="error-phone"><img src="images/login/sigh.jpg">请输入常用手机号</span>
+                                        <span id="error-phone-format"><img src="images/login/sigh.jpg">您的手机号格式不对</span>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <input type="password" name="password" lay-verify="pass" autocomplete="off"
+                                                   class="layui-input" placeholder="请输入密码" id="userphonepassword">
+                                        </div><br>
+
+                                        <span id="error-phone-password"><img src="images/login/sigh.jpg">请输入密码</span>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="code" lay-verify="email" autocomplete="off"
+                                                   placeholder="请输入验证码" id="userphonecode">
+                                        </div>
+                                        <input id="phone-code-register" type="button" value="获取验证码" onclick="return phoneCode(this)"><br>
+                                        <span id="error-phone-code"><img src="images/login/sigh.jpg">请输入验证码</span>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block" >
+                                        <input type="radio" name="usertype" value="1" title="我要发包" checked="">
+                                        <input type="radio" name="usertype" value="2" title="我要接包">
+                                    </div>
+                                    <span id="error-phone-type"><img src="images/login/sigh.jpg">请选择您的身份</span>
+                                </div>
+                                <button type="submit" class="layui-btn" onclick="return phonelRegister()">注册</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
             <h5 th:text="${msg}" style="color: #FD482C"></h5>
-            <!-- 邮箱注册的表单 -->
-            <form class="layui-form" id="register-email-form" action="reg" method="post">
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <input type="tel" name="username"  autocomplete="off"
-                                   class="layui-input" placeholder="请输入常用邮箱" id="useremail">
-                        </div><br>
-                        <span id="error-email"><img src="images/login/sigh.jpg">请输入邮箱</span>
-                        <span id="error-email-format"><img src="images/login/sigh.jpg">您的邮箱格式不正确</span>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <input type="password" name="password" lay-verify="pass" autocomplete="off"
-                                   class="layui-input" placeholder="请输入密码" id="useremailpassword">
-                        </div><br>
 
-                        <span id="error-email-password"><img src="images/login/sigh.jpg">请输入密码</span>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <input type="text" name="code" lay-verify="email" autocomplete="off"
-                                   placeholder="请输入验证码" id="useremailcode">
-                        </div>
-                        <input id="email-code-register" type="button" value="获取验证码" onclick="return emailCode(this)"><br>
-                        <span id="error-email-code"><img src="images/login/sigh.jpg">请输入验证码</span>
-                    </div>
-                </div>
-
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <input type="radio" name="usertype" value="1" title="我要发包" checked="">
-                        <input type="radio" name="usertype" value="2" title="我要接包">
-                    </div>
-                    <span id="error-email-type"><img src="images/login/sigh.jpg">请选择您的身份</span>
-                </div>
-                <button type="submit" class="layui-btn" onclick="return emailRegister()">注册</button>
-            </form>
-
-            <!-- 手机注册的表单 -->
-            <form class="layui-form" id="register-phone-form" action="reg" method="post">
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <input type="tel" name="username" lay-verify="required|phone" autocomplete="off"
-                                   class="layui-input" placeholder="请输入常用手机号" id="userphone">
-                        </div><br>
-                        <span id="error-phone"><img src="images/login/sigh.jpg">请输入常用手机号</span>
-                        <span id="error-phone-format"><img src="images/login/sigh.jpg">您的手机号格式不对</span>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <input type="password" name="password" lay-verify="pass" autocomplete="off"
-                                   class="layui-input" placeholder="请输入密码" id="userphonepassword">
-                        </div><br>
-
-                        <span id="error-phone-password"><img src="images/login/sigh.jpg">请输入密码</span>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <input type="text" name="code" lay-verify="email" autocomplete="off"
-                                   placeholder="请输入验证码" id="userphonecode">
-                        </div>
-                        <input id="phone-code-register" type="button" value="获取验证码" onclick="return phoneCode(this)"><br>
-                        <span id="error-phone-code"><img src="images/login/sigh.jpg">请输入验证码</span>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block" >
-                        <input type="radio" name="usertype" value="1" title="我要发包" checked="">
-                        <input type="radio" name="usertype" value="2" title="我要接包">
-                    </div>
-                    <span id="error-phone-type"><img src="images/login/sigh.jpg">请选择您的身份</span>
-                </div>
-                <button type="submit" class="layui-btn" onclick="return phonelRegister()">注册</button>
-            </form>
         </div>
 
         <div id="register-right">
