@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lingying.soho.Juliet.entity.Team;
 import com.lingying.soho.Juliet.entity.TeamV;
 import com.lingying.soho.Juliet.mapper.TeamMapper;
 import com.lingying.soho.Juliet.service.TeamService;
@@ -18,6 +19,7 @@ public class TeamServiceImpl implements TeamService {
             Integer taskcount, Integer fintask) {
         return mapper.teamReg(tname, experience, uid, temail, tphone, tasktype, taskcount, fintask);
     }
+    
     @Override
     public List<TeamV> show() {
         List<TeamV> list = mapper.findByLimit();
@@ -29,6 +31,15 @@ public class TeamServiceImpl implements TeamService {
             }
         }
         return list;
+    }
+    
+    @Override
+    public String getNameById(Integer uid) {
+        Team team = mapper.findByUid(uid);
+        if(team!=null) {
+            return team.getTname();
+        }
+        return null;
     }
 
 }

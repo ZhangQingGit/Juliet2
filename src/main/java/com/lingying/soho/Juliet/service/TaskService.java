@@ -11,4 +11,9 @@ public interface TaskService {
      * @return
      */
     List<TaskV> showByLimit();
+    /**
+     * 任务详情页
+     * @return
+     */
+    Task taskDatails(Integer rid);
 }

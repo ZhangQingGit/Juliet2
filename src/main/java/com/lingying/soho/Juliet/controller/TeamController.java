@@ -27,7 +27,7 @@ public class TeamController {
             Integer i = teamService.teamReg(tname, experience, uid, temail, tphone, tasktype, 0, 0);
             session.removeAttribute("uid");
             if(i==1) {
-                return "indetal";
+                return "login";
             }
         }
          return "perfect";
@@ -39,4 +39,5 @@ public class TeamController {
         List<TeamV> list = teamService.show();
         return new ResponseResult<>(200,list);
     }
+    
 }

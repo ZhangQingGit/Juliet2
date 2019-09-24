@@ -42,4 +42,14 @@ public class ReturnConroller {
         
         return "perfect";
     }
+    @RequestMapping("taskdetails")
+    public String taskdetails() {
+        
+        return "taskdetails";
+    }
+    @RequestMapping("publisherdetails")
+    public String publisherdetails() {
+        
+        return "publisherdetails";
+    }
 }

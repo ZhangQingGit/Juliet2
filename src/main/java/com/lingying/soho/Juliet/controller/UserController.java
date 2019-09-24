@@ -14,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lingying.soho.Juliet.service.CompanyService;
+import com.lingying.soho.Juliet.service.TeamService;
 import com.lingying.soho.Juliet.service.UserService;
 import com.lingying.soho.Juliet.util.Randoms;
 import com.lingying.soho.Juliet.util.ResponseResult;
@@ -25,6 +27,10 @@ public class UserController {
     
     @Autowired
     private UserService userService;
+    @Autowired
+    private TeamService teamService;
+    @Autowired
+    private CompanyService companyService;
    
     @RequestMapping("login")
     public String login(String username, String password, Model model, HttpSession session) {
@@ -42,6 +48,7 @@ public class UserController {
                     Integer isHave = userService.findToExit(uid);
                     //如果有就进首页，没有进信息完善页
                     if(isHave==1) {
+                        session.setAttribute("uid", uid);
                         return "indetal";
                     }
                     session.setAttribute("uid", uid);
@@ -133,6 +140,22 @@ public class UserController {
         MsgUtil.msgUtil(phone, key);
         session.setAttribute(phone, key);
         return new ResponseResult<>(201, "验证码已发送！");
+    }
+    
+    @RequestMapping("getName")
+    @ResponseBody
+    public ResponseResult<String> getName(HttpSession session){
+        Object uid = session.getAttribute("uid");
+        if(uid!=null) {
+            String teamname = teamService.getNameById((int)uid);
+            if(teamname!=null) {
+                return new ResponseResult<>(200,teamname);
+            }else {
+             String company = companyService.getNameById((int)uid);
+                 return new ResponseResult<>(200,company);
+            }
+        }
+        return new ResponseResult<>(200,"UnName");
     }
     
 }
