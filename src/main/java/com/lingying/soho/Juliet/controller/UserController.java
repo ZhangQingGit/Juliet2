@@ -75,6 +75,7 @@ public class UserController {
                // 执行登录
                try {
                    subject.login(token);
+                   //remove session中的验证码
                    session.removeAttribute(username);
                    //根据用户名查id
                    Integer uid = userService.findId(username);
@@ -82,6 +83,7 @@ public class UserController {
                    Integer isHave = userService.findToExit(uid);
                    //如果有就进首页，没有进信息完善页
                    if(isHave==1) {
+                       session.setAttribute("uid", uid);
                        return "indetal";
                    }
                    session.setAttribute("uid", uid);
@@ -94,7 +96,7 @@ public class UserController {
                    model.addAttribute("msg", "密码错误！");
                }
            }
-           model.addAttribute("msg", "请获取验证码！");
+           model.addAttribute("msg", "未验证码或该手机注册！");
        }
         return "login";
    }
@@ -139,6 +141,7 @@ public class UserController {
         String key = Randoms.randomInt();
         MsgUtil.msgUtil(phone, key);
         session.setAttribute(phone, key);
+        System.err.println("手机号为："+phone +"验证码为："+key);
         return new ResponseResult<>(201, "验证码已发送！");
     }
     
