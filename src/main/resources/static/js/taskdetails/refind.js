@@ -7,16 +7,30 @@ function GetRequest() {
 //      alert(strs[1]);          //直接弹出第一个参数 （如果有多个参数 还要进行循环的）
       rid = strs[1];
 	   }
+	var d_name;
 	$.post("getName", function (data) {
 		$("#d_name").append(data.message);
+		d_name = data.message;
 	});
+	
 	$.post("/task/datails",{rid:rid},function(data){
-		console.log(data);
 		$("#d_pname").append(data.data.pname);
 		$("#d_cname").append(data.data.cname);
 		$("#d_pmoney").append(data.data.pmoney);
 		$("#d_findate").append(data.data.findate);
 		$("#d_tasktype").append(data.data.tasktype);
 		$("#d_psynopsis").append(data.data.psynopsis);
+		
+		$("#want").click(function(){
+			$.post("bid_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
+				alert(data.message);
+			});
+		});
+		
+		$("#notwant").click(function(){
+			$.post("del_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
+				alert(data.message);
+			});
+		});
 	});
 }

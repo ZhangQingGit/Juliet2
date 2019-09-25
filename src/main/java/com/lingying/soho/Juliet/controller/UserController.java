@@ -141,7 +141,6 @@ public class UserController {
         String key = Randoms.randomInt();
         MsgUtil.msgUtil(phone, key);
         session.setAttribute(phone, key);
-        System.err.println("手机号为："+phone +"验证码为："+key);
         return new ResponseResult<>(201, "验证码已发送！");
     }
     
