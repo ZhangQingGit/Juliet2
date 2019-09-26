@@ -1,0 +1,142 @@
+<html lang="en" class="login_page">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>助力烨</title>
+
+    <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
+    <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/release/releasetask.css">
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="layui/layui.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/release/releasetask.js"></script>
+</head>
+<body>
+<div class="bg"></div>
+<div class=body>
+
+    <div class="login" id="login">
+        <!-- 下一步，下一步 -->
+        <div id="step1" >
+            <div class="panel-heading">
+                <h1 class="panel-title">任务基本信息</h1>
+            </div>
+            <div class="panel-body">
+                <form class="layui-form" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="text" name="cname" autocomplete="off" class="layui-input"
+                                       placeholder="请输入公司名/个人真实姓名" id="cname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="email" name="cemail" lay-verify="email" autocomplete="off" class="layui-input"
+                                       placeholder="请输入联系邮箱" id="cemail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="text" name="pname" autocomplete="off" class="layui-input"
+                                       placeholder="请输入任务名" id="pname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-top: 20px;">
+                        <div class="layui-input-inline">
+                            <select name="tasktype" lay-verify="required" lay-search="" id="tasktype">
+                                <option value="">请选择任务类型或直接搜索</option>
+                                <option value="1">APP</option>
+                                <option value="2">小程序</option>
+                                <option value="3">web网站</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="email" name="pmoney" autocomplete="off" class="layui-input"
+                                       placeholder="请输入任务报价(单位:元)" id="pmoney">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="email" name="findate" autocomplete="off" class="layui-input"
+                                       placeholder="请输入任务预期(单位:天)" id="findate">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="layui-btn">上一步</button>
+                    <button type="button" class="layui-btn" onclick="getnext('step2')">下一步</button>
+                </form>
+            </div>
+        </div>
+        <div id="step2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h1 class="panel-title">任务简单描述</h1>
+                </div>
+                <div class="panel-body">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item layui-form-text">
+                            <div class="layui-input-block">
+                                <textarea name="psynopsis" placeholder="请输入任务简单描述" class="layui-textarea" id="psynopsis"></textarea>
+                            </div>
+                        </div>
+                        <button type="button" class="layui-btn" onclick="getnext('step1')">上一步</button>
+                        <button type="button" class="layui-btn" onclick="getnext('step3')">下一步</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="step3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h1 class="panel-title">任务需求功能</h1>
+                </div>
+                <div class="panel-body">
+                    <form class="layui-form layui-form-pane" action="">
+                        <div class="layui-form-item" id="last-demand1">
+                            <label class="layui-form-label" style="width: 60px" id="label1">1.</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input"
+                                       placeholder="例如:用户基本登录注册功能(下面以此类推)" id="demand1">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" id="last-demand2">
+                            <label class="layui-form-label" style="width: 60px" id="label2">2.</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input"
+                                       placeholder="例如:用户基本登录注册功能(下面以此类推)" id="demand2">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" id="last-demand3">
+                            <label class="layui-form-label" style="width: 60px" id="label3">3.</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input"
+                                       placeholder="例如:用户基本登录注册功能(下面以此类推)" id="demand3">
+                            </div>
+                        </div>
+                        <button type="button" class="layui-btn" onclick="getMore()">不够用？我懂你！</button><br>
+                        <button type="button" class="layui-btn" onclick="getnext('step2')">上一步</button>
+                        <button type="button" class="layui-btn" onclick="demandDemo()">完成</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
