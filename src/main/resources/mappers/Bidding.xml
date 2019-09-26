@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+    "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+   
+<mapper namespace="com.lingying.soho.Juliet.mapper.Bid_RelationMapper">
+
+    <insert id="addRelation">
+    INSERT INTO bid_relation(
+            tname,pname,cname
+        ) VALUES (
+            #{tname},#{pname},#{cname}
+        )
+    </insert>
+    
+    <select id="findExist" resultType="com.lingying.soho.Juliet.entity.Bid_Relation">
+        SELECT
+            *
+        FROM
+            bid_relation
+        WHERE
+            cname=#{cname} and pname=#{pname} and tname=#{tname}
+    </select>
+    
+    <delete id="delRelation">
+        DELETE FROM
+            bid_relation
+        WHERE
+            cname=#{cname} and pname=#{pname} and tname=#{tname}
+    </delete>
+
+
+</mapper>

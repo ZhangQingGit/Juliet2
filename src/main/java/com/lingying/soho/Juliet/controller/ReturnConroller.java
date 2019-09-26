@@ -52,4 +52,10 @@ public class ReturnConroller {
         
         return "publisherdetails";
     }
+
+    @RequestMapping("tasklist")
+    public String tasklist() {
+
+        return "tasklist";
+    }
 }

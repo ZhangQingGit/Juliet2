@@ -28,9 +28,16 @@ public class TaskController extends BaseController {
     @RequestMapping("datails")
     @ResponseBody
     public ResponseResult<Task> showDatails(Integer rid){
+        
         Task task = taskService.taskDatails(rid);
         
         return new ResponseResult<>(SUCCESS, task);
+    }
+    
+    @RequestMapping("bidding")
+    @ResponseBody
+    public ResponseResult<String> taskBidding(){
+        return null;
     }
 }
 

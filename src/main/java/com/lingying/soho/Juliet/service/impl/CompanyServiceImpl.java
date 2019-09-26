@@ -1,22 +1,24 @@
 package com.lingying.soho.Juliet.service.impl;
 
+import com.lingying.soho.Juliet.entity.CompanyV;
+import com.lingying.soho.Juliet.mapper.CompanyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lingying.soho.Juliet.entity.Company;
-import com.lingying.soho.Juliet.mapper.CompanyMapper;
 import com.lingying.soho.Juliet.service.CompanyService;
 @Service
 public class CompanyServiceImpl implements CompanyService {
 
     @Autowired
     private CompanyMapper mapper;
+
+
     @Override
-    public Integer companyReg(String cname, String synopsis, Integer uid) {
-        
-        return mapper.companyReg(cname, synopsis, uid);
+    public Integer companyReg(String cname, String synopsis, Integer uid, String cemail, String cphone, String involve, String homepage, String capital) {
+        return mapper.companyReg(cname, synopsis, uid, cemail, cphone, involve,homepage, capital);
     }
-    
+
     @Override
     public String getNameById(Integer uid) {
         Company company = mapper.findByUid(uid);
@@ -24,6 +26,11 @@ public class CompanyServiceImpl implements CompanyService {
             return company.getCname();
         }
         return null;
+    }
+
+    @Override
+    public CompanyV taskShow(String cname) {
+        return mapper.getComByName(cname);
     }
 
 }
