@@ -5,9 +5,9 @@
 <mapper namespace="com.lingying.soho.Juliet.mapper.CompanyMapper">
     <insert id="companyReg">
         INSERT INTO
-            company(cname,synopsis,uid)
+            company(cname, synopsis, uid, cemail, cphone, involve, homepage, capital)
         VALUE
-            (#{cname},#{synopsis},#{uid})
+            (#{cname},#{synopsis},#{uid},#{cemail},#{cphone},#{involve},#{homepage},#{capital})
     </insert>
     
     <select id="findByUid" resultType="com.lingying.soho.Juliet.entity.Company">
@@ -17,5 +17,14 @@
             company
         WHERE
             uid=#{uid}
+    </select>
+
+    <select id="getComByName" resultType="com.lingying.soho.Juliet.entity.CompanyV">
+        SELECT
+            cname, cemail, cphone, involve, homepage, capital
+        FROM
+            company
+        WHERE
+            cname=#{cname}
     </select>
 </mapper>

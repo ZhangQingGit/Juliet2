@@ -16,13 +16,4 @@ public class UserTset {
     @Autowired
     private UserService service;
 
-    @Test
-    public void reg() {
-        String username = "643164399@qq.com";
-        String password = "123456";
-        Integer usertype = 1;
-        
-        Integer i=service.register(username, password, usertype);
-        System.out.println(i);
-    }
 }

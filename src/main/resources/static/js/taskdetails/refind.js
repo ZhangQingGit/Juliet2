@@ -13,13 +13,26 @@ function GetRequest() {
 		d_name = data.message;
 	});
 	
-	$.post("/task/datails",{rid:rid},function(data){
+	$.post("/task/datails",{rid:rid},function(data) {
 		$("#d_pname").append(data.data.pname);
 		$("#d_cname").append(data.data.cname);
 		$("#d_pmoney").append(data.data.pmoney);
 		$("#d_findate").append(data.data.findate);
 		$("#d_tasktype").append(data.data.tasktype);
 		$("#d_psynopsis").append(data.data.psynopsis);
+
+		$.post("taskShow", {cname: data.data.cname}, function (json) {
+			$("#c_name").append(json.data.cname);
+			$("#c_involve").append(json.data.involve);
+			$("#c_email").append(json.data.cemail);
+			$("#c_phone").append(json.data.cphone);
+			$("#c_capital").append(json.data.capital);
+			$("#c_homepage").append('<i class="icon-glyph-home"></i>'
+				+'<a href="http://'+json.data.homepage+'" target="_blank"'
+			+'rel="nofollow"><h4 class="c_feature_name">'+json.data.homepage+'</h4></a>');
+		});
+
+
 		
 		$("#want").click(function(){
 			$.post("bid_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
