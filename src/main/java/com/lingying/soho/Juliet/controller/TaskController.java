@@ -2,6 +2,7 @@ package com.lingying.soho.Juliet.controller;
 
 import java.util.List;
 
+import com.lingying.soho.Juliet.entity.TaskList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +39,13 @@ public class TaskController extends BaseController {
     @ResponseBody
     public ResponseResult<String> taskBidding(){
         return null;
+    }
+
+    @RequestMapping("taskList")
+    @ResponseBody
+    public ResponseResult<List<TaskList>> taskList(){
+        List<TaskList> list = taskService.taskList();
+        return new ResponseResult<>(200,list);
     }
 }
 

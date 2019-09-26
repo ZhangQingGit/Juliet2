@@ -2,6 +2,7 @@ package com.lingying.soho.Juliet.mapper;
 
 import java.util.List;
 
+import com.lingying.soho.Juliet.entity.TaskList;
 import org.apache.ibatis.annotations.Param;
 
 import com.lingying.soho.Juliet.entity.Task;
@@ -41,5 +42,10 @@ public interface TaskMapper {
      * @return
      */
     List<TaskV> findByLimit();
-    
+
+    /**
+     * 搜索时默认显示
+     * @return
+     */
+    List<TaskList> taskList();
 }

@@ -39,5 +39,15 @@
         LIMIT 0,6
     </select>
 
+    <select id="taskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
+        SELECT
+            task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve
+        from
+            task,company
+        WHERE
+             task.cname=company.cname
+        limit 0,10;
+    </select>
+
 
 </mapper>

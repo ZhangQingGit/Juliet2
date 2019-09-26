@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/tasklist/tasklist04.css"/>
     <link rel="stylesheet" type="text/css" href="css/tasklist/tasklist05.css"/>
 
+    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 
@@ -319,59 +320,9 @@
             <!-- 职位列表 -->
             <div class="s_position_list " id="s_position_list">
                 <!-- 切换分站 -->
-                <ul class="item_con_list">
-                    <li class="con_list_item default_list" data-index="0" data-positionid="6426324"
-                        data-salary="20k-30k" data-company="神州鹰" data-positionname="资深Java架构师/专家" data-companyid="43990"
-                        data-hrid="14496890" data-adword="9">
-                        <span class="top_icon direct_recruitment"></span>
-                        <div class="list_item_top">
-                            <div class="position">
-                                <div class="p_top">
+                <ul class="item_con_list" id="taskList">
+                <!-- 动态数据 -->
 
-                                    <a class="position_link" href=""
-                                       target="_blank" data-index="0" data-lg-tj-id="8E00" data-lg-tj-no="0101" data-lg-tj-cid="6426324"
-                                       data-lg-tj-abt="dm-csearch-useLayeredDisplay|1"
-                                       data-lg-webtj-_show_id="94f4a332aa5c44bb9976c933014739da"
-                                       data-lg-webtj-_search_type="csearch"
-                                       data-lg-webtj-_content_type="jd">
-                                        <h3>资深Java架构师/专家</h3>
-                                        <span class="add">[<em>厦门·思明区</em>]</span>
-                                    </a>
-                                    <span class="format-time">1天前发布</span>
-                                </div>
-                                <div class="p_bot">
-                                    <div class="li_b_l">
-                                        <span class="money">20k-30k</span>
-                                        <!--<i></i>-->经验5-10年 / 大专
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="company">
-                                <div class="company_name">
-                                    <a href="https://www.lagou.com/gongsi/43990.html" target="_blank"
-                                       data-lg-tj-id="8F00" data-lg-tj-no="0101" data-lg-tj-cid="43990"
-                                       data-lg-tj-abt="dm-csearch-useLayeredDisplay|1">神州鹰</a>
-                                </div>
-                                <div class="industry">
-                                    移动互联网 / D轮及以上 / 150-500人
-                                </div>
-                            </div>
-                            <div class="com_logo">
-                                <a href="https://www.lagou.com/gongsi/43990.html" target="_blank" data-lg-tj-id="8G00"
-                                   data-lg-tj-no="0101" data-lg-tj-cid="43990"
-                                   data-lg-tj-abt="dm-csearch-useLayeredDisplay|1">
-                                    <img src="//www.lgstatic.com/thumbnail_120x120/i/image/M00/02/68/Cgp3O1aONUqAGH5SAAB3k-WEJ10831.png"
-                                         alt="神州鹰" width="60" height="60">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="list_item_bot">
-                            <div class="li_b_l">
-                                <span>架构师</span>
-                            </div>
-                            <div class="li_b_r">“五险一金、节日礼品、年终奖、餐补”</div>
-                        </div>
-                    </li>
                 </ul>
 
                 <!-- 分页 -->
@@ -465,7 +416,7 @@
         </div>
     </div>
 </div>
-
+<script src="js/tasklist/tasklist.js"></script>
 
 </body>
 </html>

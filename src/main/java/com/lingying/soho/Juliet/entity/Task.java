@@ -14,5 +14,6 @@ public class Task {
     private String pmoney;
     private String findate;
     private String tasktype;
+    private String core;
     private String tbidding;
 }

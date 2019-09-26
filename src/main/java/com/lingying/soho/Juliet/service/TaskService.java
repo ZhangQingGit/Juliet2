@@ -3,6 +3,7 @@ package com.lingying.soho.Juliet.service;
 import java.util.List;
 
 import com.lingying.soho.Juliet.entity.Task;
+import com.lingying.soho.Juliet.entity.TaskList;
 import com.lingying.soho.Juliet.entity.TaskV;
 
 public interface TaskService {
@@ -16,4 +17,10 @@ public interface TaskService {
      * @return
      */
     Task taskDatails(Integer rid);
+
+    /**
+     * 搜索默认展示页
+     * @return
+     */
+    List<TaskList> taskList();
 }

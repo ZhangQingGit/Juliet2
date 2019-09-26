@@ -2,6 +2,7 @@ package com.lingying.soho.Juliet.service.impl;
 
 import java.util.List;
 
+import com.lingying.soho.Juliet.entity.TaskList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,11 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Task taskDatails(Integer rid) {
         return task.findById(rid);
+    }
+
+    @Override
+    public List<TaskList> taskList() {
+        return task.taskList();
     }
 
 }

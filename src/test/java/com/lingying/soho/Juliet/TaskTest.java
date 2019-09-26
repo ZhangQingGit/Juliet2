@@ -2,6 +2,7 @@ package com.lingying.soho.Juliet;
 
 import java.util.List;
 
+import com.lingying.soho.Juliet.entity.TaskList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,14 @@ public class TaskTest {
         List<TaskV> t = task.findByLimit();
         for (TaskV task : t) {
             System.err.println(task);
+        }
+    }
+
+    @Test
+    public void taskList(){
+        List<TaskList> list = task.taskList();
+        for (TaskList taskList : list) {
+            System.err.println(taskList);
         }
     }
 }
