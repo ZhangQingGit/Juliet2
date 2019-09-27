@@ -13,8 +13,10 @@
     <link rel="stylesheet" type="text/css" href="css/publisher/publisher04.css"/>
     <link rel="stylesheet" type="text/css" href="css/publisher/publisher05.css"/>
 
+    <script src="js/jquery-3.2.1.min.js"></script>
+
 </head>
-<body>
+<body onload="javascript:GetRequest()">
 
 <!--C端头部通栏广告位-->
 
@@ -101,7 +103,7 @@
                         </a>
                     </li>
                     <li class="user_dropdown" data-lg-tj-track-code="index_user">
-                        <span class="unick">曹鹏辉</span>
+                        <span class="unick" id="d_name"></span>
                         <em class="noticeDot dn" id="noticeDot_name"></em>
                         <i></i>
                         <ul>
@@ -163,36 +165,19 @@
              alt="助力烨Logo" width="164" heihgt="164"/>
         <div class="company_info">
             <div class="company_main">
-                <h2>
-                    <a href="http://www.baidu.com" class="hovertips" target="_blank" rel="nofollow"
-                       title="仟金顶网络科技有限公司">
-                        助力烨
-                    </a>
+                <h2 id="com_main">
+                    <!-- 动态标题 -->
                 </h2>
-                <a href="http://www.baidu.com" class="icon-wrap" target="_blank" rel="nofollow"
-                   title="http://www.baidu.com">
-                    <i></i>
-                </a>
                 <a class="identification tipsys" title="已完成资质认证，并完善了更优质的公司主页信息（以上信息由天眼查提供技术支持）">
                     <i></i>
                     <span>助力烨认证</span>
                 </a>
-                <div class="company_word">
-                    小程序+web网站
+                <div class="company_word" id="com_word">
+                    <!-- involve 涉及领域 -->
                 </div>
             </div>
-            <div class="company_data">
-                <ul>
-                    <li>
-                        <strong>
-                            20个
-                        </strong>
-                        <br/>
-                        <span class="tipsys" original-title="该公司的完成任务数量">
-                            <span>完成任务</span><span class="tip"></span>
-                        </span>
-                    </li>
-                </ul>
+            <div class="company_data" id="taskcount">
+
             </div>
         </div>
     </div>
@@ -205,73 +190,15 @@
     <div id="container_left">
         <div id="containerCompanyDetails">
 
-            <div class="item_container" id="company_intro">
-                <div class="item_ltitle">公司介绍</div>
-                <div class="item_content">
-                    <h3>asdadsad</h3>
 
-                </div>
-            </div>
-
-            <div class="item_container" id="company_project">
-                <div class="item_ltitle">公司项目经历</div>
-                <div class="item_content">
-                    <ul>
-                        <li style="height: 130px;border: 1px solid #E0E0E0;padding-left: 20px">
-                            <h3 style="color: #00B38A">在线日记账网站平台</h3>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
 
         </div>
     </div>
 
     <div id="container_right">
 
-        <div class="company_bussiness_info_container">
-            <div class="title">公司基本信息
-                <div class="slash"></div>
-            </div>
-            <div class="info_item">
-                <div class="info_item_title"><i><img src="//www.lgstatic.com/www/static/company-c/modules/common/img/company-business-companyname_0bd17fb.svg" /></i><span>工商信息</span>
-                </div>
-                <div class="content">仟金顶网络科技有限公司</div>
-            </div>
-            <div class="info_item">
-                <div class="info_item_title"><i><img src="//www.lgstatic.com/www/static/company-c/modules/common/img/company-business-establishtime_cf8ff33.svg"/></i><span>成立时间</span></div>
-                <div class="content">2014-12-26</div>
-            </div>
-            <div class="info_item">
-                <div class="info_item_title"><i><img src="//www.lgstatic.com/www/static/company-c/modules/common/img/company-business-money_416d259.svg" /></i><span>注册资本</span>
-                </div>
-                <div class="content">30000万人民币</div>
-            </div>
 
-            <div class="info_item">
-                <div class="info_item_title"><i><img src="images/publisher/phone-outline.png"/></i><span>联系方式</span></div>
-                <div class="content">17739761149</div>
-            </div>
-            <!--&lt;!&ndash; companyInfo.id &ndash;&gt;
-            <div class="info-more">
-                <img src="//www.lgstatic.com/www/static/company-c/modules/common/img/eye_6053086.png" alt="天眼查" class="info-more-logo"/>
-                <a href="https://www.tianyancha.com/company/2327126166" rel="nofollow" class="info-more-link" target="_blank">查看更多</a>
-            </div>-->
 
-        </div>
-
-        <div class="tags_container item_container" id="tags_container">
-            <div class="item_ltitle">公司标签</div>
-            <div class="tags_warp">
-                <div class="item_content">
-                    <ul class="item_con_ul clearfix">
-                        <li class="con_ul_li">
-                            年终奖金
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
 
     </div>
@@ -325,6 +252,6 @@
     </div>
 </div>
 
-
+<script src="js/publisherdetails/publisherdetails.js"></script>
 </body>
 </html>

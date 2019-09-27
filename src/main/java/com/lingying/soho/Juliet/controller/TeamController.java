@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.lingying.soho.Juliet.entity.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +39,13 @@ public class TeamController {
     public ResponseResult<List<TeamV>> showList(){
         List<TeamV> list = teamService.show();
         return new ResponseResult<>(200,list);
+    }
+
+    @RequestMapping("team_details")
+    @ResponseBody
+    public ResponseResult<Team> details(Integer tid){
+        Team team = teamService.teamDetails(tid);
+        return new ResponseResult<>(200, team);
     }
     
 }

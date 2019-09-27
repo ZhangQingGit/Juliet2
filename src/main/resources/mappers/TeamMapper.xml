@@ -25,11 +25,20 @@
     
     <select id="findByLimit" resultType="com.lingying.soho.Juliet.entity.TeamV">
         SELECT
-            tname,experience,
+            tid,tname,experience,
             tasktype,taskcount,fintask
         FROM
             team
         LIMIT
             0,4
+    </select>
+
+    <select id="findById" resultType="com.lingying.soho.Juliet.entity.Team">
+        SELECT
+            *
+        FROM
+            team
+        WHERE
+            tid=#{tid}
     </select>
 </mapper>

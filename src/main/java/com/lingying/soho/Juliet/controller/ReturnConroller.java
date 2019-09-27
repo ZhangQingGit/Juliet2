@@ -58,4 +58,12 @@ public class ReturnConroller {
 
         return "tasklist";
     }
+
+    @RequestMapping("releasetask")
+    public String releasetask() {
+
+        return "releasetask";
+    }
+
+
 }

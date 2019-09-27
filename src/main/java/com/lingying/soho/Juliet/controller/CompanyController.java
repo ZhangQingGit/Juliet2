@@ -2,6 +2,7 @@ package com.lingying.soho.Juliet.controller;
 
 import javax.servlet.http.HttpSession;
 
+import com.lingying.soho.Juliet.entity.Company;
 import com.lingying.soho.Juliet.entity.CompanyV;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,13 @@ public class CompanyController {
     public ResponseResult<CompanyV> taskShow(String cname){
         CompanyV comv = companyService.taskShow(cname);
         return new ResponseResult<>(200, comv);
+    }
+
+    @RequestMapping("com_details")
+    @ResponseBody
+    public ResponseResult<Company> details(Integer cid){
+        Company company = companyService.findById(cid);
+        return new ResponseResult<>(200, company);
     }
     
 }

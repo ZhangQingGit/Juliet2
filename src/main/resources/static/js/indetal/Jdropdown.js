@@ -160,7 +160,7 @@ $(document).ready(function(){
                         +'<div class="top">'
                            +'<p><a href="#"><img src="http://www.yinggoo.com/resources/images/favicon.ico" alt="公司logo" width="80" height="80"></a></p>'
                             +'<h3 class="company-name wordCut">'
-                                +'<a href="publisherdetails?tid='+data.data[i].taskcount+'" target="_blank">'+data.data[i].tname+'</a></h3>'
+                                +'<a href="publisherdetails?tid='+data.data[i].tid+'" target="_blank">'+data.data[i].tname+'</a></h3>'
                             +'<h4 class="indus-stage wordCut">'
                                 +'<span>擅长方面</span>'
                                +'<span>'+data.data[i].tasktype+'</span>'

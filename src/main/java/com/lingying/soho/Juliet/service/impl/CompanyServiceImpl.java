@@ -33,4 +33,9 @@ public class CompanyServiceImpl implements CompanyService {
         return mapper.getComByName(cname);
     }
 
+    @Override
+    public Company findById(Integer cid) {
+        return mapper.findById(cid);
+    }
+
 }
