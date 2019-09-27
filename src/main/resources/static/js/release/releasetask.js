@@ -42,7 +42,6 @@ layui.use('form', function(){
 var demand=3;
 var j;
 function getMore() {
-    alert("我进来了");
 
     for (var i=demand; i<demand+3;i++){
         console.log(i);
