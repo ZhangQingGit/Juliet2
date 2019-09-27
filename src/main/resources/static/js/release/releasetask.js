@@ -42,12 +42,9 @@ layui.use('form', function(){
 var demand=3;
 var j;
 function getMore() {
-    alert("我进来了");
-
     for (var i=demand; i<demand+3;i++){
-        console.log(i);
+        //console.log(i);
         j=i+1;
-
         $('#last-demand'+i).after("<div class=\"layui-form-item\" id=\"last-demand"+j+"\">\n" +
             "<label class=\"layui-form-label\" style=\"width: 60px\" id=\"label"+j+"\">"+j+".</label>\n" +
             "<div class=\"layui-input-inline\">\n" +
