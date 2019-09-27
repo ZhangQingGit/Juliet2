@@ -38,4 +38,11 @@ public interface CompanyMapper {
      * @return
      */
     CompanyV getComByName(String cname);
+
+    /**
+     * 根据cid查出公司的具体信息进行公司详情页的展示
+     * @param cid
+     * @return
+     */
+    Company findById(Integer cid);
 }

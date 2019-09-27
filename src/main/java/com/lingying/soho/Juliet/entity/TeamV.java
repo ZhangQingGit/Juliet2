@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class TeamV {
+    private Integer tid;
     private String tname;
     private String experience;
     private String tasktype;

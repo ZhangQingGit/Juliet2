@@ -1,5 +1,9 @@
 $(document).ready(function(){
+    $.post("getName", function (data) {
+        $("#d_name").append(data.message);
+    });
     $.post("/task/taskList",function (json) {
+        console.log(json);
         for(var i=0;i<json.data.length;i++){
             $("#taskList").append('<li class="con_list_item default_list">\n' +
                 '                        <span class="top_icon direct_recruitment"></span>\n' +
@@ -14,13 +18,13 @@ $(document).ready(function(){
                 '                                <div class="p_bot">\n' +
                 '                                    <div class="li_b_l">\n' +
                 '                                        <span class="money">金额：'+json.data[i].pmoney+'</span>\n' +
-                '                                        '+json.data[i].psynopsis+'\n' +
+                '                                        '+json.data[i].psynopsis+'\n'+
                 '                                    </div>\n' +
                 '                                </div>\n' +
                 '                            </div>\n' +
                 '                            <div class="company">\n' +
                 '                                <div class="company_name">\n' +
-                '                                   发布人： <a href="" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+json.data[i].cname+'</a>\n' +
+                '                                   发布人： <a href="publisherdetails?cid='+json.data[i].cid+'"  target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+json.data[i].cname+'</a>\n' +
                 '                                </div>\n' +
                 '                                <div class="industry">\n' +
                 '                                    公司注册资金：'+json.data[i].pmoney+'\n' +

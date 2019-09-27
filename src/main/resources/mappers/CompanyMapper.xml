@@ -27,4 +27,13 @@
         WHERE
             cname=#{cname}
     </select>
+
+    <select id="findById" resultType="com.lingying.soho.Juliet.entity.Company">
+        SELECT
+            *
+        FROM
+            company
+        WHERE
+            cid=#{cid}
+    </select>
 </mapper>

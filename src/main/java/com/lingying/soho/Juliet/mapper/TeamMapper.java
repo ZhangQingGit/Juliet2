@@ -41,4 +41,10 @@ public interface TeamMapper {
      * @return
      */
     List<TeamV> findByLimit();
+
+    /**
+     * 个人详情页
+     * @return
+     */
+    Team findById(Integer tid);
 }

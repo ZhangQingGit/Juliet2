@@ -2,6 +2,7 @@ package com.lingying.soho.Juliet.service;
 
 import java.util.List;
 
+import com.lingying.soho.Juliet.entity.Team;
 import com.lingying.soho.Juliet.entity.TeamV;
 
 public interface TeamService {
@@ -31,4 +32,11 @@ public interface TeamService {
      * @return
      */
     String getNameById(Integer uid);
+
+    /**
+     * 个人详情页
+     * @param tid
+     * @return
+     */
+    Team teamDetails(Integer tid);
 }

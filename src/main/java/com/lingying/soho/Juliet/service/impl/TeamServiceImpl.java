@@ -42,4 +42,9 @@ public class TeamServiceImpl implements TeamService {
         return null;
     }
 
+    @Override
+    public Team teamDetails(Integer tid) {
+        return mapper.findById(tid);
+    }
+
 }

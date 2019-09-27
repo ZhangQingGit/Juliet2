@@ -7,6 +7,7 @@ public class TaskList {
     //task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,company.cname,company.involve,company.involve
     private String pname;
     private Integer rid;
+    private Integer cid;
     private String psynopsis;
     private String tasktype;
     private String findate;

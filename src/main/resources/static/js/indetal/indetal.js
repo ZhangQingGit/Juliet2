@@ -8,4 +8,3 @@ layui.use(['carousel', 'form'], function(){
     });
 
 });
-

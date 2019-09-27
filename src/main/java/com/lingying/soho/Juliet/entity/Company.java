@@ -22,6 +22,7 @@ public class Company {
     private Integer uid;
     private String synopsis;
     private String cemail;
+    private String cphone;
     private String involve;
     private String homepage;
     private String capital;
