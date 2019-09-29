@@ -37,4 +37,5 @@ public interface UserMapper {
     Integer PhoneReg(@Param("username") String username
             , @Param("password") String password
             , @Param("usertype") Integer usertype);
+
 }

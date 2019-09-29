@@ -40,5 +40,6 @@
         VALUE
             (#{username},#{password},#{usertype})
     </insert>
+    
 
 </mapper>

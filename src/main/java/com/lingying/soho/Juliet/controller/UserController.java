@@ -3,6 +3,8 @@ package com.lingying.soho.Juliet.controller;
 
 import javax.servlet.http.HttpSession;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+import com.lingying.soho.Juliet.entity.Company;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -159,5 +161,18 @@ public class UserController {
         }
         return new ResponseResult<>(200,"UnName");
     }
-    
+
+    @RequestMapping("findInformationByUid")
+    @ResponseBody
+    public Object findInformationByUid(HttpSession session){
+        Object obj = session.getAttribute("uid");
+        if(obj != null){
+            Integer uid = (Integer) obj;
+            Object object=userService.findInformationByUid(uid);
+            return object;
+        }else {
+            return null;
+        }
+
+    }
 }

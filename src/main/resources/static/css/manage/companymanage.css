@@ -1,0 +1,10 @@
+iframe {
+    width:100%;
+    height: 600px;
+    margin:0 0 1em;
+    border:0;
+}
+
+.layui-nav-child a{
+    cursor: pointer;
+}

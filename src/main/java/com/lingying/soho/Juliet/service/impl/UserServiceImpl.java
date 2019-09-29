@@ -91,4 +91,17 @@ public class UserServiceImpl implements UserService {
         return 0;
     }
 
+    @Override
+    public Object findInformationByUid(Integer uid) {
+        Company company = companyMapper.findByUid(uid);
+        Team team = teamMapper.findByUid(uid);
+        if(company != null) {
+            return company;
+        }
+        if(team != team) {
+            return team;
+        }
+        return null;
+    }
+
 }
