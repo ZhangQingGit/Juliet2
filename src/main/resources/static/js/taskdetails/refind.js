@@ -20,6 +20,7 @@ function GetRequest() {
 		$("#d_findate").append(data.data.findate);
 		$("#d_tasktype").append(data.data.tasktype);
 		$("#d_psynopsis").append(data.data.psynopsis);
+		$("#d_core").append(data.data.core);
 
 		$.post("taskShow", {cname: data.data.cname}, function (json) {
 			$("#c_name").append(json.data.cname);
