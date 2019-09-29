@@ -29,4 +29,6 @@ public interface UserService {
      * @return 1为存在，0为不存在
      */
     Integer findToExit(Integer uid);
+
+    Object findInformationByUid(Integer uid);
 }

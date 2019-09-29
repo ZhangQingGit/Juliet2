@@ -3,22 +3,46 @@ layui.use('element', function(){
 
 });
 
-layui.use('table', function(){
-    var table = layui.table;
+/*function setIframeHeight(iframe) {
+    if (iframe) {
+        var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+        alert(iframeWin.document.body.scrollHeight);
+        if (iframeWin.document.body) {
+            iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+        }
+    }
+};
 
-    table.render({
-        elem: '#test'
-        ,url:'/demo/table/user/'
-        ,cols: [[
-            ,{field:'id', width:50, title: '任务编号', sort: true}
-            ,{field:'pname', title: '任务名称', width: 50}
-            ,{field:'tdate', width:50, title: '发布时间'}
-            ,{field:'psynopsis', width:50, title: '任务描述'}
-            ,{field:'pmoney', width:50, title: '任务报价', sort: true}
-            ,{field:'findate', width:50, title: '任务预期'}
-            ,{field:'tasktype', width:100, title: '任务类型', sort: true}
-            ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
-        ]]
-        ,page: true
-    });
-});
+window.onload = function () {
+    alert("我进来了");
+    setIframeHeight(document.getElementById('crtask'));
+};*/
+
+/**
+ * 发布任务的iframe
+ */
+function crTask() {
+    $('#crtask').attr("src","crtask.html");
+}
+
+/**
+ * 对我有意向的公司iframe
+ */
+function intentionCompany() {
+    $('#crtask').attr("src","intentioncompany.html");
+}
+
+/**
+ * 个人基础信息iframe
+ */
+function basicInformation() {
+    $('#crtask').attr("src","basicinformation.html");
+}
+
+/**
+ * 修改密码iframe
+ */
+function updatePassword() {
+    alert("我进来了");
+    $('#crtask').attr("src","updatepassword.html");
+}

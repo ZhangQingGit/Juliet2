@@ -71,5 +71,9 @@ public class ReturnConroller {
         return "releasetask";
     }
 
+    @RequestMapping("companymanage")
+    public String companymanage() {
 
+        return "companymanage";
+    }
 }
