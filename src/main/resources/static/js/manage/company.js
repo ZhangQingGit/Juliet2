@@ -26,10 +26,10 @@ function crTask() {
 }
 
 /**
- * 对我有意向的公司iframe
+ * 对我有意向的团队iframe
  */
 function intentionCompany() {
-    $('#crtask').attr("src","intentioncompany.html");
+    $('#crtask').attr("src","intentionteam.html");
 }
 
 /**
@@ -43,6 +43,6 @@ function basicInformation() {
  * 修改密码iframe
  */
 function updatePassword() {
-    alert("我进来了");
+    //alert("我进来了");
     $('#crtask').attr("src","updatepassword.html");
 }
