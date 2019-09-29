@@ -16,6 +16,12 @@ public class ReturnConroller {
         
         return "add";
     }
+
+    @RequestMapping("/")
+    public String login() {
+
+        return "login";
+    }
     
     @RequestMapping("updata")
     public String updata() {

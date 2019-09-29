@@ -1,7 +1,9 @@
 package com.lingying.soho.Juliet.mapper;
 
+import java.util.Date;
 import java.util.List;
 
+import com.lingying.soho.Juliet.entity.TaskBasic;
 import com.lingying.soho.Juliet.entity.TaskList;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,18 +21,25 @@ public interface TaskMapper {
      * @param pmoney 项目预定金额
      * @param findate 任务预计完成时间
      * @param tasktype 任务类型
-     * @param tbidding 竞标团队 可以为null
+     * @param core 任务主要功能
      * @return 受影响行数
      */
-    Integer addTask(@Param("cname")String cname
-            ,@Param("cemail")String cemail,
-            @Param("tdate")String tdate
-            ,@Param("pname")String pname,
-            @Param("psynopsis")String psynopsis
-            ,@Param("pmoney")String pmoney,
-            @Param("findate")String findate
-            ,@Param("tasktype")String tasktype,
-            @Param("tbidding")String tbidding);
+    Integer addTask(TaskBasic taskBasic);
+
+    /**
+     * 根据rid修改psynopsis
+     * @param psynopsis
+     * @return
+     */
+    Integer updateTaskById(Integer rid,String psynopsis);
+
+    /**
+     * 根据rid修改core
+     * @param rid
+     * @param core
+     * @return
+     */
+    Integer updateTaskCoreById(Integer rid, String core);
     /**
      * 根据cid 查询一条信息
      * @param cid

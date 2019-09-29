@@ -4,26 +4,43 @@
    
 <mapper namespace="com.lingying.soho.Juliet.mapper.TaskMapper">
 
-    <insert id="addTask">
+    <insert id="addTask" parameterType="com.lingying.soho.Juliet.entity.TaskBasic" useGeneratedKeys="true" keyProperty="rid">
     INSERT INTO task(
            cname,cemail
            ,tdate,pname
-           ,psynopsis,pmoney
-           ,findate,tasktype,tbidding
+           ,pmoney,findate,tasktype
         ) VALUES (
             #{cname},#{cemail},
             #{tdate}, #{pname},
-            #{psynopsis},#{pmoney},
-            #{findate},#{tasktype},#{tbidding}
+            #{pmoney},#{findate},#{tasktype}
         )
     </insert>
+
+    <update id="updateTaskById">
+        UPDATE
+            task
+        SET
+            psynopsis = #{psynopsis}
+        WHERE
+            rid = #{rid}
+    </update>
+
+    <update id="updateTaskCoreById">
+        UPDATE
+            task
+        SET
+            core = #{core}
+        WHERE
+            rid = #{rid}
+    </update>
+
     
     <select id="findById" resultType="com.lingying.soho.Juliet.entity.Task">
         SELECT
             cname,cemail
            ,tdate,pname
            ,psynopsis,pmoney
-           ,findate,tasktype,tbidding
+           ,findate,tasktype,core
         FROM
             task
         WHERE

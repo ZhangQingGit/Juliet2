@@ -18,12 +18,12 @@ function getnext(i){
     var psynopsis=$('#psynopsis').val();
 
     if(i == "step2"){
-        $.post("taskPush",{cname:cname,cemail:cemail,pname:pname,tasktype:tasktype,pmoney:pmoney,
+        $.post("/task/taskPush_One",{cname:cname,cemail:cemail,pname:pname,tasktype:tasktype,pmoney:pmoney,
             findate:findate},function (data,status) {
             console.log(data);
         });
     }else{
-        $.post("taskPush",{psynopsis:psynopsis},function (data,status) {
+        $.post("/task/taskPush_Two",{psynopsis:psynopsis},function (data,status) {
             console.log(data);
         });
     }
@@ -60,21 +60,21 @@ function getMore() {
 }
 
 function demandDemo() {
-    var demandstring="";
+    var core="";
     for (var i=1;i<=demand;i++){
         var demandinput=$('#demand'+i).val();
         //console.log(demandinput);
         if (demandinput != null & demandinput != ""){
             if (i != demand){
-                demandstring=demandstring+""+i+"."+demandinput+";<br>";
+                core=core+""+i+"."+demandinput+";<br>";
             }else {
-                demandstring=demandstring+""+i+"."+demandinput+"。<br>";
+                core=core+""+i+"."+demandinput+"。<br>";
             }
             //console.log(demandstring);
         }
     }
 
-    $.post("taskPush",{demandstring:demandstring},function (data,status) {
+    $.post("/task/taskPush_Three",{core:core},function (data,status) {
         //console.log(data);
     });
 
