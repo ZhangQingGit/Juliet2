@@ -25,7 +25,7 @@ import com.lingying.soho.Juliet.util.Email.EmailUtil;
 import com.lingying.soho.Juliet.util.msg.MsgUtil;
 
 @Controller
-public class UserController {
+public class UserController extends BaseController{
     
     @Autowired
     private UserService userService;
@@ -46,15 +46,8 @@ public class UserController {
                     subject.login(token);
                     //根据用户名查id
                     Integer uid = userService.findId(username);
-                    //根据uid去两个表中查是否有信息
-                    Integer isHave = userService.findToExit(uid);
-                    //如果有就进首页，没有进信息完善页
-                    if(isHave==1) {
-                        session.setAttribute("uid", uid);
-                        return "indetal";
-                    }
                     session.setAttribute("uid", uid);
-                    return "perfect";
+                    return "indetal";
                 } catch (UnknownAccountException e) {
                     //用户名不存在
                     model.addAttribute("msg", "用户名不存在");
@@ -81,15 +74,8 @@ public class UserController {
                    session.removeAttribute(username);
                    //根据用户名查id
                    Integer uid = userService.findId(username);
-                   //根据uid去两个表中查是否有信息
-                   Integer isHave = userService.findToExit(uid);
-                   //如果有就进首页，没有进信息完善页
-                   if(isHave==1) {
-                       session.setAttribute("uid", uid);
-                       return "indetal";
-                   }
                    session.setAttribute("uid", uid);
-                   return "perfect";
+                   return "indetal";
                } catch (UnknownAccountException e) {
                    //用户名不存在
                    model.addAttribute("msg", "用户名不存在");

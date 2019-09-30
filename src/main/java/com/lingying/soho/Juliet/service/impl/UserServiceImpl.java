@@ -79,17 +79,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer findToExit(Integer uid) {
-        Company com = companyMapper.findByUid(uid);
+    public boolean findToTeamExit(Integer uid) {
         Team team = teamMapper.findByUid(uid);
-        if(team!=null) {
-            return 1;
+        if(team!=null){
+            return true;
         }
-        if(com!=null) {
-            return 1;
-        }
-        return 0;
+        return false;
     }
+
+    @Override
+    public boolean findToCompanyExit(Integer uid) {
+        Company com = companyMapper.findByUid(uid);
+        if(com!=null){
+            return true;
+        }
+        return false;
+    }
+
+        /*Company com = companyMapper.findByUid(uid);
+        Team team = teamMapper.findByUid(uid);*/
 
     @Override
     public Object findInformationByUid(Integer uid) {

@@ -9,38 +9,32 @@
     <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-
-    <table class="layui-hide" id="test" lay-filter="test"></table>
-
-    <script type="text/html" id="barDemo">
-        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-    </script>
-
-    <script>
-        layui.use('table', function(){
-            var table = layui.table;
-
-            table.render({
-                elem: '#test'
-                ,url:'/demo/table/user/'
-                ,method:'post'
-                ,limit:'5'
-                ,limit:[3,5,10,15]
-                ,cols: [[
-                    ,{field:'id', width:120, title: '任务编号', sort: true}
-                    ,{field:'pname', title: '任务名称', width: 100}
-                    ,{field:'tdate', width:100, title: '发布时间'}
-                    ,{field:'psynopsis', width:100, title: '任务描述'}
-                    ,{field:'pmoney', width:100, title: '任务报价', sort: true}
-                    ,{field:'findate', width:100, title: '任务预期'}
-                    ,{field:'tasktype', width:100, title: '任务类型'}
-                    ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
-                ]]
-                ,page: true
-            });
-        });
-    </script>
-
+<table class="layui-table" lay-size="lg">
+    <colgroup>
+        <col width="200" height="200">
+        <col width="200" height="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>任务名</th>
+        <th>有意向的团队</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td colspan="2"><a href="taskdetails?rid=1" target="_blank" class="position_link fl wordCut" data-index="8" >微信小程序</a></td>
+        <td>人生就像是一场修行</td>
+    </tr>
+    <tr>
+        <td colspan="2">许闲心</td>
+        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+    </tr>
+    <tr>
+        <td colspan="2">sentsin</td>
+        <td> Life is either a daring adventure or nothing.</td>
+    </tr>
+    </tbody>
+</table>
+<script src="layui/layui.js" charset="utf-8"></script>
 </body>
 </html>

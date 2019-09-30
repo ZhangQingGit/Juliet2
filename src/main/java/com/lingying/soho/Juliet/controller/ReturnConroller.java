@@ -1,22 +1,17 @@
 package com.lingying.soho.Juliet.controller;
 
+import com.lingying.soho.Juliet.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-public class ReturnConroller {
-    @RequestMapping("list")
-    public String list() {
-        
-        return "list";
-    }
-    
-    @RequestMapping("add")
-    public String add() {
-        
-        return "add";
-    }
+import javax.servlet.http.HttpSession;
 
+@Controller
+public class ReturnConroller extends BaseController{
+
+    @Autowired
+    private UserService userService;
     @RequestMapping("/")
     public String login() {
 
@@ -38,8 +33,7 @@ public class ReturnConroller {
         
         return "register";
     }
-    @RequestMapping("indetal")
-    public String indetal() {
+    @RequestMapping("indetal")   public String indetal() {
         
         return "indetal";
     }
@@ -66,9 +60,14 @@ public class ReturnConroller {
     }
 
     @RequestMapping("releasetask")
-    public String releasetask() {
-
-        return "releasetask";
+    public String releasetask(HttpSession session) {
+        Integer uid = getUidFromSession(session);
+        boolean isHave = userService.findToCompanyExit(uid);
+        if(isHave){
+            return "releasetask";
+        }else {
+            return "perfect";
+        }
     }
 
     @RequestMapping("companymanage")

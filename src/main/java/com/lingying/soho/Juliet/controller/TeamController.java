@@ -15,7 +15,7 @@ import com.lingying.soho.Juliet.service.TeamService;
 import com.lingying.soho.Juliet.util.ResponseResult;
 
 @Controller
-public class TeamController {
+public class TeamController extends BaseController{
     @Autowired
     private TeamService teamService;
     

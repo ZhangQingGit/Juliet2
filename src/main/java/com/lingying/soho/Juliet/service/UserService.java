@@ -24,11 +24,16 @@ public interface UserService {
      */
     Integer findId(String username);
     /**
-     * 查看本用户是否存在于团队/公司表
-     * @param username
-     * @return 1为存在，0为不存在
+     * 查看本用户是否存在于团队表
+     * @return
      */
-    Integer findToExit(Integer uid);
+    boolean findToTeamExit(Integer uid);
+    /**
+     * 查看本用户是否存在于公司表
+     * @param uid
+     * @return
+     */
+    boolean findToCompanyExit(Integer uid);
 
     Object findInformationByUid(Integer uid);
 }

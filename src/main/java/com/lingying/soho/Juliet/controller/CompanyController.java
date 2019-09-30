@@ -13,7 +13,7 @@ import com.lingying.soho.Juliet.service.CompanyService;
 import com.lingying.soho.Juliet.util.ResponseResult;
 
 @Controller
-public class CompanyController {
+public class CompanyController extends BaseController{
     @Autowired
     private CompanyService companyService;
     
