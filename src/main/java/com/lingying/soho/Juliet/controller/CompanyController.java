@@ -32,16 +32,20 @@ public class CompanyController extends BaseController{
     private TeamService teamService;
 
     @RequestMapping("companyReg")
-    public String companyReg(String cname, String synopsis, HttpSession session, String cemail, String cphone, String involve, String homepage, String capital) {
+    @ResponseBody
+    public ResponseResult<String> companyReg(String cname, String synopsis, HttpSession session, String cemail, String cphone, String involve, String homepage, String capital) {
         Object obj = session.getAttribute("uid");
         if(obj!=null) {
             Integer uid = (int)obj;
             Integer i = companyService.companyReg(cname, synopsis, uid, cemail, cphone, involve,homepage, capital);
+            if(i==-1){
+                return new ResponseResult<>(201,"公司名已存在！");
+            }
             if(i==1) {
-                return "indetal";
+                return new ResponseResult<>(200);
             }
         }
-        return "perfect";
+        return new ResponseResult<>(201,"未知错误！");
     }
 
     @RequestMapping("taskShow")

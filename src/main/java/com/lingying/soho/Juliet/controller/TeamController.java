@@ -30,7 +30,6 @@ public class TeamController extends BaseController{
             if(i==-1){
                 return new ResponseResult<>(201,"团队名已存在！");
             }
-            session.removeAttribute("uid");
             if(i==1) {
                 return new ResponseResult<>(200);
             }

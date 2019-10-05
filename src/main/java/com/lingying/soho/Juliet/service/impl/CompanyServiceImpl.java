@@ -21,7 +21,7 @@ public class  CompanyServiceImpl implements CompanyService {
     @Override
     public Integer companyReg(String cname, String synopsis, Integer uid, String cemail, String cphone, String involve, String homepage, String capital) {
         Integer i = mapper.findCidByCname(cname);
-        if(i==0){
+        if(i==null){
             return mapper.companyReg(cname, synopsis, uid, cemail, cphone, involve,homepage, capital);
         }
         return -1;
