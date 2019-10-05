@@ -15,48 +15,49 @@ public class ReturnConroller extends BaseController{
     @RequestMapping("/")
     public String login() {
 
-        return "login";
+        return "user/login";
     }
     
-    @RequestMapping("updata")
-    public String updata() {
-        
-        return "updata";
-    }
-    @RequestMapping("unauth")
-    public String unauth() {
-        
-        return "unauth";
-    }
     @RequestMapping("register")
     public String register() {
         
-        return "register";
+        return "user/register";
     }
-    @RequestMapping("indetal")   public String indetal() {
-        
-        return "indetal";
-    }
-    @RequestMapping("perfect")
-    public String perfect() {
 
-        return "perfect";
+    @RequestMapping("index")
+    public String index() {
+        
+        return "index";
     }
+
+    @RequestMapping("companyperfect")
+    public String companyperfect() {
+
+        return "perfect/companyperfect";
+    }
+
+    @RequestMapping("teamperfect")
+    public String teamperfect() {
+
+        return "perfect/teamperfect";
+    }
+
     @RequestMapping("taskdetails")
     public String taskdetails() {
         
-        return "taskdetails";
+        return "task/taskdetails";
     }
+
     @RequestMapping("publisherdetails")
     public String publisherdetails() {
         
-        return "publisherdetails";
+        return "task/publisherdetails";
     }
 
     @RequestMapping("tasklist")
     public String tasklist() {
 
-        return "tasklist";
+        return "task/tasklist";
     }
 
     @RequestMapping("releasetask")
@@ -64,14 +65,14 @@ public class ReturnConroller extends BaseController{
         Integer uid = getUidFromSession(session);
         boolean isHave = userService.findToCompanyExit(uid);
         if(isHave){
-            return "releasetask";
+            return "task/releasetask";
         }
-        return "perfect";
+        return "perfect/companyperfect";
     }
 
-    @RequestMapping("companymanage")
+    @RequestMapping("manageindex")
     public String companymanage() {
 
-        return "companymanage";
+        return "manage/manageindex";
     }
 }
