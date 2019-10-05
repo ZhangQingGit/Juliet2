@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>领英·SOHO</title>
+
+    <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/perfect/perfect.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../layui/layui.js"></script>
+</head>
+<body>
+
+    <div class="perfect" id="perfect">
+        <div>
+            <h1>完善个人/团队信息</h1>
+        </div>
+        <form class="layui-form" method="post">
+            <div class="layui-form-item">
+                <label class="layui-form-label">个人/团队名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="tname" autocomplete="off" placeholder=""
+                           class="layui-input" id="tname">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">联系邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="temail" autocomplete="off" placeholder=""
+                           class="layui-input" id="temail">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">联系电话</label>
+                <div class="layui-input-block">
+                    <input type="text" name="tphone" autocomplete="off" placeholder=""
+                           class="layui-input" id="tphone">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">擅长类型</label>
+                <div class="layui-input-block">
+                    <input type="text" name="tasktype" autocomplete="off" placeholder=""
+                           class="layui-input" id="tasktype">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">项目经历</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入项目经历" class="layui-textarea"
+                              name="experience" id="experience"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn" onclick="">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/perfect/teamperfect.js"></script>
+</body>
+</html>

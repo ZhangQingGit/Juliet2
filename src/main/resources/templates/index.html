@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta name="baidu-site-verification" content="QIQ6KC1oZ6"/>
+    <meta content="助力烨" name="keywords">
+    <meta content="助力烨是创新型众包服务平台，是雇主和威客值得信赖的威客网站，是众包行业具有价值的创意交易平台，服务品类包含LOGO设计、平面设计、网站建设、网络营销推广、工业设计、文案策划、商标注册服务等400多种领先众包服务领域，一品威客-集创意与智慧于一身，专注于为企业、公共机构、个人提供个性化定制解决方案，更加高效便捷的为广大需求者解决各种实际性需求问题。"
+          name="description">
+    <title>助力烨</title>
+
+    <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/01.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/02.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/03.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/04.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/05.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index/indetal.css">
+
+    <script src="../layui/layui.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+
+</head>
+
+
+<input type="hidden" value="15142320" name="userid" id="userid"/>
+
+<!--C端头部黑色导航-->
+<div id="lg_header">
+    <div id="lg_tbar">
+
+        <div class="inner">
+
+            <div class="lg_tbar_l">
+                <a href="https://www.lagou.com/" class="logo"></a>
+            </div>
+
+            <ul class="lg_tbar_m">
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="releasetask">发布任务</a>
+                </li>
+                <li>
+                    <a rel="nofollow" href="" target="_blank">更多任务
+                        <!--<span class="tips-new">new</span>-->
+                    </a>
+                </li>
+                <li>
+                    <a href="#">地图</a>
+                </li>
+            </ul>
+
+            <div class="lg_tbar_r">
+                <ul class="account-bar">
+                    <li>
+                        <a href="#">预留位置</a>
+                    </li>
+                    <li class="user_dropdown" data-lg-tj-track-code="index_user">
+                        <span class="unick" id="d_name"></span>
+                        <em class="noticeDot dn" id="noticeDot_name"></em>
+                        <i></i>
+                        <ul>
+                            <li>
+                                <a href="/manageindex" data-lg-tj-id="5c00"
+                                   data-lg-tj-no="idnull" data-lg-tj-cid="idnull" rel="nofollow">帐号设置</a>
+                            </li>
+
+                            <li>
+                                <a href="#" data-lg-tj-id="5e00" data-lg-tj-no="idnull"
+                                   data-lg-tj-cid="idnull" rel="nofollow">退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div><!--end #lg_tbar-->
+
+</div><!--end #header-->
+
+<input type="hidden" id="serverTime" value="1568698993256"/>
+
+<!-- 页面主体START -->
+<div class="container clearfix " id="container">
+    <div class="contain-header">
+        <!-- 搜索 -->
+        <div class="search-wrapper">
+            <div id="search_box" class="search_box" data-lg-tj-track-code="index_search" data-lg-tj-track-type="1">
+                <form id="searchword" class="searchword" name="searchword" action="tasklist" method="get">
+                    <input type="text" id="search_input1" class="search_input" tabindex="1" maxlength="64"
+                           autocomplete="off" value="" placeholder="请输入想搜索的内容"/>
+                    <input type="submit" id="search_button" class="search_button" value="搜索"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-body">
+        <div class="clearfix">
+            <div id="sidebar" class="sidebar" data-lg-tj-track-code="index_navigation" data-lg-tj-track-type="1">
+                <!-- 动态菜单 -->
+                <div class="mainNavs">
+                    <div id="nav">
+                        <div class="area clearfix">
+                            <div class="separate"></div>
+                            <div class="category-content">
+                                <div class="category">
+                                    <ul class="category-list" id="indetalMenu">
+                                        <!-- 此处为动态获取的数据-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="home_banner" class="home_banner" data-lg-tj-track-code="index_bannerad" data-lg-tj-track-type="1">
+                <div class="layui-carousel" id="test10">
+                    <div carousel-item="">
+                        <div><img src="http://www.yinggoo.com/resources/images/1558494681003.png"></div>
+                        <div><img src="http://www.yinggoo.com/resources/images/1558494510156.png"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul class="job_tab module-tabs can-click" id="jobTab">
+                <li class="current hotTab" data-lg-tj-id="4X00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull">
+                    热门任务
+                </li>
+            </ul>
+            <div class="job-list-wrapper">
+                <div class="job_list clearfix" id="jobList">
+                    <div class="hot_posHotPosition position_list init_joblist" data-lg-tj-track-code="index_hotjob"
+                         data-lg-tj-track-type="1">
+                        <ul class="clearfix position_list_ul" id="ul-id">
+                            <!-- 此处动态数据 -->
+
+                        </ul>
+                    </div>
+                    <!-- 团队的介绍 -->
+                    <ul class="module-tabs">
+                        <li class="current">热门团队榜</li>
+                    </ul>
+                    <div class="ad-companys">
+                        <ul class="ad-company-list clearfix" data-lg-tj-track-code="index_logoad"
+                            data-lg-tj-track-type="1" id="team-data">
+
+                            <li class="company-item" data-companyid="28818">
+                                <div class="top">
+                                    <p>
+                                        <a href="#">
+                                            <img src="http://www.yinggoo.com/resources/images/favicon.ico" alt="公司logo"
+                                                 width="80" height="80">
+                                        </a>
+                                    </p>
+                                    <h3 class="company-name wordCut">
+                                        <a href="#">公司名字</a>
+                                    </h3>
+                                    <h4 class="indus-stage wordCut">
+                                        <span>主营业务文本</span>
+                                        <span>上市公司</span>
+                                    </h4>
+                                    <h4 class="advantage wordCut">公司介绍文本</h4>
+                                </div>
+                                <div class="bottom clearfix">
+                                    <a class="bottom-item bottom-1 fl" href="#" target="_blank" data-lg-tj-id="19wb"
+                                       data-lg-tj-no="0008" data-lg-tj-cid="">
+                                        <p class="green">
+                                            <span>40</span>
+                                        </p>
+                                        <p class="gray">接包数量</p>
+                                    </a>
+                                    <a class="bottom-item bottom-2 fl" href="#" target="_blank" data-lg-tj-id="19wc"
+                                       data-lg-tj-no="0008" data-lg-tj-cid="">
+                                        <p class="green">
+                                            <span>37</span>
+                                        </p>
+                                        <p class="gray">完成数量</p>
+                                    </a>
+                                    <a class="bottom-item bottom-3 fl" href="#" target="_blank" data-lg-tj-id="19wd"
+                                       data-lg-tj-no="0008" data-lg-tj-cid="">
+                                        <p class="green">
+                                            <span>91%</span>
+                                        </p>
+                                        <p class="gray">完成率</p>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="isIndexPage">
+<input type="hidden" id="subsiteCity" value="北京">
+
+<!-- 页面主体END -->
+<!-- footer <-->
+<a id="backtop" title="回到顶部" rel="nofollow"></a>
+
+<div id="footer">
+    <div class="wrapper">
+        <div class="inner_wrapper">
+            <div class="footer_module_right">
+                <div class="footer_module_business">
+                    <p class="footer_module_title">企业服务</p>
+                    <a href="#" target="_blank" rel="nofollow">抢包宝典</a>
+                    <a href="#" target="_blank" rel="nofollow">公司搜索</a>
+                </div>
+                <div class="footer_module_business">
+                    <p class="footer_module_title">用户帮助</p>
+                    <a href="#" target="_blank" rel="nofollow">帮助中心</a>
+                    <a href="#" target="_blank" rel="nofollow">用户服务协议</a>
+                    <a href="#" target="_blank" rel="nofollow">隐私政策</a>
+                </div>
+                <div class="footer_module_business">
+                    <p class="footer_module_title">合作伙伴</p>
+                    <a href="#" target="_blank" rel="nofollow">腾讯云</a>
+                    <a href="#" target="_blank" rel="nofollow">阿里云</a>
+                    <a href="#" target="_blank" rel="nofollow">Gitlab</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="copyright_main">
+                <div class="copyright_main_left">
+                    <span class="copyright_title"><em>&copy;</em>2018 助力烨</span>
+                    <a target="_blank" href="#" rel="nofollow">京ICP备14023790号-2</a>
+                    <a target="_blank" class="footer_gongan" href="#" rel="nofollow"><i class="footer_lagou_gongan"></i>京公网安备
+                        11010802024043号</a>
+                    <div class="footer_lagou_jubao">
+                        <i class="lagou_jubao"></i>
+                        <p>
+                            <span>违法和不良信息举报</span>
+                            <span>电话: 4000400040000</span>
+                            <span>邮箱: cc@zhuliye.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/index/indetal.js"></script>
+<script src="../js/index/jdropdown.js"></script>
+</body>
+</html>

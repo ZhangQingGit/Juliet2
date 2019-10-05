@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>领英·SOHO</title>
+
+    <link rel="Shortcut Icon" href="http://www.yinggoo.com/resources/images/favicon.ico">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/perfect/perfect.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../layui/layui.js"></script>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class=body>
+        <div class="perfect" id="perfect">
+            <div>
+                <h1>完善个人/公司信息</h1>
+            </div>
+            <form class="layui-form" action="companyReg" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">个人/公司名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="cname" autocomplete="off" placeholder=""
+                               class="layui-input" id="cname">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">涉及领域</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="involve" autocomplete="off" placeholder=""
+                               class="layui-input" id="involve">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="cphone" autocomplete="off" placeholder=""
+                               class="layui-input" id="cphone">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="cemail" autocomplete="off" placeholder=""
+                               class="layui-input" id="cemail">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">公司主页</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="homepage" autocomplete="off" placeholder=""
+                               class="layui-input" id="homepage">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">注册资金</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="capital" autocomplete="off" placeholder=""
+                               class="layui-input" id="capital">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">简单介绍下</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入个人/公司简介" class="layui-textarea"
+                                  name="synopsis" id="synopsis"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" onclick="companyPerfect()">立即提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="../js/perfect/companyperfect.js"></script>
+</body>
+</html>

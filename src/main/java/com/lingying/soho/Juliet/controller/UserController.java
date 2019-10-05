@@ -3,8 +3,6 @@ package com.lingying.soho.Juliet.controller;
 
 import javax.servlet.http.HttpSession;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-import com.lingying.soho.Juliet.entity.Company;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -49,7 +47,7 @@ public class UserController extends BaseController{
                     //根据用户名查id
                     Integer uid = userService.findId(username);
                     session.setAttribute("uid", uid);
-                    return "indetal";
+                    return "index";
                 } catch (UnknownAccountException e) {
                     //用户名不存在
                     model.addAttribute("msg", "用户名不存在");
@@ -58,7 +56,7 @@ public class UserController extends BaseController{
                     model.addAttribute("msg", "密码错误！");
                 }
             }
-            return null;
+            return "user/login";
         }
     @RequestMapping("loginforcode")
     public String loginForCode(String username, String password, Model model, HttpSession session) {
@@ -77,7 +75,7 @@ public class UserController extends BaseController{
                    //根据用户名查id
                    Integer uid = userService.findId(username);
                    session.setAttribute("uid", uid);
-                   return "indetal";
+                   return "index";
                } catch (UnknownAccountException e) {
                    //用户名不存在
                    model.addAttribute("msg", "用户名不存在");

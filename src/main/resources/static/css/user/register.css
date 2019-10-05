@@ -1,0 +1,125 @@
+
+.bg {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    z-index: 90;
+    left: 0;
+    top: 0;
+    background-color: #00B38A;
+}
+
+.register {
+    width: 600px;
+    height: 400px;
+    padding: 30px;
+    padding-right: 50px;
+    background-color: rgb(255, 255, 255);
+    border: #eaeaea solid 1px;
+    border-radius: 4px;
+    left: 50%;
+    top: 50%;
+}
+
+.body{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    position: absolute;
+    z-index: 99;
+    justify-content: center;
+}
+
+.layui-input{
+    width: 250px;
+    border: 0;
+    border-bottom: 1px solid #9F9F9F;
+}
+
+#useremailcode,#userphonecode{
+    width: 180px;
+    height: 38px;
+    padding-left: 10px;
+    border: 0;
+    border-bottom: 1px solid #9F9F9F;
+}
+
+#email-code-register,#phone-code-register{
+    height: 38px;
+    border: 0;
+    color: #00B38A;
+    border-bottom: 1px solid #9F9F9F;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: -20px;
+    text-align: right;
+}
+#error-email,#error-email-format,#error-email-password,#error-email-code,#error-email-type,
+#error-phone,#error-phone-password,#error-phone-code,#error-phone-type,#error-phone-format{
+    color: #FD482C;
+    display: none;
+}
+
+#register-phone-form{
+    /*display: none;*/
+}
+
+.layui-btn {
+    width: 250px;
+    height: 50px;
+    background-color: #00B38A;
+    margin-top: 10px;
+}
+
+#register-left{
+    width: 320px;
+    height: 330px;
+    margin-left: 30px;
+    border-right: 1px dashed #00B38A;
+    float: left;
+}
+
+#register-right{
+    float: left;
+}
+
+h5{
+    display: block;
+    margin-left: 70px;
+}
+
+.login {
+    color: #00B38A;
+    margin-left: 70px;
+}
+
+li{
+    display: inline-block;
+}
+
+.app{
+    width: 150px;
+    height: 150px;
+    margin-left: 50px;
+}
+
+li{
+    cursor: pointer;
+}
+
+.selected{
+    color: #00B38A;
+}
+
+.layui-input-block{
+    margin-left: 28px;
+}
+
+#email-register{
+     margin-left: 40px;
+}
+
+#phone-register{
+    margin-left: 50px;
+}

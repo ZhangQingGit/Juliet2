@@ -10,7 +10,7 @@ window.onload=function () {
             var tidlist=data[i].tid;
             var rowspan=tnamelist.length;
 
-           /* for (var j= 0; j<tnamelist.length;j++){*/
+            /* for (var j= 0; j<tnamelist.length;j++){*/
                 for(var j=0;j<tidlist.length;j++){
                     var tid=tidlist[j];
                     if(j == 0 ){
@@ -35,8 +35,7 @@ window.onload=function () {
                     }
                 }
 
-
-           /* }*/
+            /* }*/
 
         }
     });

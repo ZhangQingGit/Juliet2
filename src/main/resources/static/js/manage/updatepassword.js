@@ -1,5 +1,5 @@
 window.onload=function () {
-    $.post("",function (data,status) {
+    /*$.post("",function (data,status) {
 
-    });
+    });*/
 }

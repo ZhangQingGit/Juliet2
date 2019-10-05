@@ -1,5 +1,5 @@
 window.onload=function () {
-    $.post("findInformationByUid",function (data,status) {
+    $.post("/findInformationByUid",function (data,status) {
         if(data.usertype == 1){
             $('#cname').val(data.cort.cname);
             $('#synopsis').val(data.cort.synopsis);

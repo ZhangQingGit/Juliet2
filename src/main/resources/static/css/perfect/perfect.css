@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-.login{
+.perfect{
     width: 600px;
     padding: 30px;
     padding-right: 50px;
@@ -29,7 +29,7 @@
     top: 50%;
 }
 
-.login h1 {
+.perfect h1 {
     text-align: center;
     color: #00B38A;
     font-size: 24px;
