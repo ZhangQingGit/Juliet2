@@ -11,55 +11,99 @@
     <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
+    <div id="companyinformation" style="display: none">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">个人/公司名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="cname" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="cname">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">个人/公司简介</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="synopsis" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="synopsis">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">手机</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="cphone" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="cphone">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="cemail" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="cemail">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">涉及领域</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="involve" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="involve">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="layui-btn" onclick="updateCompanyInformation()">修改</button>
+        </form>
+    </div>
 
-    <form class="layui-form" action="">
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">个人/公司名称</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="required|phone" autocomplete="off"
-                           class="layui-input" id="cname">
+    <div id="teaminformation" style="display: none">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">个人/团队名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="tname" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="tname">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">个人/公司简介</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="required|phone" autocomplete="off"
-                           class="layui-input" id="synopsis">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">手机</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="tphone" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="tphone">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">手机</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="required|phone" autocomplete="off"
-                           class="layui-input" id="cphone">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="temail" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="temail">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">邮箱</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="required|phone" autocomplete="off"
-                           class="layui-input" id="cemail">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">个人/团队项目经历</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="experience" lay-verify="required|phone" autocomplete="off"
+                               class="layui-input" id="experience">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">涉及领域</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="phone" lay-verify="required|phone" autocomplete="off"
-                           class="layui-input" id="involve">
-                </div>
-            </div>
-        </div>
+            <button type="button" class="layui-btn" onclick="updateCompanyInformation()">修改</button>
+        </form>
+    </div>
 
-    </form>
 
 <script src="js/manage/basicinformation.js"></script>
 </body>

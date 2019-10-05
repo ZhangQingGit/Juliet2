@@ -2,6 +2,8 @@ package com.lingying.soho.Juliet.service;
 
 import com.lingying.soho.Juliet.entity.User;
 
+import java.util.Map;
+
 public interface UserService {
     /**
      * 用户注册
@@ -35,5 +37,5 @@ public interface UserService {
      */
     boolean findToCompanyExit(Integer uid);
 
-    Object findInformationByUid(Integer uid);
+    Map<String,Object> findInformationByUid(Integer uid);
 }

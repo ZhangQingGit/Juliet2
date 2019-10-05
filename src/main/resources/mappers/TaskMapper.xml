@@ -66,5 +66,36 @@
         limit 0,10;
     </select>
 
+    <select id="findRidByPname" resultType="java.lang.Integer">
+        SELECT
+            rid
+        FROM
+            task
+        WHERE
+            pname=#{pname}
+    </select>
 
+    <select id="findReleaseTaskByCname" resultType="com.lingying.soho.Juliet.entity.Task">
+        SELECT
+            rid,pname,
+            tdate,psynopsis,
+            pmoney,findate,
+            tasktype
+        FROM
+            task
+        WHERE
+            cname=#{cortname}
+    </select>
+
+    <select id="findReleaseTaskLimitByCname" resultType="com.lingying.soho.Juliet.entity.Task">
+        SELECT
+            rid,pname,
+            tdate,psynopsis,
+            pmoney,findate,
+            tasktype
+        FROM
+            task
+        WHERE
+            cname=#{cortname} LIMIT #{page},#{limit}
+    </select>
 </mapper>

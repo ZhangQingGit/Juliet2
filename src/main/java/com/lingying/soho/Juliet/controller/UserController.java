@@ -24,6 +24,8 @@ import com.lingying.soho.Juliet.util.ResponseResult;
 import com.lingying.soho.Juliet.util.Email.EmailUtil;
 import com.lingying.soho.Juliet.util.msg.MsgUtil;
 
+import java.util.Map;
+
 @Controller
 public class UserController extends BaseController{
     
@@ -148,14 +150,19 @@ public class UserController extends BaseController{
         return new ResponseResult<>(200,"UnName");
     }
 
+    /**
+     * 根据uid查询个人/公司信息
+     * @param session
+     * @return
+     */
     @RequestMapping("findInformationByUid")
     @ResponseBody
-    public Object findInformationByUid(HttpSession session){
+    public Map<String,Object> findInformationByUid(HttpSession session){
         Object obj = session.getAttribute("uid");
         if(obj != null){
             Integer uid = (Integer) obj;
-            Object object=userService.findInformationByUid(uid);
-            return object;
+            Map<String,Object> map=userService.findInformationByUid(uid);
+            return map;
         }else {
             return null;
         }

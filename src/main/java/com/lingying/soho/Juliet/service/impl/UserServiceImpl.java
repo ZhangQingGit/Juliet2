@@ -11,6 +11,9 @@ import com.lingying.soho.Juliet.mapper.TeamMapper;
 import com.lingying.soho.Juliet.mapper.UserMapper;
 import com.lingying.soho.Juliet.service.UserService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -100,14 +103,19 @@ public class UserServiceImpl implements UserService {
         Team team = teamMapper.findByUid(uid);*/
 
     @Override
-    public Object findInformationByUid(Integer uid) {
+    public Map<String,Object> findInformationByUid(Integer uid) {
         Company company = companyMapper.findByUid(uid);
         Team team = teamMapper.findByUid(uid);
+        Map<String,Object> map=new HashMap<>();
         if(company != null) {
-            return company;
+            map.put("usertype",1);
+            map.put("cort",company);
+            return map;
         }
-        if(team != team) {
-            return team;
+        if(team != null) {
+            map.put("usertype",2);
+            map.put("cort",team);
+            return map;
         }
         return null;
     }

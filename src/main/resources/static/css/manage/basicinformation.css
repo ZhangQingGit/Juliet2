@@ -1,3 +1,8 @@
 .layui-inline label{
-    width: 100px;
+    width: 120px;
+    text-align: left;
+}
+
+.layui-btn{
+    margin-left: 140px;
 }

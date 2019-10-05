@@ -3,27 +3,20 @@ layui.use('element', function(){
 
 });
 
-/*function setIframeHeight(iframe) {
-    if (iframe) {
-        var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-        alert(iframeWin.document.body.scrollHeight);
-        if (iframeWin.document.body) {
-            iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
-        }
-    }
-};
 
-window.onload = function () {
-    alert("我进来了");
-    setIframeHeight(document.getElementById('crtask'));
-};*/
-
+$(document).ready(function(json){
+    //获取公司名字
+    $.post("getName", function (data) {
+        $("#d_name").append(data.message);
+    });
+});
 /**
  * 发布任务的iframe
  */
 function crTask() {
     $('#crtask').attr("src","crtask.html");
 }
+
 
 /**
  * 对我有意向的团队iframe
@@ -37,6 +30,7 @@ function intentionCompany() {
  */
 function basicInformation() {
     $('#crtask').attr("src","basicinformation.html");
+    $('#crtask2').attr("src","basicinformation.html");
 }
 
 /**

@@ -41,4 +41,13 @@
         WHERE
             tid=#{tid}
     </select>
+
+    <select id="findTidByTname" resultType="java.lang.Integer">
+        SELECT
+            tid
+        FROM
+            team
+        WHERE
+            tname=#{tname}
+    </select>
 </mapper>

@@ -39,4 +39,11 @@ public interface TeamService {
      * @return
      */
     Team teamDetails(Integer tid);
+
+    /**
+     * 根据团队名称去查询tid
+     * @param tname
+     * @return
+     */
+    Integer findTidByTname(String tname);
 }

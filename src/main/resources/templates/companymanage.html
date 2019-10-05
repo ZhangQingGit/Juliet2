@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="UTF-8">
 
@@ -99,7 +100,7 @@
                             </a>
                         </li>
                         <li class="user_dropdown" data-lg-tj-track-code="index_user">
-                            <span class="unick">曹鹏辉</span>
+                            <span class="unick" id="d_name"></span>
                             <em class="noticeDot dn" id="noticeDot_name"></em>
                             <i></i>
                             <ul>
@@ -157,9 +158,17 @@
                     <a class="" href="javascript:;">任务信息</a>
                     <dl class="layui-nav-child">
                         <dd><a onclick="crTask()">发布的任务</a></dd>
-                        <dd><a onclick="intentionCompany()">对我有意向的公司</a></dd>
+                        <dd><a onclick="crTask()">接受的任务</a></dd>
+                        <dd><a onclick="intentionCompany()">对我有意向的团队</a></dd>
                     </dl>
                 </li>
+                <!--<li class="layui-nav-item layui-nav-itemed" shiro:hasPermission="2">
+                    <a class="" href="javascript:;">任务信息</a>
+                    <dl class="layui-nav-child">
+                        <dd><a onclick="crTask()">接受的任务</a></dd>
+                        <dd><a onclick="intentionCompany()">发布的任务</a></dd>
+                    </dl>
+                </li>-->
                 <li class="layui-nav-item">
                     <a href="javascript:;">个人信息</a>
                     <dl class="layui-nav-child">
@@ -177,6 +186,7 @@
         <!--<div style="padding: 15px;">内容主体区域</div>-->
 
         <iframe src="crtask.html" frameborder="0" id="crtask"></iframe>
+        <!--<iframe src="login2.html" frameborder="0" id="crtask2" shiro:hasPermission="2"></iframe>-->
     </div>
 
     <div class="layui-footer">
@@ -184,53 +194,6 @@
         © layui.com - 底部固定区域
     </div>
 </div>
-
-
-<!-- 页面主体END -->
-<!-- footer <-->
-<!--<div id="footer">
-    <div class="wrapper">
-        <div class="inner_wrapper">
-            <div class="footer_module_right">
-                <div class="footer_module_business">
-                    <p class="footer_module_title">企业服务</p>
-                    <a href="#" target="_blank" rel="nofollow">抢包宝典</a>
-                    <a href="#" target="_blank" rel="nofollow">公司搜索</a>
-                </div>
-                <div class="footer_module_business">
-                    <p class="footer_module_title">用户帮助</p>
-                    <a href="#" target="_blank" rel="nofollow">帮助中心</a>
-                    <a href="#" target="_blank" rel="nofollow">用户服务协议</a>
-                    <a href="#" target="_blank" rel="nofollow">隐私政策</a>
-                </div>
-                <div class="footer_module_business">
-                    <p class="footer_module_title">合作伙伴</p>
-                    <a href="#" target="_blank" rel="nofollow">腾讯云</a>
-                    <a href="#" target="_blank" rel="nofollow">阿里云</a>
-                    <a href="#" target="_blank" rel="nofollow">Gitlab</a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="copyright_main">
-                <div class="copyright_main_left">
-                    <span class="copyright_title"><em>&copy;</em>2018 助力烨</span>
-                    <a target="_blank" href="#" rel="nofollow">京ICP备14023790号-2</a>
-                    <a target="_blank" class="footer_gongan" href="#" rel="nofollow"><i class="footer_lagou_gongan"></i>京公网安备
-                        11010802024043号</a>
-                    <div class="footer_lagou_jubao">
-                        <i class="lagou_jubao"></i>
-                        <p>
-                            <span>违法和不良信息举报</span>
-                            <span>电话: 4000400040000</span>
-                            <span>邮箱: cc@zhuliye.com</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
 
 <script src="js/manage/company.js"></script>
 </body>

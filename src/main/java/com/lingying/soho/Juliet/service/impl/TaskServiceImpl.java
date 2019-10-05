@@ -3,13 +3,10 @@ package com.lingying.soho.Juliet.service.impl;
 import java.util.Date;
 import java.util.List;
 
-import com.lingying.soho.Juliet.entity.TaskBasic;
-import com.lingying.soho.Juliet.entity.TaskList;
+import com.lingying.soho.Juliet.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lingying.soho.Juliet.entity.Task;
-import com.lingying.soho.Juliet.entity.TaskV;
 import com.lingying.soho.Juliet.mapper.TaskMapper;
 import com.lingying.soho.Juliet.service.TaskService;
 
@@ -63,6 +60,21 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public List<TaskList> taskList() {
         return taskMapper.taskList();
+    }
+
+    @Override
+    public Integer findRidByPname(String pname) {
+        return taskMapper.findRidByPname(pname);
+    }
+
+    @Override
+    public List<Task> findReleaseTaskByCname(String cortname) {
+        return taskMapper.findReleaseTaskByCname(cortname);
+    }
+
+    @Override
+    public List<Task> findReleaseTaskLimitByCname(Page page) {
+        return taskMapper.findReleaseTaskLimitByCname(page);
     }
 
 }

@@ -36,4 +36,29 @@
         WHERE
             cid=#{cid}
     </select>
+
+    <select id="findIntentionPnameByCname" resultType="com.lingying.soho.Juliet.entity.Bid_Relation">
+        SELECT
+            DISTINCT pname
+        FROM
+            bid_relation
+        WHERE
+            cname=#{cname}
+    </select>
+
+    <select id="findIntentionTnameByPname" resultType="com.lingying.soho.Juliet.entity.Bid_Relation">
+        SELECT
+            tname
+        FROM
+            bid_relation
+        WHERE
+            pname=#{pname}
+    </select>
+
+    <update id="updateCompanyInformationByUid">
+        UPDATE
+            company
+        SET
+
+    </update>
 </mapper>

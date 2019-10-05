@@ -47,4 +47,9 @@ public class TeamServiceImpl implements TeamService {
         return mapper.findById(tid);
     }
 
+    @Override
+    public Integer findTidByTname(String tname) {
+        return mapper.findTidByTname(tname);
+    }
+
 }

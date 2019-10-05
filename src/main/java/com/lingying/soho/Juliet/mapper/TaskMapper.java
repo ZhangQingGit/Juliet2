@@ -3,12 +3,8 @@ package com.lingying.soho.Juliet.mapper;
 import java.util.Date;
 import java.util.List;
 
-import com.lingying.soho.Juliet.entity.TaskBasic;
-import com.lingying.soho.Juliet.entity.TaskList;
+import com.lingying.soho.Juliet.entity.*;
 import org.apache.ibatis.annotations.Param;
-
-import com.lingying.soho.Juliet.entity.Task;
-import com.lingying.soho.Juliet.entity.TaskV;
 
 public interface TaskMapper {
     /**
@@ -57,4 +53,25 @@ public interface TaskMapper {
      * @return
      */
     List<TaskList> taskList();
+
+    /**
+     * 根据项目名去查询rid
+     * @param pname
+     * @return
+     */
+    Integer findRidByPname(String pname);
+
+    /**
+     * 查询当前用户发布的任务
+     * @param cortname
+     * @return
+     */
+    List<Task> findReleaseTaskByCname(String cortname);
+
+    /**
+     * 查询当前用户发布的任务(分页)
+     * @param page
+     * @return
+     */
+    List<Task> findReleaseTaskLimitByCname(Page page);
 }

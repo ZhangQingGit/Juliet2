@@ -4,37 +4,27 @@
     <meta charset="UTF-8">
     <title>对我有意向的公司/个人</title>
     <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/manage/intentionteam.css">
 
     <script src="layui/layui.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-<table class="layui-table" lay-size="lg">
-    <colgroup>
-        <col width="200" height="200">
-        <col width="200" height="200">
-    </colgroup>
-    <thead>
-    <tr>
-        <th>任务名</th>
-        <th>有意向的团队</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td colspan="2"><a href="taskdetails?rid=1" target="_blank" class="position_link fl wordCut" data-index="8" >微信小程序</a></td>
-        <td>人生就像是一场修行</td>
-    </tr>
-    <tr>
-        <td colspan="2">许闲心</td>
-        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-    </tr>
-    <tr>
-        <td colspan="2">sentsin</td>
-        <td> Life is either a daring adventure or nothing.</td>
-    </tr>
-    </tbody>
-</table>
-<script src="layui/layui.js" charset="utf-8"></script>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>列边框表格测试</legend>
+    </fieldset>
+
+    <table border="1" width="500px" id="table_test">
+        <thead>
+        <tr>
+            <th style="background: #00B38A;width: 250px;">项目名</th>
+            <th style="background: #00B38A">团队</th>
+        </tr>
+        </thead>
+        <tbody id="tbody0">
+
+        </tbody>
+    </table>
+<script src="js/manage/intentionteam.js"></script>
 </body>
 </html>
