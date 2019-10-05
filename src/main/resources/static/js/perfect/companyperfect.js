@@ -12,7 +12,7 @@ function companyPerfect() {
         homepage:homepage,capital:capital,synopsis:synopsis},function (data,status) {
 
         if(data.state == 200){
-            window.location.href="releasetask.html"
+            window.location.href="releasetask";
         }else {
             alert(data.message);
         }

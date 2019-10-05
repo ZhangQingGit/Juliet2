@@ -32,6 +32,7 @@ public class CompanyController extends BaseController{
     private TeamService teamService;
 
     @RequestMapping("companyReg")
+    @ResponseBody
     public ResponseResult<String> companyReg(String cname, String synopsis, HttpSession session, String cemail, String cphone, String involve, String homepage, String capital) {
         Object obj = session.getAttribute("uid");
         if(obj!=null) {
@@ -40,7 +41,6 @@ public class CompanyController extends BaseController{
             if(i==-1){
                 return new ResponseResult<>(201,"公司名已存在！");
             }
-            session.removeAttribute("uid");
             if(i==1) {
                 return new ResponseResult<>(200);
             }
