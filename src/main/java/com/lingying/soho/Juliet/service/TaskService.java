@@ -73,4 +73,11 @@ public interface TaskService {
      * @return
      */
     String[] findTaskType();
+
+    /**
+     * 在搜索框中搜索，先出现有关公司，在出现有关任务，模糊查询
+     * @param msg
+     * @return
+     */
+    List<TaskList> search(String msg);
 }

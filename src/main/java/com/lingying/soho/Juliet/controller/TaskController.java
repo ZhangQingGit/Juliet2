@@ -98,6 +98,13 @@ public class TaskController extends BaseController {
         return new ResponseResult<>(201, "失败");
     }
 
+    @RequestMapping("search")
+    @ResponseBody
+    public ResponseResult<List<TaskList>> search(String msg){
+        List<TaskList> list = taskService.search(msg);
+        return new ResponseResult<>(200, list);
+    }
+
     /**
      * 查询当前用户发布的任务
      * @return
