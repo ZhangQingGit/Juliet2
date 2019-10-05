@@ -37,13 +37,28 @@ function GetRequest() {
 		
 		$("#want").click(function(){
 			$.post("bid_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
-				alert(data.message);
+				if(data.state==200){
+					alert(data.message);
+				}
+				else if(data.state==201){
+					alert(data.message);
+				}else {
+					window.location.href='/perfect';
+				}
+
 			});
 		});
 		
 		$("#notwant").click(function(){
 			$.post("del_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
-				alert(data.message);
+				if(data.state==200){
+					alert(data.message);
+				}
+				else if(data.state==201){
+					alert(data.message);
+				}else {
+					window.location.href='/perfect';
+				}
 			});
 		});
 	});

@@ -39,7 +39,7 @@ public class ReturnConroller extends BaseController{
     }
     @RequestMapping("perfect")
     public String perfect() {
-        
+
         return "perfect";
     }
     @RequestMapping("taskdetails")
@@ -65,9 +65,8 @@ public class ReturnConroller extends BaseController{
         boolean isHave = userService.findToCompanyExit(uid);
         if(isHave){
             return "releasetask";
-        }else {
-            return "perfect";
         }
+        return "perfect";
     }
 
     @RequestMapping("companymanage")
