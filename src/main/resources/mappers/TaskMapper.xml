@@ -66,6 +66,55 @@
         limit 0,10;
     </select>
 
+    <select id="searchByPnameTaskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
+        SELECT
+            task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve,company.cid
+        from
+            task,company
+        WHERE
+             task.cname=company.cname
+        AND
+            task.pname
+        LIKE
+            "%"#{pname}"%"
+        limit 0,10;
+    </select>
+
+    <select id="searchByCnameTaskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
+        SELECT
+            task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve,company.cid
+        from
+            task,company
+        WHERE
+             task.cname=company.cname
+        AND
+            company.cname
+        LIKE
+            "%"#{cname}"%"
+        limit 0,10;
+    </select>
+
+    <select id="searchByTypeTaskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
+        SELECT
+            task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve,company.cid
+        from
+            task,company
+        WHERE
+             task.cname=company.cname
+        AND
+            task.tasktype=#{tasktype}
+        limit 0,10;
+    </select>
+
+    <select id="findTaskType" resultType="java.lang.String">
+        SELECT
+            listname
+        FROM
+            type
+        WHERE
+            level>1;
+    </select>
+
     <select id="findRidByPname" resultType="java.lang.Integer">
         SELECT
             rid

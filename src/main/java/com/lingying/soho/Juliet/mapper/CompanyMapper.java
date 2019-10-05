@@ -69,4 +69,11 @@ public interface CompanyMapper {
      * @return
      */
     Integer updateCompanyInformationByUid(Company company);
+
+    /**
+     * 根据公司名字查cid，看公司是否存在
+     * @param cname
+     * @return
+     */
+    Integer findCidByCname(String cname);
 }

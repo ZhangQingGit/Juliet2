@@ -67,4 +67,10 @@ public interface TaskService {
      * @return
      */
     List<Task> findReleaseTaskLimitByCname(Page page);
+
+    /**
+     * 搜索下拉框的赋值
+     * @return
+     */
+    String[] findTaskType();
 }

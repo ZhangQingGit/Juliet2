@@ -12,7 +12,7 @@ import com.lingying.soho.Juliet.service.CompanyService;
 import java.util.List;
 
 @Service
-public class CompanyServiceImpl implements CompanyService {
+public class  CompanyServiceImpl implements CompanyService {
 
     @Autowired
     private CompanyMapper mapper;
@@ -20,7 +20,11 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public Integer companyReg(String cname, String synopsis, Integer uid, String cemail, String cphone, String involve, String homepage, String capital) {
-        return mapper.companyReg(cname, synopsis, uid, cemail, cphone, involve,homepage, capital);
+        Integer i = mapper.findCidByCname(cname);
+        if(i==0){
+            return mapper.companyReg(cname, synopsis, uid, cemail, cphone, involve,homepage, capital);
+        }
+        return -1;
     }
 
     @Override

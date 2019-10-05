@@ -20,18 +20,22 @@ public class TeamController extends BaseController{
     private TeamService teamService;
     
     @RequestMapping("teamReg")
-    public String teamReg(String tname, String experience, HttpSession session
+    @ResponseBody
+    public ResponseResult<String> teamReg(String tname, String experience, HttpSession session
             , String temail, String tphone, String tasktype) {
         Object obj = session.getAttribute("uid");
         if(obj!=null) {
             Integer uid = (int)obj;
             Integer i = teamService.teamReg(tname, experience, uid, temail, tphone, tasktype, 0, 0);
+            if(i==-1){
+                return new ResponseResult<>(201,"团队名已存在！");
+            }
             session.removeAttribute("uid");
             if(i==1) {
-                return "login";
+                return new ResponseResult<>(200);
             }
         }
-         return "perfect";
+         return new ResponseResult<>(201,"未知错误！");
     }
     
     @RequestMapping("showTeam")

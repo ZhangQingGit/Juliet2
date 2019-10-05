@@ -61,4 +61,13 @@
         SET
 
     </update>
+
+    <select id="findCidByCname" resultType="java.lang.Integer">
+        SELECT
+            cid
+        FROM
+            company
+        WHERE
+            cname=#{cname}
+    </select>
 </mapper>

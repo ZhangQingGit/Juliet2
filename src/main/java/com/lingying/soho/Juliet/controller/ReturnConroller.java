@@ -12,37 +12,41 @@ public class ReturnConroller extends BaseController{
 
     @Autowired
     private UserService userService;
-
     @RequestMapping("/")
     public String login() {
 
-        return "user/login";
+        return "login";
     }
-
+    
+    @RequestMapping("updata")
+    public String updata() {
+        
+        return "updata";
+    }
+    @RequestMapping("unauth")
+    public String unauth() {
+        
+        return "unauth";
+    }
     @RequestMapping("register")
     public String register() {
         
-        return "user/register";
+        return "register";
     }
-
-    @RequestMapping("index")
-    public String index() {
+    @RequestMapping("indetal")   public String indetal() {
         
-        return "index";
+        return "indetal";
     }
-
     @RequestMapping("perfect")
     public String perfect() {
 
         return "perfect";
     }
-
     @RequestMapping("taskdetails")
     public String taskdetails() {
         
-        return "task/taskdetails";
+        return "taskdetails";
     }
-
     @RequestMapping("publisherdetails")
     public String publisherdetails() {
         
@@ -52,7 +56,7 @@ public class ReturnConroller extends BaseController{
     @RequestMapping("tasklist")
     public String tasklist() {
 
-        return "task/tasklist";
+        return "tasklist";
     }
 
     @RequestMapping("releasetask")
@@ -60,14 +64,14 @@ public class ReturnConroller extends BaseController{
         Integer uid = getUidFromSession(session);
         boolean isHave = userService.findToCompanyExit(uid);
         if(isHave){
-            return "task/releasetask";
+            return "releasetask";
         }
         return "perfect";
     }
 
-    @RequestMapping("manageindex")
+    @RequestMapping("companymanage")
     public String companymanage() {
 
-        return "manage/manageindex";
+        return "companymanage";
     }
 }

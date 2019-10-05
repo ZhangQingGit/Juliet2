@@ -24,9 +24,9 @@ public class ShiroConfig {
      */
     @Bean
     public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier("securityManager") DefaultWebSecurityManager securityManager) {
-        
+
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-        
+
         //设置安全管理器
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         /**
@@ -38,15 +38,15 @@ public class ShiroConfig {
          * role: 该资源必须得到角色权限才能访问
          */
         Map<String, String> filterMap = new HashMap<String, String>();
-        
+
         filterMap.put("/register", "anon");
         filterMap.put("/login", "anon");
         //修改跳转页面
         shiroFilterFactoryBean.setLoginUrl("login");
         shiroFilterFactoryBean.setUnauthorizedUrl("unauth");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
-        
-        
+
+
         return shiroFilterFactoryBean;
     }
     

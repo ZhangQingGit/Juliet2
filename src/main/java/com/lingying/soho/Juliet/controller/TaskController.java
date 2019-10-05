@@ -58,8 +58,16 @@ public class TaskController extends BaseController {
     @ResponseBody
     public ResponseResult<List<TaskList>> taskList(){
         List<TaskList> list = taskService.taskList();
-        return new ResponseResult<>(200,list);
+        return new ResponseResult<>(200, list);
     }
+
+    @RequestMapping("findTaskType")
+    @ResponseBody
+    public ResponseResult<String[]> findTaskType(){
+        String[] arr = taskService.findTaskType();
+        return new ResponseResult<>(200, arr);
+    }
+
     @RequestMapping("taskPush_One")
     @ResponseBody
     public ResponseResult<String> taskPush(TaskBasic taskBasic, HttpSession session){

@@ -38,10 +38,10 @@ public class CompanyController extends BaseController{
             Integer uid = (int)obj;
             Integer i = companyService.companyReg(cname, synopsis, uid, cemail, cphone, involve,homepage, capital);
             if(i==1) {
-                return "index";
+                return "indetal";
             }
         }
-        return "perfect/";
+        return "perfect";
     }
 
     @RequestMapping("taskShow")
