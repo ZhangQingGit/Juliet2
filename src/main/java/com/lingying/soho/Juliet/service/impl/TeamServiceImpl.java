@@ -17,7 +17,11 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public Integer teamReg(String tname, String experience, Integer uid, String temail, String tphone, String tasktype,
             Integer taskcount, Integer fintask) {
-        return mapper.teamReg(tname, experience, uid, temail, tphone, tasktype, taskcount, fintask);
+        Integer i = mapper.findTidByTname(tname);
+        if(i==0){
+            return mapper.teamReg(tname, experience, uid, temail, tphone, tasktype, taskcount, fintask);
+        }
+        return -1;
     }
     
     @Override

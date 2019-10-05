@@ -55,6 +55,27 @@ public interface TaskMapper {
     List<TaskList> taskList();
 
     /**
+     * 根据任务名模糊查询任务列表
+     * @param pname
+     * @return
+     */
+    List<TaskList> searchByPnameTaskList(String pname);
+
+    /**
+     * 根据公司名字模糊查询任务列表
+     * @param cname
+     * @return
+     */
+    List<TaskList> searchByCnameTaskList(String cname);
+
+    /**
+     * 根据项目类型查找，一般用于直接查找，type直接在发布时固定
+     * @param type
+     * @return
+     */
+    List<TaskList> searchByTypeTaskList(String type);
+
+    /**
      * 根据项目名去查询rid
      * @param pname
      * @return
@@ -74,4 +95,11 @@ public interface TaskMapper {
      * @return
      */
     List<Task> findReleaseTaskLimitByCname(Page page);
+
+    /**
+     * 在发布任务时任务类型的搜索下拉框
+     * @return
+     */
+    String[] findTaskType();
+
 }

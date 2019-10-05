@@ -77,4 +77,9 @@ public class TaskServiceImpl implements TaskService {
         return taskMapper.findReleaseTaskLimitByCname(page);
     }
 
+    @Override
+    public String[] findTaskType() {
+        return taskMapper.findTaskType();
+    }
+
 }

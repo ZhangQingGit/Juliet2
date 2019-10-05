@@ -33,7 +33,8 @@ public class ReturnConroller extends BaseController{
         
         return "register";
     }
-    @RequestMapping("indetal")   public String indetal() {
+    @RequestMapping("indetal")
+    public String indetal() {
         
         return "indetal";
     }
