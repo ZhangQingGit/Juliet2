@@ -11,53 +11,62 @@
     <script src="../layui/layui.js"></script>
 </head>
 <body>
-
-    <div class="perfect" id="perfect">
-        <div>
-            <h1>完善个人/团队信息</h1>
-        </div>
-        <form class="layui-form" method="post">
-            <div class="layui-form-item">
-                <label class="layui-form-label">个人/团队名</label>
-                <div class="layui-input-block">
-                    <input type="text" name="tname" autocomplete="off" placeholder=""
-                           class="layui-input" id="tname">
-                </div>
+    <div class="bg"></div>
+    <div class=body>
+        <div class="perfect" id="perfect">
+            <div>
+                <h1>完善个人/团队信息</h1>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">联系邮箱</label>
-                <div class="layui-input-block">
-                    <input type="text" name="temail" autocomplete="off" placeholder=""
-                           class="layui-input" id="temail">
+            <form class="layui-form" method="post">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">个人/团队名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="tname" autocomplete="off" placeholder=""
+                               class="layui-input" id="tname">
+                    </div>
+                    <span id="error-tname-null"><img src="../images/login/sigh.jpg">请输入个人/团队名</span>
                 </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">联系电话</label>
-                <div class="layui-input-block">
-                    <input type="text" name="tphone" autocomplete="off" placeholder=""
-                           class="layui-input" id="tphone">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系邮箱</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="temail" autocomplete="off" placeholder=""
+                               class="layui-input" id="temail">
+                    </div>
+                    <span id="error-temail-null"><img src="../images/login/sigh.jpg">请输入邮箱</span><br>
+                    <span id="error-temail-format"><img src="../images/login/sigh.jpg">邮箱不正确</span>
                 </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">擅长类型</label>
-                <div class="layui-input-block">
-                    <input type="text" name="tasktype" autocomplete="off" placeholder=""
-                           class="layui-input" id="tasktype">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系电话</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="tphone" autocomplete="off" placeholder=""
+                               class="layui-input" id="tphone">
+                    </div>
+                    <span id="error-tphone-null"><img src="../images/login/sigh.jpg">请输入联系电话</span>
+                    <span id="error-tphone-format"><img src="../images/login/sigh.jpg">电话格式不正确</span>
                 </div>
-            </div>
-            <div class="layui-form-item layui-form-text">
-                <label class="layui-form-label">项目经历</label>
-                <div class="layui-input-block">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">擅长任务类型</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="tasktype" autocomplete="off" placeholder=""
+                               class="layui-input" id="tasktype">
+                    </div>
+                    <span id="error-tasktype-null"><img src="../images/login/sigh.jpg">请输入擅长任务类型</span>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">项目经历</label>
+                    <div class="layui-input-block">
                     <textarea placeholder="请输入项目经历" class="layui-textarea"
                               name="experience" id="experience"></textarea>
+                    </div>
+                    <span id="error-experience-null"><img src="../images/login/sigh.jpg">请输入项目经历</span>
                 </div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button type="button" class="layui-btn" onclick="">立即提交</button>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" onclick="teamPerfect()">立即提交</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <script src="../js/perfect/teamperfect.js"></script>

@@ -93,3 +93,9 @@ body {
 .layui-form-pane{
     margin-left: 40px;
 }
+
+span{
+    color: #FD482C;
+    display: none;
+    margin-left: 140px;
+}

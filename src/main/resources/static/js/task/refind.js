@@ -43,7 +43,7 @@ function GetRequest() {
 				else if(data.state==201){
 					alert(data.message);
 				}else {
-					window.location.href='/perfect';
+					window.location.href='teamperfect';
 				}
 
 			});

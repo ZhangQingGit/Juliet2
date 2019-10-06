@@ -48,3 +48,17 @@
     background-color: #00B38A;
     margin-top: 20px;
 }
+
+span{
+    color: #FD482C;
+    margin-left: 200px;
+    display: none;
+}
+
+.layui-form-label{
+    width: 130px;
+}
+
+.layui-textarea{
+    width: 400px;
+}

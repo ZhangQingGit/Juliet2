@@ -127,4 +127,10 @@ public class CompanyController extends BaseController{
         return null;
 
     }
+
+    @RequestMapping("/testDemo")
+    public void testDemo(String username){
+        System.out.println(username);
+        System.out.println("我进来了");
+    }
 }

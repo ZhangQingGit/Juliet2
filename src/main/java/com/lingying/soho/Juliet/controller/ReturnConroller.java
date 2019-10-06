@@ -51,7 +51,7 @@ public class ReturnConroller extends BaseController{
     @RequestMapping("publisherdetails")
     public String publisherdetails() {
         
-        return "task/publisherdetails";
+        return "publisherdetails";
     }
 
     @RequestMapping("tasklist")
