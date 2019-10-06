@@ -100,8 +100,10 @@ public class TaskController extends BaseController {
 
     @RequestMapping("search")
     @ResponseBody
-    public ResponseResult<List<TaskList>> search(String msg){
-        List<TaskList> list = taskService.search(msg);
+    public ResponseResult<List<TaskList>> search(String msg, String tasktype){
+        System.err.println(msg);
+        System.err.println(tasktype);
+        List<TaskList> list = taskService.search(msg, tasktype);
         return new ResponseResult<>(200, list);
     }
 
@@ -111,7 +113,7 @@ public class TaskController extends BaseController {
      */
     @RequestMapping("/findReleaseTaskByCname")
     @ResponseBody
-    public ResponseResult<List<Task>> findReleaseTaskByCname(HttpSession session,Integer page,Integer limit) throws JsonProcessingException {
+    public ResponseResult<List<Task>> findReleaseTaskByCname(HttpSession session,Integer page,Integer limit){
         Object uid = session.getAttribute("uid");
         Integer count;
         if(uid!=null) {

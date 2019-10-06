@@ -79,5 +79,5 @@ public interface TaskService {
      * @param msg
      * @return
      */
-    List<TaskList> search(String msg);
+    List<TaskList> search(String msg, String tasktype);
 }

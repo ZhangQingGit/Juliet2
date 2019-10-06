@@ -84,12 +84,16 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<TaskList> search(String msg) {
+    public List<TaskList> search(String msg, String tasktype) {
         List<TaskList> list = new ArrayList<TaskList>();
-        list = taskMapper.searchByCnameTaskList(msg);
-        if(list.size()==0){
-            list = taskMapper.searchByPnameTaskList(msg);
+        if(tasktype!=null){
+            tasktype=tasktype.trim();
         }
+        list = taskMapper.searchByCnameTaskList(msg, tasktype);
+        if(list.size()==0){
+            list = taskMapper.searchByPnameTaskList(msg, tasktype);
+        }
+        System.err.println(list.size());
         return list;
     }
 
