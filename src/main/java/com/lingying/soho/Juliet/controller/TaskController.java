@@ -1,5 +1,7 @@
 package com.lingying.soho.Juliet.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -101,8 +103,6 @@ public class TaskController extends BaseController {
     @RequestMapping("search")
     @ResponseBody
     public ResponseResult<List<TaskList>> search(String msg, String tasktype){
-        System.err.println(msg);
-        System.err.println(tasktype);
         List<TaskList> list = taskService.search(msg, tasktype);
         return new ResponseResult<>(200, list);
     }

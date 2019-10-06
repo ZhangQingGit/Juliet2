@@ -93,7 +93,6 @@ public class TaskServiceImpl implements TaskService {
         if(list.size()==0){
             list = taskMapper.searchByPnameTaskList(msg, tasktype);
         }
-        System.err.println(list.size());
         return list;
     }
 

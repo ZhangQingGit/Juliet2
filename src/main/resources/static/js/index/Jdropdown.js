@@ -103,9 +103,9 @@ $(document).ready(function(){
                 "</li>");
             var str = data[i].son.split(",");
             for(var j = 0; j < str.length; j++){
-                $('#father'+i).append("<li>\n" +
-                    "<h3 class=\"mcate-item-hd\"><span>"+str[j]+"</span></h3>\n" +
-                    "</li>\n");
+                $('#father'+i).append('<a onclick="search_type('+1+i+j+');">\n' +
+                    '<li><h3 class="mcate-item-hd"><span id="type'+1+i+j+'">'+str[j]+'</span></h3></li>\n' +
+                    '</a>');
             }
         }
         $("#nav .js_toggle").Jdropdown({
@@ -119,4 +119,13 @@ function uid(data){
 		alert("sul");
 	});
 };
-    
+$("#search_button").click(function () {
+    var s = $("#search_input1").val();
+    if(s!=""){
+        window.location.href="tasklist?s="+s;
+    }
+});
+function search_type(msg){
+    var s = $("#type"+msg).text();
+    window.location.href="tasklist?t="+s;
+}
