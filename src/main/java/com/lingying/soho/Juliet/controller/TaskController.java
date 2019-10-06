@@ -1,5 +1,7 @@
 package com.lingying.soho.Juliet.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -98,13 +100,20 @@ public class TaskController extends BaseController {
         return new ResponseResult<>(201, "失败");
     }
 
+    @RequestMapping("search")
+    @ResponseBody
+    public ResponseResult<List<TaskList>> search(String msg, String tasktype){
+        List<TaskList> list = taskService.search(msg, tasktype);
+        return new ResponseResult<>(200, list);
+    }
+
     /**
      * 查询当前用户发布的任务
      * @return
      */
     @RequestMapping("/findReleaseTaskByCname")
     @ResponseBody
-    public ResponseResult<List<Task>> findReleaseTaskByCname(HttpSession session,Integer page,Integer limit) throws JsonProcessingException {
+    public ResponseResult<List<Task>> findReleaseTaskByCname(HttpSession session,Integer page,Integer limit){
         Object uid = session.getAttribute("uid");
         Integer count;
         if(uid!=null) {

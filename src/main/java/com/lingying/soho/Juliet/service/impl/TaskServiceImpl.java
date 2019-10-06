@@ -1,5 +1,6 @@
 package com.lingying.soho.Juliet.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -80,6 +81,19 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public String[] findTaskType() {
         return taskMapper.findTaskType();
+    }
+
+    @Override
+    public List<TaskList> search(String msg, String tasktype) {
+        List<TaskList> list = new ArrayList<TaskList>();
+        if(tasktype!=null){
+            tasktype=tasktype.trim();
+        }
+        list = taskMapper.searchByCnameTaskList(msg, tasktype);
+        if(list.size()==0){
+            list = taskMapper.searchByPnameTaskList(msg, tasktype);
+        }
+        return list;
     }
 
 }

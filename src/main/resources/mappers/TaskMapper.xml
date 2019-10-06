@@ -71,12 +71,19 @@
             task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve,company.cid
         from
             task,company
-        WHERE
+        <where>
              task.cname=company.cname
+        <if test="pname!=null and pname!=''">
         AND
             task.pname
         LIKE
             "%"#{pname}"%"
+        </if>
+        <if test="tasktype!=null and tasktype!=''">
+        AND
+            task.tasktype=#{tasktype}
+        </if>
+        </where>
         limit 0,10;
     </select>
 
@@ -85,24 +92,19 @@
             task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve,company.cid
         from
             task,company
-        WHERE
+        <where>
              task.cname=company.cname
+        <if test="cname!=null and cname!=''">
         AND
             company.cname
         LIKE
             "%"#{cname}"%"
-        limit 0,10;
-    </select>
-
-    <select id="searchByTypeTaskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
-        SELECT
-            task.rid,task.pname,task.psynopsis,task.tasktype,task.findate,task.tdate,task.pmoney,company.cname,company.involve,company.cid
-        from
-            task,company
-        WHERE
-             task.cname=company.cname
+        </if>
+        <if test="tasktype!=null and tasktype!=''">
         AND
             task.tasktype=#{tasktype}
+        </if>
+        </where>
         limit 0,10;
     </select>
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.lingying.soho.Juliet.entity.*;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 public interface TaskMapper {
     /**
@@ -59,21 +60,14 @@ public interface TaskMapper {
      * @param pname
      * @return
      */
-    List<TaskList> searchByPnameTaskList(String pname);
+    List<TaskList> searchByPnameTaskList(@Param("pname") String pname, @Param("tasktype") String tasktype);
 
     /**
      * 根据公司名字模糊查询任务列表
      * @param cname
      * @return
      */
-    List<TaskList> searchByCnameTaskList(String cname);
-
-    /**
-     * 根据项目类型查找，一般用于直接查找，type直接在发布时固定
-     * @param type
-     * @return
-     */
-    List<TaskList> searchByTypeTaskList(String type);
+    List<TaskList> searchByCnameTaskList(@Param("cname") String cname, @Param("tasktype") String tasktype);
 
     /**
      * 根据项目名去查询rid
