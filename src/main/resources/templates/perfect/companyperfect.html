@@ -24,6 +24,8 @@
                         <input type="text" name="cname" autocomplete="off" placeholder=""
                                class="layui-input" id="cname">
                     </div>
+                    <span id="error-cname-null"><img src="../images/login/sigh.jpg">请输入个人/公司名</span><br>
+                    <span id="error-cname-existence"><img src="../images/login/sigh.jpg">名字已存在</span>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">涉及领域</label>
@@ -31,41 +33,49 @@
                         <input type="text" name="involve" autocomplete="off" placeholder=""
                                class="layui-input" id="involve">
                     </div>
+                    <span id="error-involve-null"><img src="../images/login/sigh.jpg">请输入涉及领域</span>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">公司电话</label>
+                    <label class="layui-form-label">个人/公司电话</label>
                     <div class="layui-input-block">
                         <input type="text" name="cphone" autocomplete="off" placeholder=""
                                class="layui-input" id="cphone">
                     </div>
+                    <span id="error-cphone-null"><img src="../images/login/sigh.jpg">请输入个人/公司电话</span>
+                    <span id="error-cphone-format"><img src="../images/login/sigh.jpg">电话格式不正确</span>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">公司邮箱</label>
+                    <label class="layui-form-label">个人/公司邮箱</label>
                     <div class="layui-input-block">
                         <input type="text" name="cemail" autocomplete="off" placeholder=""
                                class="layui-input" id="cemail">
                     </div>
+                    <span id="error-cemail-null"><img src="../images/login/sigh.jpg">请输入个人/公司邮箱</span>
+                    <span id="error-cemail-format"><img src="../images/login/sigh.jpg">邮箱格式不正确</span>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">公司主页</label>
+                    <label class="layui-form-label">公司主页/个人博客等</label>
                     <div class="layui-input-block">
-                        <input type="text" name="homepage" autocomplete="off" placeholder=""
+                        <input type="text" name="homepage" autocomplete="off" placeholder="可省略"
                                class="layui-input" id="homepage">
                     </div>
+                    <span id="error-homepage-null"><img src="../images/login/sigh.jpg">请输入公司主页/个人博客等</span>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">注册资金</label>
                     <div class="layui-input-block">
-                        <input type="text" name="capital" autocomplete="off" placeholder=""
+                        <input type="text" name="capital" autocomplete="off" placeholder="可省略"
                                class="layui-input" id="capital">
                     </div>
+                    <span id="error-capital-null"><img src="../images/login/sigh.jpg">请输入注册资金</span>
                 </div>
                 <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">简单介绍下</label>
+                    <label class="layui-form-label">个人/公司简介</label>
                     <div class="layui-input-block">
                         <textarea placeholder="请输入个人/公司简介" class="layui-textarea"
                                   name="synopsis" id="synopsis"></textarea>
                     </div>
+                    <span id="error-synopsis-null"><img src="../images/login/sigh.jpg">请输入简介</span>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">

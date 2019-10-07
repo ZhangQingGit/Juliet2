@@ -1,5 +1,5 @@
 function getnext(i){
-    //alert(i);
+
     var sz=new Array("step1","step2","step3");
     for(var j=0;j<sz.length;j++){
         if(i==sz[j]){
@@ -7,25 +7,6 @@ function getnext(i){
         }else{
             document.getElementById(sz[j]).style.display="none";
         }
-    }
-
-    var cname=$('#cname').val();
-    var cemail=$('#cemail').val();
-    var pname=$('#pname').val();
-    var tasktype = $('#tasktype option:selected').text();
-    var pmoney=$('#pmoney').val();
-    var findate=$('#findate').val();
-    var psynopsis=$('#psynopsis').val();
-
-    if(i == "step2"){
-        $.post("/task/taskPush_One",{cname:cname,cemail:cemail,pname:pname,tasktype:tasktype,pmoney:pmoney,
-            findate:findate},function (data,status) {
-            console.log(data);
-        });
-    }else{
-        $.post("/task/taskPush_Two",{psynopsis:psynopsis},function (data,status) {
-            console.log(data);
-        });
     }
 }
 
@@ -35,7 +16,7 @@ layui.use('form', function(){
     //……
     $(document).ready(function() {
         $.post("/task/findTaskType", function (data) {
-            console.log(data);
+            //console.log(data);
             for (var i = 0; i < data.data.length; i++) {
                 $("#tasktype").append('<option value="' + i + '">'+data.data[i]+'</option>');
             }
@@ -44,10 +25,18 @@ layui.use('form', function(){
     });
     //但是，如果你的HTML是动态生成的，自动渲染就会失效
     //因此你需要在相应的地方，执行下述方法来进行渲染
+
+    form.on('select()', function(data){
+        $('#error-tasktype-null').hide();
+    });
 });
 
 var demand=3;
 var j;
+
+/**
+ * 获取更多需求功能input框的方法
+ */
 function getMore() {
 
     for (var i=demand; i<demand+3;i++){
@@ -66,7 +55,380 @@ function getMore() {
     //$('#last-demand3').removeAttr("id");
 }
 
-function demandDemo() {
+/**
+ *邮箱的正则
+ * @param email  传入的邮箱参数
+ * @returns {boolean}  true  邮箱格式正确  false 邮箱格式不正确
+ */
+function checkEmail(email) {
+    var emailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return emailReg.test(email);
+}
+
+function notEmptyOne(i) {
+    var cname=$('#cname').val();
+    var cemail=$('#cemail').val();
+    var pname=$('#pname').val();
+    var tasktype = $('#tasktype option:selected').text();
+    var pmoney=$('#pmoney').val();
+    var findate=$('#findate').val();
+
+    if(cname == null | cname == ""){
+        $('#error-cname-null').show();
+        if(cemail == null | cemail == ""){
+            $('#error-cemail-null').show();
+            if(pname == null | pname == ""){
+                $('#error-pname-null').show();
+                if(tasktype == "请选择任务类型或直接搜索"){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }else {
+                if(tasktype == "请选择任务类型或直接搜索"){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }else {
+            if(!(checkEmail(cemail))){
+                $('#error-cemail-format').show();
+            }
+            if(pname == null | pname == ""){
+                $('#error-pname-null').show();
+                if(tasktype == null | tasktype == ""){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }else {
+                if(tasktype == "请选择任务类型或直接搜索"){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }else {
+        if(cemail == null | cemail == ""){
+            $('#error-cemail-null').show();
+            if(pname == null | pname == ""){
+                $('#error-pname-null').show();
+                if(tasktype == "请选择任务类型或直接搜索"){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }else {
+                if(tasktype == "请选择任务类型或直接搜索"){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }else {
+            if(!(checkEmail(cemail))){
+                $('#error-cemail-format').show();
+            }
+            if(pname == null | pname == ""){
+                $('#error-pname-null').show();
+                if(tasktype == null | tasktype == ""){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }
+            }else {
+                if(tasktype == "请选择任务类型或直接搜索"){
+                    $('#error-tasktype-null').show();
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }
+                }else {
+                    if(pmoney == null | pmoney == ""){
+                        $('#error-pmoney-null').show();
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        if(findate == null | findate == ""){
+                            $('#error-findate-null').show();
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    $.post("/task/taskPush_One",{cname:cname,cemail:cemail,pname:pname,tasktype:tasktype,pmoney:pmoney,
+        findate:findate},function (data,status) {
+        console.log(data);
+    });
+
+    getnext(i);
+
+}
+
+function notEmptyTwo(i) {
+    var psynopsis=$('#psynopsis').val();
+
+    if(psynopsis == null | psynopsis == ""){
+        $('#error-psynopsis-null').show();
+        return false;
+    }
+
+    $.post("/task/taskPush_Two",{psynopsis:psynopsis},function (data,status) {
+        console.log(data);
+    });
+
+    getnext(i);
+}
+
+function notEmptyThere() {
+
+    var demand1 = $('#demand1').val();
+    var demand2 = $('#demand2').val();
+    var demand3 = $('#demand3').val();
+
+    if((demand1 == null | demand1 == "") | (demand2 == null | demand2 == "") | (demand3 == null | demand3 == "")){
+        $('#error-demand-null').show();
+        return false;
+    }
+
     var core="";
     for (var i=1;i<=demand;i++){
         var demandinput=$('#demand'+i).val();
@@ -84,5 +446,32 @@ function demandDemo() {
     $.post("/task/taskPush_Three",{core:core},function (data,status) {
         //console.log(data);
     });
-
 }
+
+var cname_input=document.getElementById("cname");
+var cemail_input=document.getElementById("cemail");
+var pname_input=document.getElementById("pname");
+var pmoney_input=document.getElementById("pmoney");
+var findate_input=document.getElementById("findate");
+
+/**
+ * input 标签的onfocus事件
+ */
+cname_input.onfocus=function(){
+    $('#error-cname-null').hide();
+}
+cemail_input.onfocus=function () {
+    $('#error-cemail-null').hide();
+}
+pname_input.onfocus=function () {
+    $('#error-pname-null').hide();
+}
+pmoney_input.onfocus=function () {
+    $('#error-pmoney-null').hide();
+}
+findate_input.onfocus=function () {
+    $('#error-findate-null').hide();
+}
+
+
+

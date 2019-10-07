@@ -11,8 +11,8 @@
 
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../layui/layui.js"></script>
-    <script src="../https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="../js/task/releasetask.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="bg"></div>
@@ -34,6 +34,9 @@
                             </div>
                         </div>
                     </div>
+                    <span id="error-cname-null"><img src="../images/login/sigh.jpg">请输入个人/公司名</span><br>
+                    <span id="error-cname-existence"><img src="../images/login/sigh.jpg">名字已存在</span>
+
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <div class="layui-input-inline">
@@ -42,6 +45,9 @@
                             </div>
                         </div>
                     </div>
+                    <span id="error-cemail-null"><img src="../images/login/sigh.jpg">请输入联系邮箱</span>
+                    <span id="error-cemail-format"><img src="../images/login/sigh.jpg">邮箱格式不正确</span>
+
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <div class="layui-input-inline">
@@ -50,14 +56,18 @@
                             </div>
                         </div>
                     </div>
+                    <span id="error-pname-null"><img src="../images/login/sigh.jpg">请输入任务名</span>
+
                     <div class="layui-inline" style="margin-top: 20px;">
                         <div class="layui-input-inline">
                             <select name="tasktype" lay-verify="required" lay-search="" id="tasktype">
                                 <option value="">请选择任务类型或直接搜索</option>
 
                             </select>
+                            <span id="error-tasktype-null"><img src="../images/login/sigh.jpg">请选择/搜索任务类型</span>
                         </div>
                     </div>
+
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <div class="layui-input-inline">
@@ -66,6 +76,8 @@
                             </div>
                         </div>
                     </div>
+                    <span id="error-pmoney-null"><img src="../images/login/sigh.jpg">请输入报价</span>
+
                     <div class="layui-form-item">
                         <div class="layui-inline">
                             <div class="layui-input-inline">
@@ -74,8 +86,11 @@
                             </div>
                         </div>
                     </div>
+                    <span id="error-findate-null"><img src="../images/login/sigh.jpg">请输入预期</span><br>
+
+
                     <button type="button" class="layui-btn">上一步</button>
-                    <button type="button" class="layui-btn" onclick="getnext('step2')">下一步</button>
+                    <button type="button" class="layui-btn" onclick="notEmptyOne('step2')">下一步</button>
                 </form>
             </div>
         </div>
@@ -91,8 +106,9 @@
                                 <textarea name="psynopsis" placeholder="请输入任务简单描述" class="layui-textarea" id="psynopsis"></textarea>
                             </div>
                         </div>
+                        <span id="error-psynopsis-null" style="margin-left: 150px;"><img src="../images/login/sigh.jpg">请输入简单描述</span><br>
                         <button type="button" class="layui-btn" onclick="getnext('step1')">上一步</button>
-                        <button type="button" class="layui-btn" onclick="getnext('step3')">下一步</button>
+                        <button type="button" class="layui-btn" onclick="notEmptyTwo('step3')">下一步</button>
                     </form>
                 </div>
             </div>
@@ -107,27 +123,28 @@
                         <div class="layui-form-item" id="last-demand1">
                             <label class="layui-form-label" style="width: 60px" id="label1">1.</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input"
+                                <input type="text" name="demand" lay-verify="required" autocomplete="off" class="layui-input"
                                        placeholder="例如:用户基本登录注册功能(下面以此类推)" id="demand1">
                             </div>
                         </div>
                         <div class="layui-form-item" id="last-demand2">
                             <label class="layui-form-label" style="width: 60px" id="label2">2.</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input"
+                                <input type="text" name="demand" lay-verify="required" autocomplete="off" class="layui-input"
                                        placeholder="例如:用户基本登录注册功能(下面以此类推)" id="demand2">
                             </div>
                         </div>
                         <div class="layui-form-item" id="last-demand3">
                             <label class="layui-form-label" style="width: 60px" id="label3">3.</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input"
+                                <input type="text" name="demand" lay-verify="required" autocomplete="off" class="layui-input"
                                        placeholder="例如:用户基本登录注册功能(下面以此类推)" id="demand3">
                             </div>
                         </div>
+                        <span id="error-demand-null"><img src="../images/login/sigh.jpg">请至少填写三个任务需求</span><br>
                         <button type="button" class="layui-btn" onclick="getMore()">不够用？我懂你！</button><br>
                         <button type="button" class="layui-btn" onclick="getnext('step2')">上一步</button>
-                        <button type="button" class="layui-btn" onclick="demandDemo()">完成</button>
+                        <button type="button" class="layui-btn" onclick="notEmptyThere()">完成</button>
                     </form>
                 </div>
             </div>
@@ -135,6 +152,6 @@
 
     </div>
 </div>
-
+<script src="../js/task/releasetask.js"></script>
 </body>
 </html>
