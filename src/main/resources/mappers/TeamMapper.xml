@@ -30,7 +30,7 @@
         FROM
             team
         LIMIT
-            0,4
+            0,4;
     </select>
 
     <select id="findById" resultType="com.lingying.soho.Juliet.entity.Team">
