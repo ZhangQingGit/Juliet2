@@ -63,7 +63,6 @@
             task,company
         WHERE
              task.cname=company.cname
-        limit 0,10;
     </select>
 
     <select id="searchByPnameTaskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
@@ -84,7 +83,6 @@
             task.tasktype=#{tasktype}
         </if>
         </where>
-        limit 0,10;
     </select>
 
     <select id="searchByCnameTaskList" resultType="com.lingying.soho.Juliet.entity.TaskList">
@@ -105,7 +103,6 @@
             task.tasktype=#{tasktype}
         </if>
         </where>
-        limit 0,10;
     </select>
 
     <select id="findTaskType" resultType="java.lang.String">

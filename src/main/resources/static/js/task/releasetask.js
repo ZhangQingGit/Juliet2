@@ -74,7 +74,7 @@ function checkEmail(email) {
 }
 
 function notEmptyOne(i) {
-    var cname=$('#cname').val();
+    var cname=$('#cname option:selected').text();
     var cemail=$('#cemail').val();
     var pname=$('#pname').val();
     var tasktype = $('#tasktype option:selected').text();

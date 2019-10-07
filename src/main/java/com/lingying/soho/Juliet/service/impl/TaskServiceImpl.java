@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.github.pagehelper.PageHelper;
 import com.lingying.soho.Juliet.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,8 +60,10 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<TaskList> taskList() {
-        return taskMapper.taskList();
+    public PageResult taskList(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        com.github.pagehelper.Page result =(com.github.pagehelper.Page)taskMapper.taskList();
+        return new PageResult(result.getTotal(), result.getResult());
     }
 
     @Override

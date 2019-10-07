@@ -45,7 +45,7 @@ public interface TaskService {
      * 搜索默认展示页
      * @return
      */
-    List<TaskList> taskList();
+    PageResult taskList(Integer pageNum, Integer pageSize);
 
     /**
      * 根据项目名去查询rid
