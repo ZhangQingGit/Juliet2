@@ -38,4 +38,26 @@ public interface UserMapper {
             , @Param("password") String password
             , @Param("usertype") Integer usertype);
 
+
+    /**
+     * 根据uid查询账户密码
+     * @param uid
+     * @return
+     */
+    String findPasswordByUid(Integer uid);
+
+    /**
+     * 根据uid修改密码
+     * @param uid
+     * @return
+     */
+    Integer updatePasswordByUid(@Param("uid") Integer uid,
+                                @Param("password") String password);
+
+    /**
+     * 根据uid查询用户昵称
+     * @param uid
+     * @return
+     */
+    String getNickNameByUid(Integer uid);
 }

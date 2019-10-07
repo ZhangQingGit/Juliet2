@@ -131,20 +131,21 @@ public class UserController extends BaseController{
         session.setAttribute(phone, key);
         return new ResponseResult<>(201, "验证码已发送！");
     }
-    
-    @RequestMapping("getName")
+
+    /**
+     * 根据uid查询用户昵称
+     * @param session
+     * @return
+     */
+    @RequestMapping("getNickName")
     @ResponseBody
-    public ResponseResult<String> getName(HttpSession session){
-        Object uid = session.getAttribute("uid");
-        if(uid!=null) {
-            String teamname = teamService.getNameById((int)uid);
-            if(teamname!=null) {
-                return new ResponseResult<>(200,teamname);
-            }else {
-             String company = companyService.getNameById((int)uid);
-                 return new ResponseResult<>(200,company);
-            }
+    public ResponseResult<String> getNickName(HttpSession session){
+        Integer uid = getUidFromSession(session);
+        if(uid != null){
+            String nickName = userService.getNickNameByUid(uid);
+            return new ResponseResult<>(200,nickName);
         }
+
         return new ResponseResult<>(200,"UnName");
     }
 
@@ -164,6 +165,40 @@ public class UserController extends BaseController{
         }else {
             return null;
         }
+    }
 
+    /**
+     * 根据uid查询账户密码
+     * @param session
+     * @return
+     */
+    @RequestMapping("/findPasswordByUid")
+    @ResponseBody
+    public ResponseResult<String> findPasswordByUid(HttpSession session){
+        Object obj = session.getAttribute("uid");
+        if(obj != null){
+            Integer uid = (Integer) obj;
+            String password = userService.findPasswordByUid(uid);
+            return new ResponseResult<>(200,password);
+        }else {
+            return null;
+        }
+    }
+
+    @RequestMapping("/updatePasswordByUid")
+    @ResponseBody
+    public ResponseResult<String> updatePasswordByUid(HttpSession session,String confirmpassword){
+        Object obj = session.getAttribute("uid");
+        if(obj != null){
+            Integer uid = (Integer) obj;
+
+            Integer a = userService.updatePasswordByUid(uid,confirmpassword);
+            if(a > 0){
+                return new ResponseResult<>(200,"修改成功");
+            }
+        }else {
+            return null;
+        }
+        return null;
     }
 }

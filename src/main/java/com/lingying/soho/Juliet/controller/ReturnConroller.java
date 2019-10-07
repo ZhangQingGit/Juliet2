@@ -54,6 +54,12 @@ public class ReturnConroller extends BaseController{
         return "publisherdetails";
     }
 
+    @RequestMapping("managePublisherdetails")
+    public String managePublisherdetails() {
+
+        return "redirect:publisherdetails";
+    }
+
     @RequestMapping("tasklist")
     public String tasklist() {
 

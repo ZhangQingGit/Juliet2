@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#taskList").empty();
     //得到名字
-    $.post("getName", function (data) {
+    $.post("/getNickName", function (data) {
         $("#d_name").append(data.message);
     });
     //初始列表

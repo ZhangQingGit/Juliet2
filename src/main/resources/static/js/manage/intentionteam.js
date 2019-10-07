@@ -1,7 +1,6 @@
 window.onload=function () {
     $.post("/findIntentionTeamByCname",function (data,status) {
 
-        console.log(data[0].tid[2]);
         for (var i= 0; i<data.length;i++) {
             var pname=data[i].pname;
             var rid=data[i].rid;
@@ -16,20 +15,20 @@ window.onload=function () {
                     if(j == 0 ){
                         if(rowspan>1){
                             $('#tbody0').append("<tr>\n" +
-                                "                <td rowspan=\""+rowspan+"\"><a href=\"taskdetails?rid="+rid+"\" target=\"_blank\">"+pname+"</a></td>\n" +
-                                "                <td ><a href=\"publisherdetails?tid="+tid+"\" target=\"_blank\">"+tnamelist[j].tname+"</a></td>\n" +
+                                "                <td rowspan=\""+rowspan+"\"><a href=\"/taskdetails?rid="+rid+"\" target=\"_blank\">"+pname+"</a></td>\n" +
+                                "                <td ><a href=\"/publisherdetails?tid="+tid+"\" target=\"_blank\">"+tnamelist[j].tname+"</a></td>\n" +
                                 "            </tr>");
                         }else {
                             $('#tbody0').append("<tr>\n" +
-                                "                <td><a href=\"taskdetails?rid="+rid+"\" target=\"_blank\">"+pname+"</a></td>\n" +
-                                "                <td><a href=\"publisherdetails?tid="+tid+"\" target=\"_blank\">"+tnamelist[j].tname+"</a></td>\n" +
+                                "                <td><a href=\"/taskdetails?rid="+rid+"\" target=\"_blank\">"+pname+"</a></td>\n" +
+                                "                <td><a href=\"/publisherdetails?tid="+tid+"\" target=\"_blank\">"+tnamelist[j].tname+"</a></td>\n" +
                                 "            </tr>");
                         }
 
                     }else{
                         if(rowspan>1){
                             $('#tbody0').append("<tr>\n" +
-                                "                <td><a href=\"publisherdetails?tid="+tid+"\" target=\"_blank\">"+tnamelist[j].tname+"</a></td>\n" +
+                                "                <td><a href=\"/publisherdetails?tid="+tid+"\" target=\"_blank\">"+tnamelist[j].tname+"</a></td>\n" +
                                 "            </tr>");
                         }
                     }

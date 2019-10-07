@@ -120,4 +120,19 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public String findPasswordByUid(Integer uid) {
+        return userMapper.findPasswordByUid(uid);
+    }
+
+    @Override
+    public Integer updatePasswordByUid(Integer uid,String password) {
+        return userMapper.updatePasswordByUid(uid,password);
+    }
+
+    @Override
+    public String getNickNameByUid(Integer uid) {
+        return userMapper.getNickNameByUid(uid);
+    }
+
 }

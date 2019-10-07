@@ -41,5 +41,30 @@
             (#{username},#{password},#{usertype})
     </insert>
     
+    <select id="findPasswordByUid" resultType="java.lang.String">
+        SELECT
+            password
+        FROM
+            t_user
+        WHERE
+            uid=#{uid}
+    </select>
 
+    <update id="updatePasswordByUid">
+        UPDATE
+            t_user
+        SET
+            password = #{password}
+        WHERE
+            uid = #{uid}
+    </update>
+
+    <select id="getNickNameByUid" resultType="java.lang.String">
+        SELECT
+            nickname
+        FROM
+            t_user
+        WHERE
+            uid=#{uid}
+    </select>
 </mapper>

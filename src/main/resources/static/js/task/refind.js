@@ -8,7 +8,8 @@ function GetRequest() {
       rid = strs[1];
 	   }
 	var d_name;
-	$.post("getName", function (data) {
+
+	$.post("/getNickName", function (data) {
 		$("#d_name").append(data.message);
 		d_name = data.message;
 	});

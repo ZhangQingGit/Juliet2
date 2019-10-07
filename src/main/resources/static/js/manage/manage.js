@@ -6,7 +6,7 @@ layui.use('element', function(){
 
 $(document).ready(function(json){
     //获取公司名字
-    $.post("getName", function (data) {
+    $.post("/getNickName", function (data) {
         $("#d_name").append(data.message);
     });
 });
@@ -14,7 +14,7 @@ $(document).ready(function(json){
  * 发布任务的iframe
  */
 function crTask() {
-    $('#crtask').attr("src","manage/crtask.html");
+    $('#crtask').attr("src","../manage/crtask.html");
 }
 
 
@@ -22,15 +22,15 @@ function crTask() {
  * 对我有意向的团队iframe
  */
 function intentionCompany() {
-    $('#crtask').attr("src","manage/intentionteam.html");
+    $('#crtask').attr("src","../manage/intentionteam.html");
 }
 
 /**
  * 个人基础信息iframe
  */
 function basicInformation() {
-    $('#crtask').attr("src","manage/basicinformation.html");
-    $('#crtask2').attr("src","manage/basicinformation.html");
+    $('#crtask').attr("src","../manage/basicinformation.html");
+    $('#crtask2').attr("src","../manage/basicinformation.html");
 }
 
 /**
@@ -38,5 +38,5 @@ function basicInformation() {
  */
 function updatePassword() {
     //alert("我进来了");
-    $('#crtask').attr("src","manage/updatepassword.html");
+    $('#crtask').attr("src","../manage/updatepassword.html");
 }

@@ -11,8 +11,8 @@ layui.use(['carousel', 'form'], function(){
 
 $(document).ready(function(json){
 
-    //获取公司名字
-    $.post("getName", function (data) {
+    //获取用户昵称名字
+    $.post("/getNickName", function (data) {
         $("#d_name").append(data.message);
     });
 

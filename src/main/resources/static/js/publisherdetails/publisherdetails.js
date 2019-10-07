@@ -2,10 +2,12 @@ function GetRequest() {
     var cid=-1;
     var tid=-1;
     var d_name;
-    $.post("getName", function (data) {
+
+    $.post("/getNickName", function (data) {
         $("#d_name").append(data.message);
         d_name = data.message;
     });
+
     var url = location.search; //获取url中"?"符后的字串
     if (url.indexOf("?") != -1) {    //判断是否有参数
         var str = url.substr(1); //从第一个字符开始 因为第0个是?号 获取所有除问号的所有符串

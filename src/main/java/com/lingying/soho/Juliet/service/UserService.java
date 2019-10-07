@@ -37,5 +37,31 @@ public interface UserService {
      */
     boolean findToCompanyExit(Integer uid);
 
+    /**
+     * 根据uid查询个人/公司信息
+     * @param uid
+     * @return
+     */
     Map<String,Object> findInformationByUid(Integer uid);
+
+    /**
+     * 根据uid查询账户密码
+     * @param uid
+     * @return
+     */
+    String findPasswordByUid(Integer uid);
+
+    /**
+     * 根据uid修改密码
+     * @param uid
+     * @return
+     */
+    Integer updatePasswordByUid(Integer uid,String password);
+
+    /**
+     * 根据uid查询用户昵称
+     * @param uid
+     * @return
+     */
+    String getNickNameByUid(Integer uid);
 }
