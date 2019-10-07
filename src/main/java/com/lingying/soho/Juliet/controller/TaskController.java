@@ -70,6 +70,13 @@ public class TaskController extends BaseController {
         return new ResponseResult<>(200, arr);
     }
 
+    @RequestMapping("findCname")
+    @ResponseBody
+    public ResponseResult<String[]> findCname(){
+        String[] arr = taskService.findCname();
+        return new ResponseResult<>(200,arr);
+    }
+
     @RequestMapping("taskPush_One")
     @ResponseBody
     public ResponseResult<String> taskPush(TaskBasic taskBasic, HttpSession session){

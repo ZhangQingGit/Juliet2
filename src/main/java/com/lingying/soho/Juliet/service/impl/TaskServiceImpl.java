@@ -84,6 +84,11 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
+    public String[] findCname() {
+        return taskMapper.findCname();
+    }
+
+    @Override
     public List<TaskList> search(String msg, String tasktype) {
         List<TaskList> list = new ArrayList<TaskList>();
         if(tasktype!=null){

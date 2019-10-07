@@ -117,6 +117,13 @@
             level>1;
     </select>
 
+    <select id="findCname" resultType="java.lang.String">
+        SELECT
+            cname
+        FROM
+            company
+    </select>
+
     <select id="findRidByPname" resultType="java.lang.Integer">
         SELECT
             rid

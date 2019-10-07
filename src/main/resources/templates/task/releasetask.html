@@ -26,16 +26,15 @@
             </div>
             <div class="panel-body">
                 <form class="layui-form" action="">
-                    <div class="layui-form-item">
-                        <div class="layui-inline">
-                            <div class="layui-input-inline">
-                                <input type="text" name="cname" autocomplete="off" class="layui-input"
-                                       placeholder="请输入公司名/个人真实姓名" id="cname">
-                            </div>
+                    <div class="layui-inline" style="margin-top: 20px;">
+                        <div class="layui-input-inline">
+                            <select name="tasktype" lay-verify="required" lay-search="" id="cname">
+                                <option value="">请选择你的公司名字或直接搜索</option>
+
+                            </select>
+                            <span id="error-cname-null"><img src="../images/login/sigh.jpg">请选择/搜索任务类型</span>
                         </div>
                     </div>
-                    <span id="error-cname-null"><img src="../images/login/sigh.jpg">请输入个人/公司名</span><br>
-                    <span id="error-cname-existence"><img src="../images/login/sigh.jpg">名字已存在</span>
 
                     <div class="layui-form-item">
                         <div class="layui-inline">

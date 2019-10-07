@@ -69,10 +69,16 @@ public interface TaskService {
     List<Task> findReleaseTaskLimitByCname(Page page);
 
     /**
-     * 搜索下拉框的赋值
+     * 任务类型搜索下拉框的赋值
      * @return
      */
     String[] findTaskType();
+
+    /**
+     * 公司名搜索下拉框的赋值
+     * @return
+     */
+    String[] findCname();
 
     /**
      * 在搜索框中搜索，先出现有关公司，在出现有关任务，模糊查询

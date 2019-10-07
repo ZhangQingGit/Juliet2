@@ -96,4 +96,10 @@ public interface TaskMapper {
      */
     String[] findTaskType();
 
+    /**
+     * 在发布任务时公司名字的搜索下拉框
+     * @return
+     */
+    String[] findCname();
+
 }
