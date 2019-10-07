@@ -45,7 +45,7 @@ public interface TaskService {
      * 搜索默认展示页
      * @return
      */
-    List<TaskList> taskList();
+    PageResult taskList(Integer pageNum, Integer pageSize);
 
     /**
      * 根据项目名去查询rid
@@ -69,10 +69,16 @@ public interface TaskService {
     List<Task> findReleaseTaskLimitByCname(Page page);
 
     /**
-     * 搜索下拉框的赋值
+     * 任务类型搜索下拉框的赋值
      * @return
      */
     String[] findTaskType();
+
+    /**
+     * 公司名搜索下拉框的赋值
+     * @return
+     */
+    String[] findCname();
 
     /**
      * 在搜索框中搜索，先出现有关公司，在出现有关任务，模糊查询

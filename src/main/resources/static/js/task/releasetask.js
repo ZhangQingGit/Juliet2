@@ -14,7 +14,15 @@ layui.use('form', function(){
     var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
 
     //……
+
     $(document).ready(function() {
+        $.post("/task/findCname", function (data) {
+            //console.log(data);
+            for (var i = 0; i < data.data.length; i++) {
+                $("#cname").append('<option value="' + i + '">'+data.data[i]+'</option>');
+            }
+            form.render();
+        });
         $.post("/task/findTaskType", function (data) {
             //console.log(data);
             for (var i = 0; i < data.data.length; i++) {
@@ -66,7 +74,7 @@ function checkEmail(email) {
 }
 
 function notEmptyOne(i) {
-    var cname=$('#cname').val();
+    var cname=$('#cname option:selected').text();
     var cemail=$('#cemail').val();
     var pname=$('#pname').val();
     var tasktype = $('#tasktype option:selected').text();

@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.pagehelper.PageHelper;
 import com.lingying.soho.Juliet.entity.*;
 import com.lingying.soho.Juliet.service.CompanyService;
 import com.lingying.soho.Juliet.service.TeamService;
@@ -35,9 +36,9 @@ public class TaskController extends BaseController {
     @RequestMapping("show")
     @ResponseBody
     public ResponseResult<List<TaskV>> showByLimit(){
-        
+
         List<TaskV> t = taskService.showByLimit();
-       
+
         return new ResponseResult<>(SUCCESS,t);
     }
     
@@ -58,9 +59,12 @@ public class TaskController extends BaseController {
 
     @RequestMapping("taskList")
     @ResponseBody
-    public ResponseResult<List<TaskList>> taskList(){
-        List<TaskList> list = taskService.taskList();
-        return new ResponseResult<>(200, list);
+    public PageResult taskList(Integer pageNum, Integer pageSize){
+        PageResult result = taskService.taskList(pageNum, pageSize);
+        Integer num = new Long(result.getTotalSize()).intValue();
+        Integer pages = (num+5-1)/5;
+        result.setPages(pages);
+        return result;
     }
 
     @RequestMapping("findTaskType")
@@ -68,6 +72,13 @@ public class TaskController extends BaseController {
     public ResponseResult<String[]> findTaskType(){
         String[] arr = taskService.findTaskType();
         return new ResponseResult<>(200, arr);
+    }
+
+    @RequestMapping("findCname")
+    @ResponseBody
+    public ResponseResult<String[]> findCname(){
+        String[] arr = taskService.findCname();
+        return new ResponseResult<>(200,arr);
     }
 
     @RequestMapping("taskPush_One")
