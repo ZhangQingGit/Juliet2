@@ -1,4 +1,10 @@
 function GetRequest() {
+	var layer;
+	layui.use('layer', function(){
+		layer = layui.layer;
+
+	});
+
 	var rid;
 	var url = location.search; //获取url中"?"符后的字串
 	if (url.indexOf("?") != -1) {    //判断是否有参数
@@ -35,32 +41,55 @@ function GetRequest() {
 		});
 
 
-		
-		$("#want").click(function(){
-			$.post("bid_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
-				if(data.state==200){
-					alert(data.message);
-				}
-				else if(data.state==201){
-					alert(data.message);
-				}else {
-					window.location.href='teamperfect';
+		new Vue({
+			el: '#app',
+			data: {
+				msg: '',
+			},
+			methods: {
+				tntention(){
+					$.post("bid_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},(intentiondata)=>{
+						if(intentiondata.state==200){
+							this.msg=intentiondata.message;
+
+							this.$alert(this.msg,'提示信息', {
+								confirmButtonText: '确定'
+							});
+
+							$('.icon-glyph-hollow-star').css("content","url('images/star333.png')");
+						}else if(intentiondata.state==201){
+							this.msg=intentiondata.message;
+
+							this.$alert(this.message,'提示信息', {
+								confirmButtonText: '确定'
+							});
+						}else {
+							window.location.href='/teamperfect';
+						}
+					});
+				},
+				contact(){
+					$('.icon-glyph-hollow-star').css("content","url('images/star111.png')");
+					$.post("del_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},(contactdata)=>{
+						if(contactdata.state==200){
+							this.msg=contactdata.message;
+							this.$alert(this.msg,'提示信息', {
+								confirmButtonText: '确定'
+							});
+						}
+						else if(contactdata.state==201){
+							this.msg=contactdata.message;
+							this.$alert(this.msg,'提示信息', {
+								confirmButtonText: '确定'
+							});
+						}else {
+							window.location.href='/perfect';
+						}
+					});
 				}
 
-			});
-		});
-		
-		$("#notwant").click(function(){
-			$.post("del_relation",{cname:data.data.cname,pname:data.data.pname,tname:d_name},function(data){
-				if(data.state==200){
-					alert(data.message);
-				}
-				else if(data.state==201){
-					alert(data.message);
-				}else {
-					window.location.href='/perfect';
-				}
-			});
+			}
 		});
 	});
 }
+

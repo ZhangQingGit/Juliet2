@@ -147,5 +147,11 @@ public class TaskController extends BaseController {
         }
         return  null;
     }
+
+    @RequestMapping("/testDemo")
+    @ResponseBody
+    public Integer testDemo(){
+        return 200;
+    }
 }
 

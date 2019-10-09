@@ -183,7 +183,7 @@ ul, ol {
 }
 
 .icon-glyph-hollow-star:before {
-    content: "\e909"
+    content: url("../../images/star111.png");
 }
 
 .icon-glyph-wechat:before {

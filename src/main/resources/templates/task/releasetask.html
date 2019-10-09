@@ -8,7 +8,13 @@
     <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../layui/css/layui.css"/>
     <link rel="stylesheet" href="../css/task/releasetask.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
+    <!-- 引入vue.js -->
+    <script src="js/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../layui/layui.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -117,7 +123,7 @@
                 <div class="panel-heading">
                     <h1 class="panel-title">任务需求功能</h1>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" id="app">
                     <form class="layui-form layui-form-pane" action="">
                         <div class="layui-form-item" id="last-demand1">
                             <label class="layui-form-label" style="width: 60px" id="label1">1.</label>
@@ -143,7 +149,7 @@
                         <span id="error-demand-null"><img src="../images/login/sigh.jpg">请至少填写三个任务需求</span><br>
                         <button type="button" class="layui-btn" onclick="getMore()">不够用？我懂你！</button><br>
                         <button type="button" class="layui-btn" onclick="getnext('step2')">上一步</button>
-                        <button type="button" class="layui-btn" onclick="notEmptyThere()">完成</button>
+                        <button type="button" class="layui-btn" @click="notEmptyThere">完成</button>
                     </form>
                 </div>
             </div>

@@ -1,3 +1,29 @@
+var cname_input=document.getElementById("cname");
+var cemail_input=document.getElementById("cemail");
+var pname_input=document.getElementById("pname");
+var pmoney_input=document.getElementById("pmoney");
+var findate_input=document.getElementById("findate");
+
+/**
+ * input 标签的onfocus事件
+ */
+cname_input.onfocus=function(){
+    $('#error-cname-null').hide();
+}
+cemail_input.onfocus=function () {
+    $('#error-cemail-null').hide();
+}
+pname_input.onfocus=function () {
+    $('#error-pname-null').hide();
+}
+pmoney_input.onfocus=function () {
+    $('#error-pmoney-null').hide();
+}
+findate_input.onfocus=function () {
+    $('#error-findate-null').hide();
+}
+
+
 function getnext(i){
 
     var sz=new Array("step1","step2","step3");
@@ -322,9 +348,7 @@ function notEmptyOne(i) {
                 }
             }
         }else {
-            if(!(checkEmail(cemail))){
-                $('#error-cemail-format').show();
-            }
+
             if(pname == null | pname == ""){
                 $('#error-pname-null').show();
                 if(tasktype == null | tasktype == ""){
@@ -395,7 +419,10 @@ function notEmptyOne(i) {
                         if(findate == null | findate == ""){
                             $('#error-findate-null').show();
                             return false;
-                        }
+                        }/*else if (!(checkEmail(cemail))){
+                            $('#error-cemail-format').show();
+                            return false;
+                        }*/
                     }
                 }
             }
@@ -426,6 +453,13 @@ function notEmptyTwo(i) {
     getnext(i);
 }
 
+var layer;
+$().ready(function () {
+    layui.use('layer', function(){
+        layer = layui.layer;
+    });
+})
+
 function notEmptyThere() {
 
     var demand1 = $('#demand1').val();
@@ -451,35 +485,70 @@ function notEmptyThere() {
         }
     }
 
-    $.post("/task/taskPush_Three",{core:core},function (data,status) {
-        //console.log(data);
+    $.post("/task/taskPush_Three",{core:core},function (data) {
+        if(data.state == 200){
+            layer.open({
+                type: 1,
+                title: '提示信息',
+                area: ['250px', '120px'],
+                content: '<div style="padding: 20px 80px;">'+ data.message +'</div>'
+            });
+        }else {
+
+        }
+
     });
 }
 
-var cname_input=document.getElementById("cname");
-var cemail_input=document.getElementById("cemail");
-var pname_input=document.getElementById("pname");
-var pmoney_input=document.getElementById("pmoney");
-var findate_input=document.getElementById("findate");
-
-/**
- * input 标签的onfocus事件
- */
-cname_input.onfocus=function(){
-    $('#error-cname-null').hide();
-}
-cemail_input.onfocus=function () {
-    $('#error-cemail-null').hide();
-}
-pname_input.onfocus=function () {
-    $('#error-pname-null').hide();
-}
-pmoney_input.onfocus=function () {
-    $('#error-pmoney-null').hide();
-}
-findate_input.onfocus=function () {
-    $('#error-findate-null').hide();
-}
 
 
 
+new Vue({
+    el: '#app',
+    data: {
+        msg: '',
+    },
+    methods: {
+        notEmptyThere(){
+            var demand1 = $('#demand1').val();
+            var demand2 = $('#demand2').val();
+            var demand3 = $('#demand3').val();
+
+            if((demand1 == null | demand1 == "") | (demand2 == null | demand2 == "") | (demand3 == null | demand3 == "")){
+                $('#error-demand-null').show();
+                return false;
+            }
+
+            var core="";
+            for (var i=1;i<=demand;i++){
+                var demandinput=$('#demand'+i).val();
+                //console.log(demandinput);
+                if (demandinput != null & demandinput != ""){
+                    if (i != demand){
+                        core=core+""+i+"."+demandinput+";<br>";
+                    }else {
+                        core=core+""+i+"."+demandinput+"。<br>";
+                    }
+                    //console.log(demandstring);
+                }
+            }
+
+            $.post("/task/taskPush_Three",{core:core}, (data)=> {
+                if(data.state == 200){
+                    /*this.msg=data.message;
+                    this.$alert(this.msg,'提示信息', {
+                        confirmButtonText: '确定'
+                    });*/
+
+                    window.location.href='/index';
+                }else {
+                    this.msg=data.message;
+                    this.$alert(this.msg,'提示信息', {
+                        confirmButtonText: '确定'
+                    });
+                }
+
+            });
+        }
+    }
+});
