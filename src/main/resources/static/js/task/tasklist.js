@@ -171,6 +171,11 @@ $("#submit").click(function () {
     $.post("/task/search",{msg:msg,pageNum:pageNum,pageSize:pageSize},function (json) {
         var data=json.data;
         appendtask(json.data.length,data);
+        $("#fenye").empty();
+        $("#fenye").append('当前第<span id="page"></span>页&nbsp;&nbsp;&nbsp;&nbsp;\n' +
+            '                        <a class="page_no"  data-index="" id="up" onclick="javascript:upto();">上一页</a>\n' +
+            '                        <a class="page_no" data-index="2" id="next" onclick="javascript:nextto();">下一页</a>\n' +
+            '                        共<span id="totle"></span>页');
         $("#page").text(pageNum);
         $("#totle").text(json.pages);
     });
@@ -181,6 +186,11 @@ function search_type(msg){
     $.post("/task/search",{msg:msg,tasktype:type,pageNum:pageNum,pageSize:pageSize},function (json) {
         var data=json.data;
         appendtask(json.data.length,data);
+        $("#fenye").empty();
+        $("#fenye").append('当前第<span id="page"></span>页&nbsp;&nbsp;&nbsp;&nbsp;\n' +
+            '                        <a class="page_no"  data-index="" id="up" onclick="javascript:upto();">上一页</a>\n' +
+            '                        <a class="page_no" data-index="2" id="next" onclick="javascript:nextto();">下一页</a>\n' +
+            '                        共<span id="totle"></span>页');
         $("#page").text(pageNum);
         $("#totle").text(json.pages);
     });
