@@ -92,16 +92,27 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<TaskList> search(String msg, String tasktype) {
-        List<TaskList> list = new ArrayList<TaskList>();
+    public PageResult search(String msg, String tasktype, Integer pageNum, Integer pageSize, HttpSession session) {
         if(tasktype!=null){
             tasktype=tasktype.trim();
+            session.setAttribute("tasktype", tasktype);
         }
-        list = taskMapper.searchByCnameTaskList(msg, tasktype);
-        if(list.size()==0){
-            list = taskMapper.searchByPnameTaskList(msg, tasktype);
+        if(msg!=null){
+            session.setAttribute("msg", msg);
         }
-        return list;
+        List<TaskList> list = taskMapper.searchByCnameTaskList((String) session.getAttribute("msg"), (String) session.getAttribute("tasktype"));
+        if(list.size()!=0){
+            PageHelper.startPage(pageNum, pageSize);
+            com.github.pagehelper.Page result = new com.github.pagehelper.Page();
+            result = (com.github.pagehelper.Page) taskMapper.searchByCnameTaskList((String) session.getAttribute("msg"), (String) session.getAttribute("tasktype"));
+            return new PageResult(result.getTotal(), result.getResult());
+        }else{
+            PageHelper.startPage(pageNum, pageSize);
+            com.github.pagehelper.Page result = new com.github.pagehelper.Page();
+            result = (com.github.pagehelper.Page) taskMapper.searchByPnameTaskList((String) session.getAttribute("msg"), (String) session.getAttribute("tasktype"));
+            return new PageResult(result.getTotal(), result.getResult());
+        }
     }
+
 
 }

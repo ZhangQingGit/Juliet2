@@ -53,6 +53,9 @@
             ,findate,psynopsis
         FROM
             task
+        ORDER BY
+            rid
+        DESC
         LIMIT 0,6
     </select>
 

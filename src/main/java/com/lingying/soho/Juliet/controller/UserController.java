@@ -33,7 +33,7 @@ public class UserController extends BaseController{
     private TeamService teamService;
     @Autowired
     private CompanyService companyService;
-   
+
     @RequestMapping("login")
     public String login(String username, String password, Model model, HttpSession session) {
             if(username!=null) {
@@ -140,7 +140,13 @@ public class UserController extends BaseController{
     @RequestMapping("getNickName")
     @ResponseBody
     public ResponseResult<String> getNickName(HttpSession session){
-        Integer uid = getUidFromSession(session);
+        Integer uid = 0;
+        try {
+            uid = getUidFromSession(session);
+        } catch (NullPointerException e){
+            System.err.println("session 过期！");
+            return new ResponseResult<>(200,"UnName");
+        }
         if(uid != null){
             String nickName = userService.getNickNameByUid(uid);
             return new ResponseResult<>(200,nickName);
