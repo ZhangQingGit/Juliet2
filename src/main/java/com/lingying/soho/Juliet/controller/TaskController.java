@@ -113,9 +113,12 @@ public class TaskController extends BaseController {
 
     @RequestMapping("search")
     @ResponseBody
-    public ResponseResult<List<TaskList>> search(String msg, String tasktype){
-        List<TaskList> list = taskService.search(msg, tasktype);
-        return new ResponseResult<>(200, list);
+    public PageResult search(String msg, String tasktype, Integer pageNum, Integer pageSize, HttpSession session){
+        PageResult result = taskService.search(msg, tasktype, pageNum, pageSize, session);
+        Integer num = new Long(result.getTotalSize()).intValue();
+        Integer pages = (num+5-1)/5;
+        result.setPages(pages);
+        return result;
     }
 
     /**

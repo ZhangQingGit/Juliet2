@@ -2,7 +2,7 @@ var pageNum=1;
 var pageSize=5;
 $(document).ready(function(){
     //得到名字
-    $.post("/getName", function (data) {
+    $.post("/getNickName", function (data) {
         $("#d_name").append(data.message);
     });
     //菜单栏
@@ -29,21 +29,34 @@ $(document).ready(function(){
         if(strs[1]!=''){
             if(strs[0]=='s'){
                 var title = decodeURI(strs[1]);
-                $.post("/task/search",{msg:title},function (json) {
+                $.post("/task/search",{msg:title,pageNum:pageNum,pageSize:pageSize},function (json) {
                     $("#keyword").val(title);
-                    $("#taskList").empty();
                     var data=json.data;
                     appendtask(json.data.length,data);
+                    appendtask(json.data.length,data);
+                    $("#fenye").append('当前第<span id="page"></span>页&nbsp;&nbsp;&nbsp;&nbsp;\n' +
+                        '                        <a class="page_no"  data-index="" id="up" onclick="javascript:upto();">上一页</a>\n' +
+                        '                        <a class="page_no" data-index="2" id="next" onclick="javascript:nextto();">下一页</a>\n' +
+                        '                        共<span id="totle"></span>页');
+                    $("#page").text(pageNum);
+                    $("#totle").text(json.pages);
                 });
             }
             if(strs[0]=='t'){
                 var title = decodeURI(strs[1]);
-                $.post("/task/search",{tasktype:title},function (json) {
+                $.post("/task/search",{tasktype:title,pageNum:pageNum,pageSize:pageSize},function (json) {
                     var data=json.data;
                     appendtask(json.data.length,data);
+                    $("#fenye").append('当前第<span id="page"></span>页&nbsp;&nbsp;&nbsp;&nbsp;\n' +
+                        '                        <a class="page_no"  data-index="" id="up" onclick="javascript:upto();">上一页</a>\n' +
+                        '                        <a class="page_no" data-index="2" id="next" onclick="javascript:nextto();">下一页</a>\n' +
+                        '                        共<span id="totle"></span>页');
+                    $("#page").text(pageNum);
+                    $("#totle").text(json.pages);
                 });
             }
         }
+
     }else {
         //初始列表
         $.post("/task/taskList",{pageNum:pageNum,pageSize:pageSize},function (json) {
@@ -57,7 +70,6 @@ $(document).ready(function(){
             $("#totle").text(json.pages);
         });
     }
-
 });
     function up(){
             if(pageNum>1){
@@ -87,6 +99,35 @@ $(document).ready(function(){
                 return null;
             }
     }
+
+function upto(){
+    if(pageNum>1){
+        pageNum=pageNum-1;
+        $.post("/task/search",{pageNum:pageNum,pageSize:pageSize},function (json) {
+            var data=json.data;
+            appendtask(json.data.length,data);
+            $("#page").text(pageNum);
+        });
+    }else {
+        pageNum=1;
+        $("#page").text(1);
+        return null;
+    }
+}
+function nextto(){
+    if(pageNum<$("#totle").text()){
+        pageNum=pageNum+1;
+        $.post("/task/search",{pageNum:pageNum,pageSize:pageSize},function (json) {
+            var data=json.data;
+            appendtask(json.data.length,data);
+            $("#page").text(pageNum);
+        });
+    }else {
+        pageNum=$("#totle").text();
+        $("#page").text($("#totle").text());
+        return null;
+    }
+}
 function appendtask(length,data){
     $("#taskList").empty();
     for(var i=0;i<length;i++) {
@@ -127,16 +168,20 @@ function appendtask(length,data){
 }
 $("#submit").click(function () {
     var msg = $("#keyword").val();
-    $.post("/task/search",{msg:msg},function (json) {
+    $.post("/task/search",{msg:msg,pageNum:pageNum,pageSize:pageSize},function (json) {
         var data=json.data;
         appendtask(json.data.length,data);
+        $("#page").text(pageNum);
+        $("#totle").text(json.pages);
     });
 });
 function search_type(msg){
     var type = $("#type"+msg).text();
     var msg = $("#keyword").val();
-    $.post("/task/search",{msg:msg,tasktype:type},function (json) {
+    $.post("/task/search",{msg:msg,tasktype:type,pageNum:pageNum,pageSize:pageSize},function (json) {
         var data=json.data;
         appendtask(json.data.length,data);
+        $("#page").text(pageNum);
+        $("#totle").text(json.pages);
     });
 }

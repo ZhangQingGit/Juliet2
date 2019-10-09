@@ -85,5 +85,5 @@ public interface TaskService {
      * @param msg
      * @return
      */
-    List<TaskList> search(String msg, String tasktype);
+    PageResult search(String msg, String tasktype, Integer pageNum, Integer pageSize, HttpSession session);
 }
